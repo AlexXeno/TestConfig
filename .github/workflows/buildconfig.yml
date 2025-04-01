@@ -34,7 +34,7 @@ jobs:
         with:
           find: "${{vars.TSSERVER}}"
           replace: "${{env.TSServerToken}}"
-          include: "/**"
+          include: "Rules/**"
           regex: true    
           
       - name: Push changes
