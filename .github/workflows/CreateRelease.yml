@@ -60,12 +60,11 @@ jobs:
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: 'Release_${{inputs.environment}}.zip'
+          filename: 'Releases\Release_${{inputs.environment}}.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
 
       - name: Upload Release
-        uses: ncipollo/release-action@v1.12.0
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          artifacts: 'Release_${{inputs.environment}}.zip'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: TestBuild
+          file_pattern: 'Releases\Release_${{inputs.environment}}.zip'
+
