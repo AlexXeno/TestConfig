@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="20" Description="Bloomberg IPV FX Smiles" CodeType="Request" Code="Bloomberg IPV FX Smiles" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="20" Description="Bloomberg IPV FX Smiles" CodeType="Request" Code="Bloomberg IPV FX Smiles" Database="\\\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg FX Vols</string>
     </Property>
@@ -89,7 +89,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV FX Smiles", "Murex FX Smile")
+              <string>DatabaseItems("\\\MD_SILVER", "Murex IPV FX Smiles", "Murex FX Smile")
 .Values(|Data Inputs|("Gold").Data(TODAY).Where(Column_4 = "Bloomberg")
 .Values(Column_2.Code)).FLATTEN.Values(Column_1).GROUPBY(Column_1).Where(Column_1 &lt;&gt; NULL)
 .VALUES(
@@ -122,13 +122,13 @@ Column_1,
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
     <Property Name="File Export Definition" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC" code="BB GAQ REQUEST" codeType="File Export" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC" code="BB GAQ REQUEST" codeType="File Export" />
     </Property>
     <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
       <boolean>true</boolean>

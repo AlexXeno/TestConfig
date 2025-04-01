@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetHistory - IPV Equity Stocks" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetHistory - IPV Equity Stocks" Database="\\\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg Stocks</string>
     </Property>
@@ -106,7 +106,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Stocks','Front Arena Equity Address')
+              <string>DatabaseItems('\\\MD_SILVER','Front Arena IPV Stocks','Front Arena Equity Address')
 .Where(%RunDate% IN (Positions('Front Arena').Dates))
 .Values(|Data Inputs|("Automated").Data(%RunDate%,%RunDate%).Cells(1,2))
 .FLATTEN
@@ -138,7 +138,7 @@
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />

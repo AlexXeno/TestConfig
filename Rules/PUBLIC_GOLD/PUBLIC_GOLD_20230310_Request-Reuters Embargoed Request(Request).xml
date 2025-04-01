@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Reuters Embargoed Request" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters Embargoed Request" Database="\\\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
@@ -126,7 +126,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems('\\MZTSBATCH01\PUBLIC_GOLD', 'Mapping Tables', 'Mapping Table', 'Embargoed Rics' )
+      <string>DatabaseItems('\\\PUBLIC_GOLD', 'Mapping Tables', 'Mapping Table', 'Embargoed Rics' )
 .Values( |Table|.Rows( 2, RowCount ) ).FLATTEN
 .Values( "Embargoed RIC Request", Column_1, 'Reuters', Column_2,  'Reuters', Column_3, Column_4 )</string>
     </Property>

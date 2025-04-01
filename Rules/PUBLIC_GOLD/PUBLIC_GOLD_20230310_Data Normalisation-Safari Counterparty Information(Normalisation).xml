@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="5" CodeType="Normalisation" Code="Safari Counterparty Information" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="5" CodeType="Normalisation" Code="Safari Counterparty Information" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -1081,7 +1081,7 @@
             <col index="10">
               <string>.Values( 
 IF(|Value|= "NULL", NULL, 
-LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Table|("Internal"), |Value|, 1,2))).Cells(1,1)</string>
+LOOKUP(Item("\\\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Table|("Internal"), |Value|, 1,2))).Cells(1,1)</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List>
@@ -1144,7 +1144,7 @@ LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Tab
             <col index="10">
               <string>.Values( 
 IF(|Value|= "NULL", NULL, 
-LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Table|("Internal"), |Value|, 1,2))).Cells(1,1)</string>
+LOOKUP(Item("\\\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Table|("Internal"), |Value|, 1,2))).Cells(1,1)</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List>
@@ -1209,7 +1209,7 @@ LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Tab
             <col index="10">
               <string>.Values( 
 IF(|Value|= "NULL", NULL, 
-LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Table|("Internal"), |Value|, 1,2))).Cells(1,1)</string>
+LOOKUP(Item("\\\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Table|("Internal"), |Value|, 1,2))).Cells(1,1)</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List>
@@ -1261,7 +1261,7 @@ LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Tab
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\MZTSBATCH01\MD_RAW", "Safari Counterparty Information", "", "*" )</string>
+              <string>DatabaseItems( "\\\MD_RAW", "Safari Counterparty Information", "", "*" )</string>
             </col>
           </row>
           <row index="2">
@@ -1269,7 +1269,7 @@ LOOKUP(Item("\\MZTSBATCH01\PUBLIC_GOLD", "Safari Ratings", "Mapping Table").|Tab
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\MZTSBATCH01\MD_RAW", "Safari Counterparty Information", "", "100*" )</string>
+              <string>DatabaseItems( "\\\MD_RAW", "Safari Counterparty Information", "", "100*" )</string>
             </col>
           </row>
         </rows>

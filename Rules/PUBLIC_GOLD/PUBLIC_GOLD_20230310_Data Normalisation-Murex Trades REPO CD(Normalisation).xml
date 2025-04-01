@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="6" CodeType="Normalisation" Code="Murex Trades REPO CD" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="6" CodeType="Normalisation" Code="Murex Trades REPO CD" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -2523,7 +2523,7 @@
               <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
             </col>
             <col index="10">
-              <string>.Values(Item("\\MZTSBATCH01\MD_SILVER", |Value|.CDBL().CSTR(), "Counterparty Number")).Cells(1,1)</string>
+              <string>.Values(Item("\\\MD_SILVER", |Value|.CDBL().CSTR(), "Counterparty Number")).Cells(1,1)</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
@@ -3860,7 +3860,7 @@
               <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
             </col>
             <col index="10">
-              <string>.Values(Item('\\MZTSBATCH01\MD_SILVER',Parent.Code,Parent.CodeType).Status('Gold').Data(%rundate%),'Missing')
+              <string>.Values(Item('\\\MD_SILVER',Parent.Code,Parent.CodeType).Status('Gold').Data(%rundate%),'Missing')
 .Values(IF(Column_1 &lt;&gt;NULL,Column_1,Column_2)).Cells(1,1)</string>
             </col>
             <col index="11">
@@ -3899,7 +3899,7 @@
               <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
             </col>
             <col index="10">
-              <string>.Values(Item('\\MZTSBATCH01\MD_SILVER',Parent.Code,Parent.CodeType).StatusEnum('Gold').Data(%rundate%),2)
+              <string>.Values(Item('\\\MD_SILVER',Parent.Code,Parent.CodeType).StatusEnum('Gold').Data(%rundate%),2)
 .Values(IF(Column_1 &lt;&gt;NULL,Column_1,Column_2)).Cells(1,1)</string>
             </col>
             <col index="11">
@@ -4003,7 +4003,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\MZTSBATCH01\MD_RAW", "Murex Trades REPO CD", "Murex Trade DuT", "*" ).Where(|DATE_REP|.Data.Data(%RunDate%) &lt;&gt; NULL)
+              <string>DatabaseItems( "\\\MD_RAW", "Murex Trades REPO CD", "Murex Trade DuT", "*" ).Where(|DATE_REP|.Data.Data(%RunDate%) &lt;&gt; NULL)
 .Values(Database, Code("Murex Trade")).Values(Item(Column_1, Column_2, "Murex Trade"))</string>
             </col>
           </row>
@@ -4012,7 +4012,7 @@
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>Item('\\MZTSBATCH01\MD_RAW','901486_B','Murex Trade')</string>
+              <string>Item('\\\MD_RAW','901486_B','Murex Trade')</string>
             </col>
           </row>
         </rows>

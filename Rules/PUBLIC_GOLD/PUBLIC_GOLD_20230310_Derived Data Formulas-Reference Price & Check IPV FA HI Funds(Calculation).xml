@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" Description="IPV Check" CodeType="Calculation" Code="Reference Price &amp; Check IPV FA HI Funds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" Description="IPV Check" CodeType="Calculation" Code="Reference Price &amp; Check IPV FA HI Funds" Database="\\\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="53" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -271,7 +271,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="48" Left="2" Bottom="48" Right="2" />
-            <Value>OutputDataSources.Values( Column_1, Values(StartDate, Values( '\\MZTSBATCH01\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate) ).MAKESERIES(0,1) )</Value>
+            <Value>OutputDataSources.Values( Column_1, Values(StartDate, Values( '\\\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate) ).MAKESERIES(0,1) )</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="31" Left="1" Bottom="31" Right="1" />
@@ -420,7 +420,7 @@ Values(DatabaseName,IF(ISERROR(MarketDataCode),NULL,MarketDataCode),MarketDataCo
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="47" Left="2" Bottom="47" Right="2" />
-            <Value>OutputDataSources.Values( Column_1, Values(StartDate, Values( '\\MZTSBATCH01\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate) ).MAKESERIES(0,1) )</Value>
+            <Value>OutputDataSources.Values( Column_1, Values(StartDate, Values( '\\\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate) ).MAKESERIES(0,1) )</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="48" Left="0" Bottom="48" Right="0" />

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Shared Universe Definitions">
-  <Item PropertyCount="1" CodeType="Universe" Code="Reuters Cash Rates - MCC Loan Deposit" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Universe" Code="Reuters Cash Rates - MCC Loan Deposit" Database="\\\PUBLIC_GOLD">
     <Property Name="Universe Items" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="6" CellDefinitionsColumns="2">
         <NamedRanges>
@@ -31,7 +31,7 @@
         <Cells>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="2" Left="1" Bottom="2" Right="1" />
-            <Value>DatabaseItems("\\MZTSBATCH01\MD_SILVER","Murex Trades IRD EQD SCF","Murex Trade DuT",(RunDate).TOSTRING( 'yyyyMMdd' )+ "*") .Where(|Transaction Group| = 'LN_BR') 
+            <Value>DatabaseItems("\\\MD_SILVER","Murex Trades IRD EQD SCF","Murex Trade DuT",(RunDate).TOSTRING( 'yyyyMMdd' )+ "*") .Where(|Transaction Group| = 'LN_BR') 
 .Values(Data inputs('Automated').Data(RunDate).Where(Column_1 LIKE '*cash Rates*')).FLATTEN()</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">

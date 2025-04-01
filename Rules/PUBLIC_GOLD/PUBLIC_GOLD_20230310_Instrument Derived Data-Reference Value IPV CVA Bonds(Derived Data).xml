@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" Description="Reference vlaue and QI calc for IPV CVA Bonds" CodeType="Derived Data" Code="Reference Value IPV CVA Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="5" Description="Reference vlaue and QI calc for IPV CVA Bonds" CodeType="Derived Data" Code="Reference Value IPV CVA Bonds" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -58,7 +58,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -191,7 +191,7 @@
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>Item("\\MZTSBATCH01\MD_SILVER", "DE0001135473", "Murex CVA Bond")</string>
+              <string>Item("\\\MD_SILVER", "DE0001135473", "Murex CVA Bond")</string>
             </col>
           </row>
           <row index="2">
@@ -199,7 +199,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV CVA Bonds", "Murex CVA Bond").Where(%RunDate% IN (|Data Inputs|('Automated').Dates))</string>
+              <string>DatabaseItems("\\\MD_SILVER", "Murex IPV CVA Bonds", "Murex CVA Bond").Where(%RunDate% IN (|Data Inputs|('Automated').Dates))</string>
             </col>
           </row>
         </rows>
