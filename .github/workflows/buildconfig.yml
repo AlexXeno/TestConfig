@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: show env variable
-        run: echo TSServer token, $TSServer
+        run: echo TSServer token, ${{env.TSServer}}
 
       - name: show DEREFERENCE TSSERVER
         run: echo TSServer value, ${{ vars.TSSERVER}}
@@ -44,7 +44,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@3.0.5
         with:
           find: "${{vars.TSSERVER}}"
-          replace: "$TSServer"
+          replace: "${{env.TSServer}}"
           include: "Rules/**"
           regex: true    
           
