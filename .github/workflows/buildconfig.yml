@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
-  TSServerToken : "TSSERVER"
+  TSServerToken : "%TSSERVER%"
   SQLInstanceToken : "%SQLINSTANCE%"
   SQLUserToken : "%SQLUSER%
 
@@ -33,7 +33,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "${{vars.TSSERVER}}"
-          replace: "${{env.TSServerToken}}"
+          replace: "$TSServerToken"
           include: "Rules/**"
           regex: true    
           
