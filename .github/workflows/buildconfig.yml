@@ -57,7 +57,7 @@ jobs:
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
       environment: DEV
-      TSServerToken: "${{TSServerToken}}"
+      TSServerToken: "${{env.TSServerToken}}"
       SQLInstanceToken: ${env.SQLInstanceToken}
       SQLUserToken: ${env.SQLUserToken}
         
