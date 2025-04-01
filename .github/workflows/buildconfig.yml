@@ -26,32 +26,23 @@ jobs:
     permissions:
       contents: write
     steps:
-
-      - uses: actions/checkout@v2
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: hello
-          replace: world
-          regex: false
-
           
-    #  - name: Checkout Repository
-    #    uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    #  - name: show env variable
-    #    run: echo $TSServer
+      - name: show env variable
+        run: echo $TSServer
         
-   #   - name: Find and Replace TSSERVER in Rules
-    #    uses: jacobtomlinson/gha-find-replace@3.0.5
-    #    with:
-    #      find: "${{ vars.TSSERVER}}"
-    #      replace: "$TSServer"
-    #      include: "Rules/**"
-    #      regex: true    
+      - name: Find and Replace TSSERVER in Rules
+        uses: jacobtomlinson/gha-find-replace@3.0.5
+        with:
+          find: "${{ vars.TSSERVER}}"
+          replace: "$TSServer"
+          include: "Rules/**"
+          regex: true    
           
-    #  - name: Push changes
-    #    uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
   
   # This workflow contains a single job called "build"
   buildDEV:
