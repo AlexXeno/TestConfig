@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="6" CodeType="Normalisation" Code="Murex IPV CapFloor Volatilities" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="6" CodeType="Normalisation" Code="Murex IPV CapFloor Volatilities" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%Rundate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -670,7 +670,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_RAW", "Murex IPV CF Vola", "Murex CapFloor Volatility", "*").where(%Rundate% in (CALLBID("Murex").dates))</string>
+              <string>DatabaseItems("\\xTSSERVERx\MD_RAW", "Murex IPV CF Vola", "Murex CapFloor Volatility", "*").where(%Rundate% in (CALLBID("Murex").dates))</string>
             </col>
           </row>
         </rows>

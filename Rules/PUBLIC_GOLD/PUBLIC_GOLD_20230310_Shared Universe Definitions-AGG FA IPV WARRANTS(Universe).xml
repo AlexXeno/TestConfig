@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Shared Universe Definitions">
-  <Item PropertyCount="1" CodeType="Universe" Code="AGG FA IPV WARRANTS" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Universe" Code="AGG FA IPV WARRANTS" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Universe Items" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="7" CellDefinitionsColumns="2">
         <NamedRanges>
@@ -27,11 +27,11 @@
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="3" Left="1" Bottom="3" Right="1" />
-            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p6:type="q1:string">\\MZTSBATCH01\MD_SILVER</Value>
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p6:type="q1:string">\\xTSSERVERx\MD_SILVER</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="5" Left="1" Bottom="5" Right="1" />
-            <Value>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Front Arena Positions Equities", "Front Arena Position Equity").Where(NOT ISERROR(|Quantity|('Front Arena').Data(RunDate))).Where(Portfolio.|Is PL Relevant| = TRUE AND |Instrument| NOT LIKE "LBHT*" AND |Instrument Type| = "Warrant").Values(|IPV Parameter|('Front Arena').Code, Code)</Value>
+            <Value>DatabaseItems("\\xTSSERVERx\MD_SILVER", "Front Arena Positions Equities", "Front Arena Position Equity").Where(NOT ISERROR(|Quantity|('Front Arena').Data(RunDate))).Where(Portfolio.|Is PL Relevant| = TRUE AND |Instrument| NOT LIKE "LBHT*" AND |Instrument Type| = "Warrant").Values(|IPV Parameter|('Front Arena').Code, Code)</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="2" Left="1" Bottom="2" Right="1" />

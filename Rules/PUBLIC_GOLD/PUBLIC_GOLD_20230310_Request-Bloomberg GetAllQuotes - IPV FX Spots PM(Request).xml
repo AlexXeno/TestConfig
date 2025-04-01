@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetAllQuotes - IPV FX Spots PM" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetAllQuotes - IPV FX Spots PM" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg FX Spots</string>
     </Property>
@@ -89,11 +89,11 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex IPV FX Spots','Murex FX Spot')
+              <string>DatabaseItems('\\xTSSERVERx\MD_SILVER','Murex IPV FX Spots','Murex FX Spot')
 .Where(|Is Precious Metal|('Murex') = TRUE AND |Is Currency Relevant| = TRUE)
 .Values(
 	|Bloomberg FX Spot|('Internal').Code('Bloomberg'), 
-	Item('\\MZTSBATCH01\PUBLIC_GOLD','EOD TIMES','Mapping Table').Table('Internal').LOOKUP('Murex',1,2)
+	Item('\\xTSSERVERx\PUBLIC_GOLD','EOD TIMES','Mapping Table').Table('Internal').LOOKUP('Murex',1,2)
 ).Values(
 	DATEADD( %RunDate%, '+1S' ),
 	DATEADD(  %RunDate%, '+1D' ).DATEADD( '-1S' ),
@@ -125,7 +125,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />

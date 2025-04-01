@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetAllQuotes - IPV FX Vols" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetAllQuotes - IPV FX Vols" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg FX Vols</string>
     </Property>
@@ -89,7 +89,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex IPV FX Vols','Murex FX Vol')
+              <string>DatabaseItems('\\xTSSERVERx\MD_SILVER','Murex IPV FX Vols','Murex FX Vol')
 .Where( %RunDate% IN ( |Data Inputs|( 'Automated' ).Dates ) )
 .Values(|Data Inputs|( 'Automated' ).Data( %RunDate% ) ).FLATTEN
 .Values(Column_7.TOSTRING("yyyy-MM-dd 00:00:00"), Column_8.TOSTRING("yyyy-MM-dd 23:59:59"), Column_4)
@@ -123,7 +123,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Validation">
-  <Item PropertyCount="7" CodeType="Validation" Code="MCC - OTC Derivatives 1" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="7" CodeType="Validation" Code="MCC - OTC Derivatives 1" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Object Tests" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -565,7 +565,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", %RunDate%.CDATE().ToString( 'yyyyMMdd' ) + '*' ).where(|Product ID| IN ( 1, 11, 14, 15 ) and |Late Transaction| = False and |Basis Swap| = False and |No Floating Leg| = False and |End-of-Day Sensi| &lt;&gt; 0 ).Where ( |Date under Test| = Value(%RunDate%) ) .Values( Database, Code("Murex Trade") ).Values( Item(Column_1, Column_2, "Murex Trade") )</string>
+              <string>DatabaseItems("\\xTSSERVERx\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", %RunDate%.CDATE().ToString( 'yyyyMMdd' ) + '*' ).where(|Product ID| IN ( 1, 11, 14, 15 ) and |Late Transaction| = False and |Basis Swap| = False and |No Floating Leg| = False and |End-of-Day Sensi| &lt;&gt; 0 ).Where ( |Date under Test| = Value(%RunDate%) ) .Values( Database, Code("Murex Trade") ).Values( Item(Column_1, Column_2, "Murex Trade") )</string>
             </col>
           </row>
         </rows>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Reuters IPV Future Option Volatilities" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters IPV Future Option Volatilities" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string>Value(%RunDate%)</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
@@ -127,7 +127,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex IPV Fut Opt Vola','Murex Swaption Volatility')
+      <string>DatabaseItems('\\xTSSERVERx\MD_SILVER','Murex IPV Fut Opt Vola','Murex Swaption Volatility')
 .Where((NOT  ISERROR( |Data Inputs|( 'Automated' ).Data(%RunDate% )) ) and  (NOT ISERROR(|Maturity Date|('Murex') )) ).Values(
 |Data Inputs|("automated").Data(%RunDate%)
 .Values( Item.Code,Item.CodeType, |DataSource| ).GROUPBY( Item.Code,Item.CodeType, |DataSource|).Values(Column_1,Column_2).FLATTEN

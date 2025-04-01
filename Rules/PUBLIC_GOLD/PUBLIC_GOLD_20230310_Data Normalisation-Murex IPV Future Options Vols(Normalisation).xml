@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="6" CodeType="Normalisation" Code="Murex IPV Future Options Vols" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="6" CodeType="Normalisation" Code="Murex IPV Future Options Vols" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -210,7 +210,7 @@ ISNULL(
               <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
             </col>
             <col index="10">
-              <string>Item("\\MZTSBATCH01\PUBLIC_GOLD", "FI Future Option Markets", "Mapping Table").|Table|("Internal")</string>
+              <string>Item("\\xTSSERVERx\PUBLIC_GOLD", "FI Future Option Markets", "Mapping Table").|Table|("Internal")</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List>
@@ -736,7 +736,7 @@ ISNULL(
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_RAW","Murex IPV Fut Opt Vola","Murex Swaption Volatility","*").where(NOT ISERROR(ABS_STRIKE.Data(%RunDate%)))</string>
+              <string>DatabaseItems("\\xTSSERVERx\MD_RAW","Murex IPV Fut Opt Vola","Murex Swaption Volatility","*").where(NOT ISERROR(ABS_STRIKE.Data(%RunDate%)))</string>
             </col>
           </row>
         </rows>

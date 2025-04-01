@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Reuters FX Forward Rates GV1/GV2 Dates" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters FX Forward Rates GV1/GV2 Dates" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
@@ -127,7 +127,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>Item('\\MZTSBATCH01\PUBLIC_GOLD','FX Forward Curves','Mapping Table').Table.Column_3.Rows(2,RowCount)
+      <string>Item('\\xTSSERVERx\PUBLIC_GOLD','FX Forward Curves','Mapping Table').Table.Column_3.Rows(2,RowCount)
 .Values('Reuters FX Forward Rates',Column_1,'RIC',Column_1,'Reuters','Reuters','Reuters FX Forward Rates')</string>
     </Property>
     <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">

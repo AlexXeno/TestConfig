@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Create MCC Proxy Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Create MCC Proxy Bonds" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="24" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -77,7 +77,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="14" Left="1" Bottom="14" Right="1" />
-            <Value>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT", Value(StartDate).TOSTRING("yyyyMMdd") + "*" ).Where(|Transaction Family| = 'IRD' AND |Transaction Group| = 'BOND' AND |Market Data Operation| = 'Proxy Bond'
+            <Value>DatabaseItems( "\\xTSSERVERx\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT", Value(StartDate).TOSTRING("yyyyMMdd") + "*" ).Where(|Transaction Family| = 'IRD' AND |Transaction Group| = 'BOND' AND |Market Data Operation| = 'Proxy Bond'
 AND |Proxy Bond|.Code = ProxyBondISIN )</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">

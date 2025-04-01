@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="6" Description="Normalise IPV FX Smiles" CodeType="Normalisation" Code="Normalise IPV FX Smiles" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="6" Description="Normalise IPV FX Smiles" CodeType="Normalisation" Code="Normalise IPV FX Smiles" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -328,7 +328,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_RAW", "Murex IPV FX Smiles", "Murex FX Smile").WHERE( %RunDate% IN ( CALLASK( 'Murex' ).DATES ) )</string>
+              <string>DatabaseItems("\\xTSSERVERx\MD_RAW", "Murex IPV FX Smiles", "Murex FX Smile").WHERE( %RunDate% IN ( CALLASK( 'Murex' ).DATES ) )</string>
             </col>
           </row>
         </rows>

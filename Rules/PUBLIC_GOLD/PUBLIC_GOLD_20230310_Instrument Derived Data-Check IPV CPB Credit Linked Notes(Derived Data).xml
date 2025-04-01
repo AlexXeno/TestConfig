@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" CodeType="Derived Data" Code="Check IPV CPB Credit Linked Notes" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="5" CodeType="Derived Data" Code="Check IPV CPB Credit Linked Notes" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -58,7 +58,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\xTSSERVERx\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -183,7 +183,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( '\\MZTSBATCH01\MD_SILVER', 'Murex IPV Bonds' ) .WHERE( %RunDate% IN ( |Node Product|( 'Risk Control' ).Dates ) ) .WHERE( |Node Product|( 'Risk Control' ).Data( %RunDate% ) = 'CLN' )</string>
+              <string>DatabaseItems( '\\xTSSERVERx\MD_SILVER', 'Murex IPV Bonds' ) .WHERE( %RunDate% IN ( |Node Product|( 'Risk Control' ).Dates ) ) .WHERE( |Node Product|( 'Risk Control' ).Data( %RunDate% ) = 'CLN' )</string>
             </col>
           </row>
         </rows>

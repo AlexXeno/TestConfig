@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" Description="Set SCF Node Assignment" CodeType="Calculation" Code="Set MCC IRD EQD SCF Nodes" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" Description="Set SCF Node Assignment" CodeType="Calculation" Code="Set MCC IRD EQD SCF Nodes" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="99" CellDefinitionsColumns="6">
         <NamedRanges>
@@ -213,7 +213,7 @@
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="3" Left="1" Bottom="3" Right="1" />
-            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:string">\\MZTSBATCH01\MD_SILVER</Value>
+            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:string">\\xTSSERVERx\MD_SILVER</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="43" Left="1" Bottom="43" Right="1" />
@@ -336,11 +336,11 @@ ISNULL(IF (LOOKUP(ELBVanillaOrExotic, SPDEquity.|Product Group|, 1, 2) = "Exotic
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="12" Left="2" Bottom="12" Right="2" />
-            <Value>IF(Database = '\\MZTSBATCH01\PUBLIC_SILVER', Item('\\MZTSBATCH01\PUBLIC_SILVER','Mapping SCF','Mapping Table').Table('Internal'), MappingSCF)</Value>
+            <Value>IF(Database = '\\xTSSERVERx\PUBLIC_SILVER', Item('\\xTSSERVERx\PUBLIC_SILVER','Mapping SCF','Mapping Table').Table('Internal'), MappingSCF)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="13" Left="2" Bottom="13" Right="2" />
-            <Value>IF(Database = '\\MZTSBATCH01\PUBLIC_SILVER', Item('\\MZTSBATCH01\PUBLIC_SILVER','SCF Assignment','Mapping Table').Table('Internal'), SCFAssignment)</Value>
+            <Value>IF(Database = '\\xTSSERVERx\PUBLIC_SILVER', Item('\\xTSSERVERx\PUBLIC_SILVER','SCF Assignment','Mapping Table').Table('Internal'), SCFAssignment)</Value>
           </CellDefinition>
           <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
             <Range Top="12" Left="1" Bottom="12" Right="1" />

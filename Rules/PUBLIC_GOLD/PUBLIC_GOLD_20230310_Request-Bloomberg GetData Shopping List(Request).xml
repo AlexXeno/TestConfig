@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="20" CodeType="Request" Code="Bloomberg GetData Shopping List" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="20" CodeType="Request" Code="Bloomberg GetData Shopping List" Database="\\xTSSERVERx\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg Futures</string>
     </Property>
@@ -106,7 +106,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( '\\MZTSBATCH01\PUBLIC_GOLD', 'Mapping Tables', 'Mapping Table', 'Bloomberg *Shopping List*' ).
+              <string>DatabaseItems( '\\xTSSERVERx\PUBLIC_GOLD', 'Mapping Tables', 'Mapping Table', 'Bloomberg *Shopping List*' ).
 VALUES(
     |Table|.WHERE( COlumn_1 = 'GetData' and Column_2 = 'Daily' and Column_3 &lt;&gt; NULL and Column_5 = 'Bloomberg Futures' )
         .VALUES( Column_3  )
@@ -135,13 +135,13 @@ VALUES(
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
     <Property Name="File Export Definition" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_SILVER" code="BB GD REQUEST (TICKER)" codeType="File Export" />
+      <Xenomorph.Generic.ItemRef database="\\xTSSERVERx\PUBLIC_SILVER" code="BB GD REQUEST (TICKER)" codeType="File Export" />
     </Property>
     <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
       <boolean>true</boolean>
