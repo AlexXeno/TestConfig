@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="5" CodeType="Normalisation" Code="Murex MOPs Currency" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="5" CodeType="Normalisation" Code="Murex MOPs Currency" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -2447,7 +2447,7 @@
               <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
             </col>
             <col index="10">
-              <string>.Values(Item("\\\MD_SILVER", |Value|.CDBL().CSTR(), "Counterparty Number")).Cells(1,1)</string>
+              <string>.Values(Item("\\MZTSBATCH01\MD_SILVER", |Value|.CDBL().CSTR(), "Counterparty Number")).Cells(1,1)</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
@@ -3068,7 +3068,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_RAW","Murex Trades Currency","Murex MOP DuT",DATETOTEXT(%RunDate%, 6).REPLACE('-','') + "*").Values(Database,Code('Murex MOP')).Values(Item(Column_1,Column_2,'Murex MOP'))</string>
+              <string>DatabaseItems("\\MZTSBATCH01\MD_RAW","Murex Trades Currency","Murex MOP DuT",DATETOTEXT(%RunDate%, 6).REPLACE('-','') + "*").Values(Database,Code('Murex MOP')).Values(Item(Column_1,Column_2,'Murex MOP'))</string>
             </col>
           </row>
         </rows>

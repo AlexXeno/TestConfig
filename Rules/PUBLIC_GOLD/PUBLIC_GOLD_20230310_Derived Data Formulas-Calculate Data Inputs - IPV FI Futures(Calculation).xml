@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" Description="Calculate RICs for Murex IPV Futures" CodeType="Calculation" Code="Calculate Data Inputs - IPV FI Futures" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" Description="Calculate RICs for Murex IPV Futures" CodeType="Calculation" Code="Calculate Data Inputs - IPV FI Futures" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="45" CellDefinitionsColumns="4">
         <NamedRanges>
@@ -172,7 +172,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="39" Left="2" Bottom="39" Right="2" />
-            <Value>Values( StartDate, Values(Values( '\\\PUBLIC_GOLD', 'REU FUT Prices', 'Mapping Table', "Table", 'Internal', StartDate), Values(DatabaseName, CodeName, CodeTypeName, "ISIN", TargetDatasource, StartDate), Values(DatabaseName, CodeName, CodeTypeName, "Maturity Date", TargetDatasource, StartDate) ).TRANSPOSE.FLATTEN ).MAKESERIES( 0, 1 )</Value>
+            <Value>Values( StartDate, Values(Values( '\\MZTSBATCH01\PUBLIC_GOLD', 'REU FUT Prices', 'Mapping Table', "Table", 'Internal', StartDate), Values(DatabaseName, CodeName, CodeTypeName, "ISIN", TargetDatasource, StartDate), Values(DatabaseName, CodeName, CodeTypeName, "Maturity Date", TargetDatasource, StartDate) ).TRANSPOSE.FLATTEN ).MAKESERIES( 0, 1 )</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="31" Left="1" Bottom="31" Right="1" />
@@ -204,7 +204,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="38" Left="2" Bottom="38" Right="2" />
-            <Value>Values( StartDate, Values(Values( '\\\PUBLIC_GOLD', 'REU FUT Prices', 'Mapping Table', "Table", 'Internal', StartDate), Values(DatabaseName, CodeName, CodeTypeName, "ISIN", TargetDatasource, StartDate), Values(DatabaseName, CodeName, CodeTypeName, "Maturity Date", TargetDatasource, StartDate) ).TRANSPOSE.FLATTEN ).MAKESERIES( 0, 1 )</Value>
+            <Value>Values( StartDate, Values(Values( '\\MZTSBATCH01\PUBLIC_GOLD', 'REU FUT Prices', 'Mapping Table', "Table", 'Internal', StartDate), Values(DatabaseName, CodeName, CodeTypeName, "ISIN", TargetDatasource, StartDate), Values(DatabaseName, CodeName, CodeTypeName, "Maturity Date", TargetDatasource, StartDate) ).TRANSPOSE.FLATTEN ).MAKESERIES( 0, 1 )</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="39" Left="0" Bottom="39" Right="0" />

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="20" Description="underlying stock prices" CodeType="Request" Code="Bloomberg GetData - IPV Single Stock Div Fut Chain" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="20" Description="underlying stock prices" CodeType="Request" Code="Bloomberg GetData - IPV Single Stock Div Fut Chain" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg Stocks</string>
     </Property>
@@ -106,7 +106,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_SILVER", "Front Arena IPV Dividends", "Front Arena Dividend")
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Front Arena IPV Dividends", "Front Arena Dividend")
 .Where((|Node Product|.Data(%RunDate%)="Annually Paid" OR |Node Product|.Data(%RunDate%)="Others"))
 .Values(|Data Inputs|("Automated").Data(%RunDate%).Item).FLATTEN()
 .Values(Column_3).GROUPBY(Column_3)
@@ -136,13 +136,13 @@
       <string>%Rundate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
     <Property Name="File Export Definition" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC" code="BB GD REQUEST - IPV Single Stock Dividends" codeType="File Export" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC" code="BB GD REQUEST - IPV Single Stock Dividends" codeType="File Export" />
     </Property>
     <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
       <boolean>true</boolean>

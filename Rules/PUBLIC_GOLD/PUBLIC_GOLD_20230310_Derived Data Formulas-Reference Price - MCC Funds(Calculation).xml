@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Reference Price - MCC Funds" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Reference Price - MCC Funds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="36" CellDefinitionsColumns="4">
         <NamedRanges>
@@ -122,7 +122,7 @@ Trade Price &gt;= (PX_LAST) - Tolerance</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="3" Left="1" Bottom="3" Right="1" />
-            <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p6:type="q4:string">\\\MD_SILVER</Value>
+            <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p6:type="q4:string">\\MZTSBATCH01\MD_SILVER</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="13" Left="1" Bottom="13" Right="1" />
@@ -145,7 +145,7 @@ Trade Price &gt;= (PX_LAST) - Tolerance</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="23" Left="1" Bottom="23" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD','MCC IPV Result DataSource','Mapping Table').Table('internal').Where(Column_1=CalcMethod).Column_2.SPLIT(',')</Value>
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD','MCC IPV Result DataSource','Mapping Table').Table('internal').Where(Column_1=CalcMethod).Column_2.SPLIT(',')</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="21" Left="1" Bottom="21" Right="1" />
@@ -230,7 +230,7 @@ Values(NULL, CurrentMarketPrice, CloseData,Check)).TRANSPOSE.FLATTEN.Values(IF(C
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="29" Left="2" Bottom="29" Right="2" />
-            <Value>OutputDataSources.Values( Column_1, Values( '\\\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate))</Value>
+            <Value>OutputDataSources.Values( Column_1, Values( '\\MZTSBATCH01\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate))</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="30" Left="0" Bottom="30" Right="0" />
@@ -242,7 +242,7 @@ Values(NULL, CurrentMarketPrice, CloseData,Check)).TRANSPOSE.FLATTEN.Values(IF(C
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="30" Left="2" Bottom="30" Right="2" />
-            <Value>OutputDataSources.Values( Column_1, Values( '\\\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate))</Value>
+            <Value>OutputDataSources.Values( Column_1, Values( '\\MZTSBATCH01\PUBLIC_GOLD', 'Calculate Quality Index From Market data History', 'Calculation', "Calculation", "Internal", StartDate))</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="31" Left="0" Bottom="31" Right="0" />

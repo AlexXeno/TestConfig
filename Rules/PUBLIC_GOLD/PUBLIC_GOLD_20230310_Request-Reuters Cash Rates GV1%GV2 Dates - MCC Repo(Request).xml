@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Reuters Cash Rates GV1/GV2 Dates - MCC Repo" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters Cash Rates GV1/GV2 Dates - MCC Repo" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
@@ -127,7 +127,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems("\\\MD_SILVER","Murex Trades REPO CD","Murex Trade DuT") 
+      <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER","Murex Trades REPO CD","Murex Trade DuT") 
 .Where(|Transaction Type| = 'REPO' AND Nature IN ('B_REPO_T','B_BUY_SELL','B_REPO_O') AND |date Under test|.Data(%Rundate%) = %Rundate%)
 .Values(currency.Code)
 .GROUPBY(currency.Code)

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Reuters TRTH RAW IPV HELPS Swaption Volatilities" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters TRTH RAW IPV HELPS Swaption Volatilities" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values( 
@@ -138,7 +138,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems("\\\MD_SILVER", "HELPS Vola", "Helps Volatility", "*").
+      <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "HELPS Vola", "Helps Volatility", "*").
 Where(%Rundate% IN (Data inputs.Dates ) AND 
 |include|.Data(%Rundate%)=TRUE AND 
 |Instrument Type|( "HELPS" ) = "Swaption Volatilities ATM" )

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="20" CodeType="Request" Code="Bloomberg Bonds Master Data - CVA Bonds" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="20" CodeType="Request" Code="Bloomberg Bonds Master Data - CVA Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string>Bloomberg Bonds</string>
     </Property>
@@ -490,7 +490,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_SILVER", "Murex IPV CVA Bonds", "Murex CVA Bond")
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV CVA Bonds", "Murex CVA Bond")
 .Where(|No Check|.Data(%RunDate%) = FALSE)
 .Values(|Bloomberg Bond|('Murex'))
 .Values(Column_1.Code('Bloomberg'), Column_1.|Refresh Master Data|)
@@ -523,13 +523,13 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
     <Property Name="File Export Definition" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC" code="BB GD REQUEST - Bonds Master" codeType="File Export" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC" code="BB GD REQUEST - Bonds Master" codeType="File Export" />
     </Property>
     <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
       <boolean>true</boolean>

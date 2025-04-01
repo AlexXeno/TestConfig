@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Shared Universe Definitions">
-  <Item PropertyCount="1" CodeType="Universe" Code="Reuters IPV CCBS" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Universe" Code="Reuters IPV CCBS" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Universe Items" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="9" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -29,7 +29,7 @@
         <Cells>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="2" Left="1" Bottom="2" Right="1" />
-            <Value>DatabaseItems( "\\\MD_SILVER", "Cross Currency Swap Spreads", "Cross Currency Swap Spread" )
+            <Value>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Cross Currency Swap Spreads", "Cross Currency Swap Spread" )
 .Values( |Data Inputs| ( "Automated" ).Data( RunDate ).Values( Item, DataSource ) ).FLATTEN
 .Where( Column_4 != "interpolated" )
 .Values( Column_3, Column_4.TRIM.REPLACE( "TRTH_", "" ), Column_2 ).FLATTEN.FillColData( "TP", 1, 3)
@@ -53,7 +53,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="4" Left="1" Bottom="4" Right="1" />
-            <Value>Item('\\\MD_SILVER','Reuters Early Request','System').|Universe Details|.Data(RunDate).Where(Column_8 = FALSE).Values(Column_2).FLATTEN()</Value>
+            <Value>Item('\\MZTSBATCH01\MD_SILVER','Reuters Early Request','System').|Universe Details|.Data(RunDate).Where(Column_8 = FALSE).Values(Column_2).FLATTEN()</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="6" Left="1" Bottom="6" Right="1" />
@@ -97,7 +97,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="2" Left="2" Bottom="2" Right="2" />
-            <Value>DatabaseItems( "\\\MD_SILVER", "Cross Currency Swap Spreads", "Cross Currency Swap Spread", "*" )
+            <Value>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Cross Currency Swap Spreads", "Cross Currency Swap Spread", "*" )
 .Values( |Market Data| ( "Internal" ) ).FLATTEN
 .Values( Column_3, Column_4.SPLIT( ";" ), Column_2 ).FLATTEN.FillColData( "TP", 1, 3)
 .Values( Column_1 + Column_2, Column_2, Column_3, Column_1 )

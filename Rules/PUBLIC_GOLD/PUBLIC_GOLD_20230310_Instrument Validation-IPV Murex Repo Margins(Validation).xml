@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Validation">
-  <Item PropertyCount="7" Description="Validation check" CodeType="Validation" Code="IPV Murex Repo Margins" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="7" Description="Validation check" CodeType="Validation" Code="IPV Murex Repo Margins" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Object Tests" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -448,7 +448,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\\MD_SILVER", "Murex positions Repo Margins", "Murex position Repo Margin", "*" )
+              <string>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Murex positions Repo Margins", "Murex position Repo Margin", "*" )
 .Where(Value(%RunDate%).CDATE() IN (|Maximum Maturity|.Dates))</string>
             </col>
           </row>

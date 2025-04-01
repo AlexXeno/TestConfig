@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" Description="Derive Reference Rate from Whitelist" CodeType="Calculation" Code="Multi Quote - Multi Property" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" Description="Derive Reference Rate from Whitelist" CodeType="Calculation" Code="Multi Quote - Multi Property" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="103" CellDefinitionsColumns="8">
         <NamedRanges>
@@ -675,7 +675,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="18" Left="1" Bottom="18" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD', WhitelistCode, 'Whitelist').Contributors</Value>
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD', WhitelistCode, 'Whitelist').Contributors</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="25" Left="1" Bottom="25" Right="1" />
@@ -687,7 +687,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="17" Left="3" Bottom="17" Right="3" />
-            <Value>Item('\\\PUBLIC_GOLD','BOND WHITELIST','Mapping Table').Table('Internal').Where(NOT Column_1 LIKE '#*')</Value>
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD','BOND WHITELIST','Mapping Table').Table('Internal').Where(NOT Column_1 LIKE '#*')</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="14" Left="0" Bottom="14" Right="0" />

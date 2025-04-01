@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="FA IPV Forward Price Universe" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="FA IPV Forward Price Universe" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="6" CellDefinitionsColumns="2">
         <NamedRanges>
@@ -30,14 +30,14 @@
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="3" Left="1" Bottom="3" Right="1" />
             <Value>IF(Node=A4,Values(
-DatabaseItems('\\\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
 .Where(
 NOT(ISERROR(|Underlying Forward Price|.Data(RunDate))) AND 
 NOT(ISERROR(|Underlying Price|.Data(RunDate))) AND 
 |Valuation group| = 'IndexFuture' AND 
 |ISIN Underlying|.|MAX Date| &gt;= |Expiry date|
 ),
-DatabaseItems('\\\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
 .Where(
 NOT(ISERROR(|Underlying Forward Price|.Data(RunDate))) AND 
 NOT(ISERROR(Underlying Price.Data(RunDate))) AND 
@@ -53,13 +53,13 @@ NOT(ISERROR(Underlying Price.Data(RunDate))) AND
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="4" Left="1" Bottom="4" Right="1" />
             <Value>IF(Node=A5,Values(
-DatabaseItems('\\\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
 .Where(
 NOT(ISERROR(|Underlying Forward Price|.Data(RunDate))) AND 
 NOT(ISERROR(Underlying Price.Data(RunDate))) AND 
 |Valuation group| != 'IndexFuture'),
 
-DatabaseItems('\\\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Forward Prices','Front Arena Forward Price','RCH_FORWARD*') 
 .Where(
 NOT(ISERROR(|Underlying Forward Price|.Data(RunDate))) AND 
 NOT(ISERROR(Underlying Price.Data(RunDate))) AND

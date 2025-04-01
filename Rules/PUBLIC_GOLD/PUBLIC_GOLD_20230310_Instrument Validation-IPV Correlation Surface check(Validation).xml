@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Validation">
-  <Item PropertyCount="7" CodeType="Validation" Code="IPV Correlation Surface check" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="7" CodeType="Validation" Code="IPV Correlation Surface check" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Object Tests" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -306,7 +306,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_SILVER", "Murex FI Interest Correlation Surfaces", "", "*").where(|Status|('Gold').data(%RunDate%))</string>
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex FI Interest Correlation Surfaces", "", "*").where(|Status|('Gold').data(%RunDate%))</string>
             </col>
           </row>
           <row index="2">
@@ -314,7 +314,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_SILVER", "Murex FI Inflation Correlation Surfaces", "", "*").where(|Status|('Gold').data(%RunDate%))</string>
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex FI Inflation Correlation Surfaces", "", "*").where(|Status|('Gold').data(%RunDate%))</string>
             </col>
           </row>
         </rows>
