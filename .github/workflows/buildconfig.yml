@@ -22,7 +22,7 @@ jobs:
   # De-reference any environment specific variables
   dereference:
     runs-on: ubuntu-latest
-    environment: DEFERERENCE
+    environment: DEREFERENCE
     permissions:
       contents: write
     steps:
@@ -39,7 +39,7 @@ jobs:
       - name: Find and Replace TSSERVER in Rules
         uses: jacobtomlinson/gha-find-replace@3.0.5
         with:
-          find: "${{ vars.TSSERVER}}"
+          find: "${{vars.TSSERVER}}"
           replace: "$TSServer"
           include: "Rules/**"
           regex: true    
