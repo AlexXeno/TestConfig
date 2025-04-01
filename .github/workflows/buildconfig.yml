@@ -57,9 +57,9 @@ jobs:
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
       environment: DEV
-      TSServerToken: $TSServerToken
-      SQLInstanceToken: $SQLInstanceToken
-      SQLUserToken: $SQLUserToken
+      TSServerToken: ${{TSServerToken}}
+      SQLInstanceToken: ${{SQLInstanceToken}}
+      SQLUserToken: ${{SQLUserToken}}
         
   buildSIT:
     # The type of runner that the job will run on
