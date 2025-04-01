@@ -53,19 +53,13 @@ jobs:
   
   # This workflow contains a single job called "build"
   call-create-release-DEV:
-    runs-on: ubuntu-latest
     # Call the reusable workflow
-    steps: 
-    - name: Run a one-line script
-      uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
-      with:
-        environment: DEV
-        TSServerToken: $TSServerToken
-        SQLInstanceToken: $SQLInstanceToken
-        
-      # pants
-    - name: Run a one-line script
-      run: echo Hello, ${{ vars.TSSERVER}} world!
+    uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
+    with:
+      environment: DEV
+      TSServerToken: $TSServerToken
+      SQLInstanceToken: $SQLInstanceToken
+      
         
   buildSIT:
     # The type of runner that the job will run on
