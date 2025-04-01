@@ -36,10 +36,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
+      # Output the various variables 
       - name: Run a multi-line script
         run: 
           echo "Building Environment, ${{inputs.environment}}" 
@@ -47,3 +44,26 @@ jobs:
           echo "TSServer Token, ${{ inputs.TSServerToken}}"          
           echo "SQLInstance Token, ${{ inputs.SQLInstanceToken}}"          
           echo "SQLUser Token, ${{ inputs.SQLUserToken}}"
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Find and Replace ${{ inputs.TSServerToken}} in Rules
+        uses: jacobtomlinson/gha-find-replace@3.0.5
+        with:
+          find: "${{ inputs.TSServerToken}}"
+          replace: "${{ vars.TSSERVER}}"
+          include: "Rules/**"
+          regex: true    
+
+      - name: Create Config Release
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: 'zip'
+          filename: 'Releases\Release_${{inputs.environment}}.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: 'Releases\Release_${{inputs.environment}}.zip'
