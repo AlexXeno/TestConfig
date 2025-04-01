@@ -30,10 +30,10 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Find and Replace TSSERVER in Rules
-        uses: jacobtomlinson/gha-find-replace@v3
+        uses: jacobtomlinson/gha-find-replace@3.0.5
         with:
           find: "${{vars.TSSERVER}}"
-          replace: "<TSSERVER>"
+          replace: "TSSERVER"
           include: "Rules/**"
           regex: true    
           
