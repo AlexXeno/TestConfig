@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
-  TSServerToken : "%TSSERVER%"
+  c : "%TSSERVER%"
   SQLInstanceToken : "%SQLINSTANCE%"
   SQLUserToken : "%SQLUSER%
 
@@ -28,12 +28,15 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: show env variable
+        run: echo $TSServer
         
       - name: Find and Replace TSSERVER in Rules
         uses: jacobtomlinson/gha-find-replace@3.0.5
         with:
-          find: "wibble wibble wibble"
-          replace: "nitwit"
+          find: "${{ vars.TSSERVER}}"
+          replace: "$TSServer"
           include: "Rules/**"
           regex: true    
           
