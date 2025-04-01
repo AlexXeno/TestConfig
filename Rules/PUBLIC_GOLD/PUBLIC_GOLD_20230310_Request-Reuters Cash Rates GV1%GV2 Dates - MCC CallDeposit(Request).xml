@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" CodeType="Request" Code="Reuters Cash Rates GV1/GV2 Dates - MCC CallDeposit" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters Cash Rates GV1/GV2 Dates - MCC CallDeposit" Database="\\\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
@@ -127,7 +127,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER","Murex Trades REPO CD","Murex Trade DuT") .Where(|Transaction Group| = 'CD' AND %Rundate% IN (|date Under test|.Dates))
+      <string>DatabaseItems("\\\MD_SILVER","Murex Trades REPO CD","Murex Trade DuT") .Where(|Transaction Group| = 'CD' AND %Rundate% IN (|date Under test|.Dates))
 .Values(currency.Code)
 .GROUPBY(currency.Code)
 .Values(Column_1,Values('ON','TN','SN','SW','2W','3W','1M','2M','3M','4M','5M','6M','7M','8M','9M','10M','11M','1Y','2Y','3Y','4Y','5Y','7Y','10Y').TRANSPOSE)

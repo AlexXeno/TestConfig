@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Validation">
-  <Item PropertyCount="7" CodeType="Validation" Code="MCC - Frankfurt - CPB - Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="7" CodeType="Validation" Code="MCC - Frankfurt - CPB - Bonds" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Object Tests" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -764,7 +764,7 @@
                               <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p17:type="q1:string" xmlns:p17="http://www.w3.org/2001/XMLSchema-instance">Current Whitelist</anyType>
                             </col>
                             <col index="3">
-                              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p17:type="q1:string" xmlns:p17="http://www.w3.org/2001/XMLSchema-instance">Values( Item(  '\\MZTSBATCH01\PUBLIC_GOLD', 'Reference Price Bond Multi Quote', "Calculation").Calculation.
+                              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p17:type="q1:string" xmlns:p17="http://www.w3.org/2001/XMLSchema-instance">Values( Item(  '\\\PUBLIC_GOLD', 'Reference Price Bond Multi Quote', "Calculation").Calculation.
 SetValues( 
 	"DatabaseName", #Database,  
 	"CodeName",  #Code,
@@ -1003,7 +1003,7 @@ SetValues(
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex Trades IRD EQD SCF','Murex Trade DuT',%RunDate%.CDate().ToString( 'yyyyMMdd' ) + "*").Where(Portfolio.Entity = 'HLB Frankfurt' AND Portfolio.|RC Unit Bonds| = 'CPB' AND |Transaction Group| = 'BOND').Values(Database,Code('Murex Trade')).Values(Item(Column_1,Column_2,'Murex Trade'))</string>
+              <string>DatabaseItems('\\\MD_SILVER','Murex Trades IRD EQD SCF','Murex Trade DuT',%RunDate%.CDate().ToString( 'yyyyMMdd' ) + "*").Where(Portfolio.Entity = 'HLB Frankfurt' AND Portfolio.|RC Unit Bonds| = 'CPB' AND |Transaction Group| = 'BOND').Values(Database,Code('Murex Trade')).Values(Item(Column_1,Column_2,'Murex Trade'))</string>
             </col>
           </row>
           <row index="2">
@@ -1011,7 +1011,7 @@ SetValues(
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex Trades IRD EQD SCF','Murex Trade DuT',DATETOTEXT(%RunDate%,6).REPLACE("-","") + "_5594453_B")</string>
+              <string>DatabaseItems('\\\MD_SILVER','Murex Trades IRD EQD SCF','Murex Trade DuT',DATETOTEXT(%RunDate%,6).REPLACE("-","") + "_5594453_B")</string>
             </col>
           </row>
         </rows>

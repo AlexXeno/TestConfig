@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="6" Description="Front Arena IPV FX Spots" CodeType="Normalisation" Code="Front Arena IPV FX Spots" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="6" Description="Front Arena IPV FX Spots" CodeType="Normalisation" Code="Front Arena IPV FX Spots" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -129,7 +129,7 @@
               <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
             </col>
             <col index="10">
-              <string>.Values(Item('\\MZTSBATCH01\MD_SILVER', Parent.CUR1("Front Arena") + "-" + Parent.CUR2("Front Arena"), 'Murex FX Spot'))[1,1]</string>
+              <string>.Values(Item('\\\MD_SILVER', Parent.CUR1("Front Arena") + "-" + Parent.CUR2("Front Arena"), 'Murex FX Spot'))[1,1]</string>
             </col>
             <col index="11">
               <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
@@ -442,7 +442,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_RAW", "Front Arena IPV FX Spots", "Front Arena FX Spot", "*")</string>
+              <string>DatabaseItems("\\\MD_RAW", "Front Arena IPV FX Spots", "Front Arena FX Spot", "*")</string>
             </col>
           </row>
         </rows>

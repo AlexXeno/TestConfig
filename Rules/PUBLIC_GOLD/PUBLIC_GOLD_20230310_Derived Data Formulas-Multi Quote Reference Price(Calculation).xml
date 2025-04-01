@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" Description="Derive Reference Rate from Whitelist" CodeType="Calculation" Code="Multi Quote Reference Price" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" Description="Derive Reference Rate from Whitelist" CodeType="Calculation" Code="Multi Quote Reference Price" Database="\\\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="101" CellDefinitionsColumns="8">
         <NamedRanges>
@@ -665,7 +665,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="18" Left="3" Bottom="18" Right="3" />
-            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD','BOND WHITELIST','Mapping Table').Table('Internal').Where(NOT Column_1 LIKE '#*')</Value>
+            <Value>Item('\\\PUBLIC_GOLD','BOND WHITELIST','Mapping Table').Table('Internal').Where(NOT Column_1 LIKE '#*')</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="16" Left="0" Bottom="16" Right="0" />

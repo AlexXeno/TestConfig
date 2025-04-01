@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" CodeType="Derived Data" Code="Reference Price - MCC OTC Derivatives 1" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="5" CodeType="Derived Data" Code="Reference Price - MCC OTC Derivatives 1" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -58,7 +58,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -177,7 +177,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", CDATE( %RunDate% ).ToString( 'yyyyMMdd' ) + '*' )
+              <string>DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", CDATE( %RunDate% ).ToString( 'yyyyMMdd' ) + '*' )
 .WHERE( |Node Department|( 'Risk Control' ) = 'FI' )
 .WHERE( |Node Product|( 'Risk Control' ) = 'OTC' )
 .WHERE( |OTC Check|( 'Risk Control' ) IN( 'Automated', 'Linked Trade Automated', 'MOP ON Nominal', 'Linked Trade Manual' ) )
@@ -191,7 +191,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", CDATE( %RunDate% ).ToString( 'yyyyMMdd' ) + '*' ) .WHERE( |Node Department|( 'Risk Control' ) = 'FI' ) .WHERE( |Node Product|( 'Risk Control' ) = 'OTC' ) .WHERE( |OTC Check|( 'Risk Control' ) IN( 'MOP Checked' ) ) .WHERE( |Product Type|( "Risk Control" ) &lt;&gt; "Cross Currency Swap" ) .WHERE( |Basis Swap|( 'Murex' ) = FALSE ) .VALUES( Item( Database, Code( 'Murex Trade' ), 'Murex Trade' ) )</string>
+              <string>DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", CDATE( %RunDate% ).ToString( 'yyyyMMdd' ) + '*' ) .WHERE( |Node Department|( 'Risk Control' ) = 'FI' ) .WHERE( |Node Product|( 'Risk Control' ) = 'OTC' ) .WHERE( |OTC Check|( 'Risk Control' ) IN( 'MOP Checked' ) ) .WHERE( |Product Type|( "Risk Control" ) &lt;&gt; "Cross Currency Swap" ) .WHERE( |Basis Swap|( 'Murex' ) = FALSE ) .VALUES( Item( Database, Code( 'Murex Trade' ), 'Murex Trade' ) )</string>
             </col>
           </row>
           <row index="3">
@@ -199,7 +199,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", CDATE( %RunDate% ).ToString( 'yyyyMMdd' ) + '*' )
+              <string>DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", CDATE( %RunDate% ).ToString( 'yyyyMMdd' ) + '*' )
 .WHERE( |Node Department|( 'Risk Control' ) = 'FI' ) 
 .WHERE( |Node Product|( 'Risk Control' ) = 'OTC' ) 
 .WHERE( |Product Type|( "Risk Control" ) &lt;&gt; "Cross Currency Swap" ) 

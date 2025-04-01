@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Save Request List IPV FI Reval Curves" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Save Request List IPV FI Reval Curves" Database="\\\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="23" CellDefinitionsColumns="2">
         <NamedRanges>
@@ -116,7 +116,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="15" Left="1" Bottom="15" Right="1" />
-            <Value>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Murex Curve Generator Points", 'Murex Curve Generator Point' )
+            <Value>DatabaseItems( "\\\MD_SILVER", "Murex Curve Generator Points", 'Murex Curve Generator Point' )
 .Where( 
 	PriorDate IN ( |Data Inputs|( 'Automated' ).Dates )  
 )

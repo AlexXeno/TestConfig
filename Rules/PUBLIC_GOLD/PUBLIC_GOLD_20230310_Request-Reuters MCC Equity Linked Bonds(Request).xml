@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" Description="Reuters MCC Equity Linked Bonds" CodeType="Request" Code="Reuters MCC Equity Linked Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="19" Description="Reuters MCC Equity Linked Bonds" CodeType="Request" Code="Reuters MCC Equity Linked Bonds" Database="\\\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values("Trade - Price").FLATTEN()</string>
@@ -123,7 +123,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
+      <string>DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
 .Where(|Node Product| LIKE "Equity Linked Bonds *")
 .Values(|Data Inputs|("Automated")).FLATTEN
 .Where(Column_2 &lt;&gt; NULL)
@@ -140,14 +140,14 @@
     </Property>
     <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
-  Values( "Murex Trades IRD EQD SCF", "QueryStartDate", DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
+  Values( "Murex Trades IRD EQD SCF", "QueryStartDate", DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
 .Where(|Node Product| LIKE "Equity Linked Bonds *" AND |Data Inputs|("Automated").Column_2 &lt;&gt; NULL)
 .Values(|Data Inputs|("Automated").Column_5)
 .Values(Column_1)
 .Values(TOSTRING(Column_1,"dd-MMM-yyyy 00:00:00"))
 .Values(Column_1)
 .SORTBY(Column_1 DESC).Cells(1,1)),
-  Values( "Murex Trades IRD EQD SCF", "QueryEndDate", DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
+  Values( "Murex Trades IRD EQD SCF", "QueryEndDate", DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
 .Where(|Node Product| LIKE "Equity Linked Bonds *" AND |Data Inputs|("Automated").Column_2 &lt;&gt; NULL)
 .Values(|Data Inputs|("Automated").Column_6)
 .Values(Column_1)

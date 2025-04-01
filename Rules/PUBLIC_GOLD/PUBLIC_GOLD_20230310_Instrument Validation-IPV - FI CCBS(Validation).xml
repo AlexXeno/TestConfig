@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Validation">
-  <Item PropertyCount="7" CodeType="Validation" Code="IPV - FI CCBS" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="7" CodeType="Validation" Code="IPV - FI CCBS" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Object Tests" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -290,7 +290,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex IPV Reval Curves','Murex Reval Curve')
+              <string>DatabaseItems('\\\MD_SILVER','Murex IPV Reval Curves','Murex Reval Curve')
 .Where( |Murex Curve|.Responsibility('Risk Control') = 'FI'  )
 .Where( ISNULL( |Curve Spread|( 'Murex' ).Data( %RunDate% ), 0 ) &lt;&gt; 0
     OR ( 

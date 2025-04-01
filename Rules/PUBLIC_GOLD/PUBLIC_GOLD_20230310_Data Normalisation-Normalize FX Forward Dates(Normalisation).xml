@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Data Normalisation">
-  <Item PropertyCount="5" CodeType="Normalisation" Code="Normalize FX Forward Dates" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="5" CodeType="Normalisation" Code="Normalize FX Forward Dates" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Actions" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -122,10 +122,10 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>Item('\\MZTSBATCH01\PUBLIC_GOLD','FX Forward Curves','Mapping Table')
+              <string>Item('\\\PUBLIC_GOLD','FX Forward Curves','Mapping Table')
 .|Table|('Internal')
 .Where(Column_1!='FX Forward Curve')
-.Values(Item('\\MZTSBATCH01\MD_RAW',Column_3,Column_2))</string>
+.Values(Item('\\\MD_RAW',Column_3,Column_2))</string>
             </col>
           </row>
         </rows>

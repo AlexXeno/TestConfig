@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" Description="Normalise all sources of Bloomberg Rates" CodeType="Derived Data" Code="Normalise Bloomberg Quotes - Bloomberg Rates" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="5" Description="Normalise all sources of Bloomberg Rates" CodeType="Derived Data" Code="Normalise Bloomberg Quotes - Bloomberg Rates" Database="\\\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -58,7 +58,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -256,7 +256,7 @@ Identifiers.Cells(1,1), Code )</anyType>
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -438,7 +438,7 @@ Identifiers.Cells(1,1),Code )</anyType>
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Bloomberg Requests", "Bloomberg Request", "IPV Reval*").Where(|Date Under Test| = %RunDate% )
+              <string>DatabaseItems("\\\MD_SILVER", "Bloomberg Requests", "Bloomberg Request", "IPV Reval*").Where(|Date Under Test| = %RunDate% )
 .Where(|Product Group| = 'IPV RATE CURVE FI').Values( Reference.Identifiers.Values( Column_1, Column_2 ) ).FLATTEN
 .Values( Item( 'MD_SILVER', Column_1, Column_2 ) ).Where( Column_1.Exists )</string>
             </col>
@@ -448,12 +448,12 @@ Identifiers.Cells(1,1),Code )</anyType>
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER', 'cross currency swap spreads', 'cross currency swap spread', '*' ) 
+              <string>DatabaseItems('\\\MD_SILVER', 'cross currency swap spreads', 'cross currency swap spread', '*' ) 
 .Values(Reference,Market data).FLATTEN().FillCoLData( 'TP', 1, 3 )
 .Values( Column_3, Column_6, Column_5 )
 .Where( Column_3 = 'Bloomberg' )
 .Values( Column_2 ).GROUPBY( Column_2 )
-.Values( Item( '\\MZTSBATCH01\MD_SILVER', Column_1, 'Bloomberg' ) ).WHERE( Column_1.Exists )</string>
+.Values( Item( '\\\MD_SILVER', Column_1, 'Bloomberg' ) ).WHERE( Column_1.Exists )</string>
             </col>
           </row>
           <row index="3">
@@ -461,7 +461,7 @@ Identifiers.Cells(1,1),Code )</anyType>
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Murex Curve Generator Points", 'Murex Curve Generator Point' )
+              <string>DatabaseItems( "\\\MD_SILVER", "Murex Curve Generator Points", 'Murex Curve Generator Point' )
 .Where( 
 	%RunDate% IN ( |Data Inputs|( 'Automated' ).Dates )  
 )

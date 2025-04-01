@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Set Bloomberg Bond Master Data Identifier" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Set Bloomberg Bond Master Data Identifier" Database="\\\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="34" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -87,7 +87,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="16" Left="1" Bottom="16" Right="1" />
-            <Value>IF(Database = '\\MZTSBATCH01\PUBLIC_GOLD', BondProxyTable, Item("\\MZTSBATCH01\PUBLIC_SILVER", "Bond Proxies", "Mapping Table").Table).Where(Column_1.TRIM = ISIN)</Value>
+            <Value>IF(Database = '\\\PUBLIC_GOLD', BondProxyTable, Item("\\\PUBLIC_SILVER", "Bond Proxies", "Mapping Table").Table).Where(Column_1.TRIM = ISIN)</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="7" Left="1" Bottom="7" Right="1" />
