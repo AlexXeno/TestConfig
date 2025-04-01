@@ -51,7 +51,7 @@ jobs:
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
   
-  # This workflow contains a single job called "build"
+  # Create the various releases
   call-create-release-DEV:
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
@@ -61,7 +61,38 @@ jobs:
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
-        
+      
+  call-create-release-SIT:
+    # Call the reusable workflow
+    uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
+    with:
+      environment: SIT
+      # apparently there is a bug in re-usable workflows that stop variables from working
+      TSServerToken: "xTSSERVERx"
+      SQLInstanceToken: "xSQLINSTANCEx"
+      SQLUserToken: "xSQLUSERx"
+
+  call-create-release-UAT:
+    # Call the reusable workflow
+    uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
+    with:
+      environment: UAT
+      # apparently there is a bug in re-usable workflows that stop variables from working
+      TSServerToken: "xTSSERVERx"
+      SQLInstanceToken: "xSQLINSTANCEx"
+      SQLUserToken: "xSQLUSERx"
+      
+  call-create-release-PROD:
+    # Call the reusable workflow
+    uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
+    with:
+      environment: PROD
+      # apparently there is a bug in re-usable workflows that stop variables from working
+      TSServerToken: "xTSSERVERx"
+      SQLInstanceToken: "xSQLINSTANCEx"
+      SQLUserToken: "xSQLUSERx"
+
+      
   buildSIT:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
