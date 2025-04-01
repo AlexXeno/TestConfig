@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Request">
-  <Item PropertyCount="19" Description="Reuters IPV Equity Linked Bonds" CodeType="Request" Code="Reuters IPV Equity Linked Bonds" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="19" Description="Reuters IPV Equity Linked Bonds" CodeType="Request" Code="Reuters IPV Equity Linked Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
       <string />
     </Property>
@@ -114,7 +114,7 @@
       <string />
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values("Trade - Price").FLATTEN()</string>
@@ -123,7 +123,7 @@
       <boolean>false</boolean>
     </Property>
     <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
-      <string>DatabaseItems("\\\MD_SILVER", "Murex IPV Equity Linked Bonds", "Murex IPV Equity Linked Bond")
+      <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV Equity Linked Bonds", "Murex IPV Equity Linked Bond")
 .Where(|Reporting Date|.Data(%RUNDATE%) = %RUNDATE%)
 .Values(|Data Inputs|("Automated").Data(%RUNDATE%)).FLATTEN
 .Where(Column_2 &lt;&gt; NULL)
@@ -140,14 +140,14 @@
     </Property>
     <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">
       <string>Values(
-  Values( "Murex IPV Equity Linked Bonds", "QueryStartDate", DatabaseItems("\\\MD_SILVER", "Murex IPV Equity Linked Bonds", "Murex IPV Equity Linked Bond")
+  Values( "Murex IPV Equity Linked Bonds", "QueryStartDate", DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV Equity Linked Bonds", "Murex IPV Equity Linked Bond")
 .Where(|Reporting Date|.Data(%RUNDATE%) = %RUNDATE% AND |Data Inputs|("Automated").Data(%RUNDATE%).Column_5 &lt;&gt; NULL)
 .Values(|Data Inputs|("Automated").Data(%RUNDATE%).Column_5)
 .Values(Column_1)
 .Values(TOSTRING(Column_1,"dd-MMM-yyyy 00:00:00"))
 .Values(Column_1)
 .SORTBY(Column_1 ASC).Cells(1,1)),
-  Values( "Murex IPV Equity Linked Bonds", "QueryEndDate", DatabaseItems("\\\MD_SILVER", "Murex IPV Equity Linked Bonds", "Murex IPV Equity Linked Bond")
+  Values( "Murex IPV Equity Linked Bonds", "QueryEndDate", DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV Equity Linked Bonds", "Murex IPV Equity Linked Bond")
 .Where(|Reporting Date|.Data(%RUNDATE%) = %RUNDATE% AND |Data Inputs|("Automated").Data(%RUNDATE%).Column_6 &lt;&gt; NULL)
 .Values(|Data Inputs|("Automated").Data(%RUNDATE%).Column_6)
 .Values(Column_1)

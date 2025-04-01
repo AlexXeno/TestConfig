@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Repo Underlying Asset Class" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Repo Underlying Asset Class" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="39" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -176,7 +176,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="19" Left="1" Bottom="19" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD',ExceptionTable,'Mapping Table').Table('Internal').Where(Column_1 = InstrumentLabel
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD',ExceptionTable,'Mapping Table').Table('Internal').Where(Column_1 = InstrumentLabel
 AND Column_2 = ISIN)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
@@ -197,7 +197,7 @@ AND Column_2 = ISIN)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="27" Left="1" Bottom="27" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD',InstrumentLabelMapping,'Mapping Table').Table('Internal').Where(Column_1=InstrumentLabel AND Column_2 = BBCurrency)</Value>
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD',InstrumentLabelMapping,'Mapping Table').Table('Internal').Where(Column_1=InstrumentLabel AND Column_2 = BBCurrency)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="3" Left="1" Bottom="3" Right="1" />
@@ -205,7 +205,7 @@ AND Column_2 = ISIN)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="22" Left="1" Bottom="22" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD',MappingTableCode,'Mapping Table').Table('Internal')
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD',MappingTableCode,'Mapping Table').Table('Internal')
 .Where(Column_1 = BBCurrency
 AND Column_2 = BBCountryofRisk 
 AND Column_3 = BBIssuerIndustry 
@@ -239,12 +239,12 @@ AND IF(Column_7 = NULL, BBShortName, Column_7) = BBShortName)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="31" Left="1" Bottom="31" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD',XFISIN,'Mapping Table').Table('Internal').Where(ISIN LIKE Column_1 AND 
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD',XFISIN,'Mapping Table').Table('Internal').Where(ISIN LIKE Column_1 AND 
 Column_2 = BBCurrency)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="0" Left="2" Bottom="0" Right="2" />
-            <Value>Item( '\\\MD_SILVER','DE000A11QTG5','ISIN')</Value>
+            <Value>Item( '\\MZTSBATCH01\MD_SILVER','DE000A11QTG5','ISIN')</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="1" Left="2" Bottom="1" Right="2" />

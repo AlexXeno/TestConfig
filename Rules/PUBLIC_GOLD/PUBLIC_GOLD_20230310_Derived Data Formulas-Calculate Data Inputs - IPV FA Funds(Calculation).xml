@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Data Inputs - IPV FA Funds" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Data Inputs - IPV FA Funds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="40" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -132,7 +132,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="21" Left="1" Bottom="21" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD','MCC IPV Result DataSource','Mapping Table').Table('internal').Where(Column_1=CalcMethod).Column_2.SPLIT(',')</Value>
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD','MCC IPV Result DataSource','Mapping Table').Table('internal').Where(Column_1=CalcMethod).Column_2.SPLIT(',')</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="32" Left="0" Bottom="32" Right="0" />

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Reference Price &amp; Check IPV Equity Volatility Surf" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Reference Price &amp; Check IPV Equity Volatility Surf" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="73" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -305,7 +305,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="41" Left="1" Bottom="41" Right="1" />
-            <Value>Values(Values("CALL/PUT","STRIKE","MATURITY","OPTION","FRONT OFFICE VOLATILITY","MONEYNESS","ASK","BID","SETTLE","DIFF TO SETTLE","TOLERANCE","DISTORTION"),ItemList("\\\md_silver",SurfacePoints).Values(|call/put|('Eurex').Data(StartDate),Strike('Front Arena').Data(StartDate),Maturity('Front Arena').Data(StartDate),option('Front Arena').Data(StartDate),|Volatility|('Front Arena').Data(StartDate).ROUND(2),Moneyness('Eurex').Data(StartDate).ROUND(2),|Implied Volatility Ask|('Eurex').Data(StartDate).ROUND(2),|Implied Volatility Bid|('Eurex').Data(StartDate).ROUND(2),|Implied Volatility Settle|('Eurex').Data(StartDate).ROUND(2),|Diff to Settle|('Gold').Data(StartDate).ROUND(2),|Tolerance|('Internal').Data(StartDate),|Distortion|('Internal').Data(StartDate)).SORTBY(Maturity('Front Arena').Data(StartDate),Strike('Front Arena').Data(StartDate))).TRANSPOSE.FLATTEN()</Value>
+            <Value>Values(Values("CALL/PUT","STRIKE","MATURITY","OPTION","FRONT OFFICE VOLATILITY","MONEYNESS","ASK","BID","SETTLE","DIFF TO SETTLE","TOLERANCE","DISTORTION"),ItemList("\\MZTSBATCH01\md_silver",SurfacePoints).Values(|call/put|('Eurex').Data(StartDate),Strike('Front Arena').Data(StartDate),Maturity('Front Arena').Data(StartDate),option('Front Arena').Data(StartDate),|Volatility|('Front Arena').Data(StartDate).ROUND(2),Moneyness('Eurex').Data(StartDate).ROUND(2),|Implied Volatility Ask|('Eurex').Data(StartDate).ROUND(2),|Implied Volatility Bid|('Eurex').Data(StartDate).ROUND(2),|Implied Volatility Settle|('Eurex').Data(StartDate).ROUND(2),|Diff to Settle|('Gold').Data(StartDate).ROUND(2),|Tolerance|('Internal').Data(StartDate),|Distortion|('Internal').Data(StartDate)).SORTBY(Maturity('Front Arena').Data(StartDate),Strike('Front Arena').Data(StartDate))).TRANSPOSE.FLATTEN()</Value>
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="50" Left="0" Bottom="50" Right="0" />

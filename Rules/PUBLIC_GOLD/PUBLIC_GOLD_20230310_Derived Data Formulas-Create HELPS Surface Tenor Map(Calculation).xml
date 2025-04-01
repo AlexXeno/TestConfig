@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Create HELPS Surface Tenor Map" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Create HELPS Surface Tenor Map" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="23" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -126,7 +126,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="13" Left="1" Bottom="13" Right="1" />
-            <Value>DatabaseItems(  '\\\MD_SILVER', 'HELPS Vola', 'HELPS Volatility' )
+            <Value>DatabaseItems(  '\\MZTSBATCH01\MD_SILVER', 'HELPS Vola', 'HELPS Volatility' )
 .Values(  
 		Maturity Option + '_' +  Maturity Underlying + IF ( Index Underlying &lt;&gt; NULL ,  '_' +  Index Underlying, '' ),
 		TenorToDATE( Maturity Option, TODAY, NULL ), 
@@ -210,7 +210,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="10" Left="1" Bottom="10" Right="1" />
-            <Value>Item( "\\\COMMON", "Surface Manager", "User" ).|Tenors Map|</Value>
+            <Value>Item( "\\MZTSBATCH01\COMMON", "Surface Manager", "User" ).|Tenors Map|</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="12" Left="2" Bottom="12" Right="2" />

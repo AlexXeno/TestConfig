@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" Description="New External CD/LN_BR/Trade events" CodeType="Derived Data" Code="Reference Value and Check MCC Mx New Ext LN_BR/CD" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="5" Description="New External CD/LN_BR/Trade events" CodeType="Derived Data" Code="Reference Value and Check MCC Mx New Ext LN_BR/CD" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -59,7 +59,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -203,7 +203,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -355,7 +355,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -507,7 +507,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -633,7 +633,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", DATETOTEXT(%RunDate%,6).REPLACE("-","") + "*").Items
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades IRD EQD SCF", "Murex Trade Dut", DATETOTEXT(%RunDate%,6).REPLACE("-","") + "*").Items
 .Where(|Transaction Family| = 'IRD' AND |Transaction Group| IN ('LN_BR') 
 AND NOT (|internal trade|))</string>
             </col>
@@ -643,7 +643,7 @@ AND NOT (|internal trade|))</string>
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems("\\\MD_SILVER", "Murex Trades REPO CD", "Murex Trade Dut", DATETOTEXT(%RunDate%,6).REPLACE("-","") + "*")
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex Trades REPO CD", "Murex Trade Dut", DATETOTEXT(%RunDate%,6).REPLACE("-","") + "*")
 .Items.Where(
 |Transaction Family| = 'IRD' AND 
 |Transaction Group| IN ('CD') AND 

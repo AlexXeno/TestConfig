@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" CodeType="Derived Data" Code="Normalise Reuters IPV Reval Futures" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="5" CodeType="Derived Data" Code="Normalise Reuters IPV Reval Futures" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -58,7 +58,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -239,7 +239,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -423,7 +423,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -583,7 +583,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -724,7 +724,7 @@
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\\MD_SILVER", "Reuters Requests", "Reuters Request", "IPV REVAL Curves *" ) 
+              <string>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Reuters Requests", "Reuters Request", "IPV REVAL Curves *" ) 
 .Where( |Product Group| = "IPV RATE CURVE FI" AND Date Under Test = CDATE( %RunDate% ) ) 
 .Values( |Ric List|).FLATTEN()
 .Values( Column_1, Column_1.SPLIT("=").Cells(1,1) )
@@ -738,7 +738,7 @@
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems( "\\\MD_SILVER", "Murex Curve Generator Points", 'Murex Curve Generator Point' ) .Where( %RunDate% IN ( |Data Inputs|( 'Automated' ).Dates ) ) .Values( |Data Inputs|( 'Automated' ).Data( %RunDate% ).Values( |Item| ) ).FLATTEN .Values( Column_1, Column_3, Column_2 ) .Where( Column_3 = 'Reuters' ) .Values( Column_2 ).GROUPBY( Column_2 ) .Values( Item( "\\\MD_RAW", Column_1, 'Reuters' ) ).WHERE( Column_1.Category = 'Reuters Futures' )</string>
+              <string>DatabaseItems( "\\MZTSBATCH01\MD_SILVER", "Murex Curve Generator Points", 'Murex Curve Generator Point' ) .Where( %RunDate% IN ( |Data Inputs|( 'Automated' ).Dates ) ) .Values( |Data Inputs|( 'Automated' ).Data( %RunDate% ).Values( |Item| ) ).FLATTEN .Values( Column_1, Column_3, Column_2 ) .Where( Column_3 = 'Reuters' ) .Values( Column_2 ).GROUPBY( Column_2 ) .Values( Item( "\\MZTSBATCH01\MD_RAW", Column_1, 'Reuters' ) ).WHERE( Column_1.Category = 'Reuters Futures' )</string>
             </col>
           </row>
         </rows>

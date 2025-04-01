@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Murex IPV Repo Margin IsinPosition Flag" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Murex IPV Repo Margin IsinPosition Flag" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="77" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -164,7 +164,7 @@
         <Cells>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="37" Left="1" Bottom="37" Right="1" />
-            <Value>Item('\\\PUBLIC_GOLD','Calculate Repo Underlying Asset Class','Calculation').Calculation
+            <Value>Item('\\MZTSBATCH01\PUBLIC_GOLD','Calculate Repo Underlying Asset Class','Calculation').Calculation
 .Setvalues('BloombergBond',Isin,'InstrumentLabel',Instrument,'Currency',ccy)</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
@@ -451,7 +451,7 @@
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="5" Left="2" Bottom="5" Right="2" />
-            <Value xmlns:q23="http://www.w3.org/2001/XMLSchema" p6:type="q23:string">Item('\\\MD_SILVER','ABNA1.125+01/32_21M_EURBND','Murex Repo Margin').Values(
+            <Value xmlns:q23="http://www.w3.org/2001/XMLSchema" p6:type="q23:string">Item('\\MZTSBATCH01\MD_SILVER','ABNA1.125+01/32_21M_EURBND','Murex Repo Margin').Values(
 Item('MD_SILVER',instrument,'Murex Position Repo Margin')
 .Maximum Maturity.LastValue,|Tenor Date|.LastValue)</Value>
           </CellDefinition>

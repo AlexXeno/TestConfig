@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Derived Data Formulas">
-  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Data Inputs - IPV FX Spots" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Calculate Data Inputs - IPV FX Spots" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
       <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="42" CellDefinitionsColumns="3">
         <NamedRanges>
@@ -111,7 +111,7 @@
           </CellDefinition>
           <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="3" Left="1" Bottom="3" Right="1" />
-            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:string">\\\MD_SILVER</Value>
+            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:string">\\MZTSBATCH01\MD_SILVER</Value>
           </CellDefinition>
           <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
             <Range Top="8" Left="1" Bottom="8" Right="1" />
@@ -122,14 +122,14 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="15" Left="1" Bottom="15" Right="1" />
-            <Value>Item("\\\PUBLIC_GOLD","EOD TIMES","Mapping Table").Table.LOOKUP( 'Murex', 1, 2)</Value>
+            <Value>Item("\\MZTSBATCH01\PUBLIC_GOLD","EOD TIMES","Mapping Table").Table.LOOKUP( 'Murex', 1, 2)</Value>
           </CellDefinition>
           <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
             <Range Top="12" Left="1" Bottom="12" Right="1" />
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="24" Left="1" Bottom="24" Right="1" />
-            <Value>IF(Database.Name = 'PUBLIC_GOLD', ExoticFXLookup, Item( '\\\PUBLIC_SILVER', 'Exotic FX Rates', 'Mapping Table' ).Table('Internal'))</Value>
+            <Value>IF(Database.Name = 'PUBLIC_GOLD', ExoticFXLookup, Item( '\\MZTSBATCH01\PUBLIC_SILVER', 'Exotic FX Rates', 'Mapping Table' ).Table('Internal'))</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="0" Left="0" Bottom="0" Right="0" />
@@ -177,7 +177,7 @@
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="36" Left="1" Bottom="36" Right="1" />
-            <Value>Values(Values('Bloomberg Ask Quote', BloombergFXSpot, 'Ask Intraday', 'Bloomberg BGN', StartDateTime, EndDateTime, CDBL(1)), Values('Bloomberg Bid Quote', BloombergFXSpot, 'Bid Intraday', 'Bloomberg BGN', StartDateTime, EndDateTime, CDBL(1)),  Values('USD/EUR Ask Quote',Item('\\\MD_SILVER','EUR=','Reuters'),'Ask Intraday','Reuters',StartDateTime, EndDateTime,CDBL(1)),  Values('USD/EUR Bid Quote',Item('\\\MD_SILVER','EUR=','Reuters'),'Bid Intraday','Reuters',StartDateTime,EndDateTime,CDBL(1))).TRANSPOSE</Value>
+            <Value>Values(Values('Bloomberg Ask Quote', BloombergFXSpot, 'Ask Intraday', 'Bloomberg BGN', StartDateTime, EndDateTime, CDBL(1)), Values('Bloomberg Bid Quote', BloombergFXSpot, 'Bid Intraday', 'Bloomberg BGN', StartDateTime, EndDateTime, CDBL(1)),  Values('USD/EUR Ask Quote',Item('\\MZTSBATCH01\MD_SILVER','EUR=','Reuters'),'Ask Intraday','Reuters',StartDateTime, EndDateTime,CDBL(1)),  Values('USD/EUR Bid Quote',Item('\\MZTSBATCH01\MD_SILVER','EUR=','Reuters'),'Bid Intraday','Reuters',StartDateTime,EndDateTime,CDBL(1))).TRANSPOSE</Value>
           </CellDefinition>
           <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
             <Range Top="29" Left="1" Bottom="29" Right="1" />

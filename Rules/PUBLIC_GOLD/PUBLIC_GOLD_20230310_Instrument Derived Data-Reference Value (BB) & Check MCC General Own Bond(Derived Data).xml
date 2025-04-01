@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Category ItemCount="1" Name="Instrument Derived Data">
-  <Item PropertyCount="5" Description="Based on bloomberg Prices" CodeType="Derived Data" Code="Reference Value (BB) &amp; Check MCC General Own Bond" Database="\\\PUBLIC_GOLD">
+  <Item PropertyCount="5" Description="Based on bloomberg Prices" CodeType="Derived Data" Code="Reference Value (BB) &amp; Check MCC General Own Bond" Database="\\MZTSBATCH01\PUBLIC_GOLD">
     <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
       <string>%RunDate%</string>
     </Property>
     <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
-      <Xenomorph.Generic.ItemRef database="\\\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
     </Property>
     <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
       <Xenomorph.Generic.List>
@@ -58,7 +58,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -200,7 +200,7 @@
                       <string>Public</string>
                     </col>
                     <col index="2">
-                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\\PUBLIC_GOLD</anyType>
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
                     </col>
                   </row>
                   <row index="2">
@@ -325,7 +325,7 @@
               <boolean>false</boolean>
             </col>
             <col index="2">
-              <string>DatabaseItems('\\\MD_SILVER','Murex Trades IRD EQD SCF','Murex Trade DuT', CDATE(%RunDate%).TOSTRING('yyyyMMdd_*'))
+              <string>DatabaseItems('\\MZTSBATCH01\MD_SILVER','Murex Trades IRD EQD SCF','Murex Trade DuT', CDATE(%RunDate%).TOSTRING('yyyyMMdd_*'))
 .Where(Portfolio.|RC Unit Bonds| = 'TC')
 .Where(|Transaction Group| = 'BOND' 
 AND |Murex Bond Instrument Data|.|Structure Type| NOT IN 
@@ -338,7 +338,7 @@ AND |Murex Bond Instrument Data|.|Structure Type| NOT IN
               <boolean>true</boolean>
             </col>
             <col index="2">
-              <string>Item("\\\MD_SILVER", "5881212_B", "Murex Trade")</string>
+              <string>Item("\\MZTSBATCH01\MD_SILVER", "5881212_B", "Murex Trade")</string>
             </col>
           </row>
         </rows>
