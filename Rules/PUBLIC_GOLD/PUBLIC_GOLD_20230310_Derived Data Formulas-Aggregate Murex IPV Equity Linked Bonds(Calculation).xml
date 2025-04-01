@@ -1,0 +1,831 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Derived Data Formulas">
+  <Item PropertyCount="1" Description="Aggregate Murex IPV Equity Linked Bonds" CodeType="Calculation" Code="Aggregate Murex IPV Equity Linked Bonds" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
+      <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="66" CellDefinitionsColumns="4">
+        <NamedRanges>
+          <CellNameDefinition Name="a">
+            <Range Top="32" Left="2" Bottom="32" Right="2" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="aa">
+            <Range Top="32" Left="3" Bottom="32" Right="3" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="CalculationAudit">
+            <Range Top="64" Left="1" Bottom="64" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="CodeName">
+            <Range Top="4" Left="1" Bottom="4" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="CodeTypeName">
+            <Range Top="5" Left="1" Bottom="5" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Counterparty">
+            <Range Top="58" Left="1" Bottom="58" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="DatabaseName">
+            <Range Top="3" Left="1" Bottom="3" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="EndDate">
+            <Range Top="8" Left="1" Bottom="8" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="FormulaResult">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="InputAudit">
+            <Range Top="63" Left="1" Bottom="63" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="IsFapPas">
+            <Range Top="21" Left="1" Bottom="21" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="MurexBondPriceInterface">
+            <Range Top="20" Left="1" Bottom="20" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="MurexPositionBond">
+            <Range Top="20" Left="1" Bottom="20" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="NodeProduct">
+            <Range Top="23" Left="1" Bottom="23" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Positions">
+            <Range Top="15" Left="1" Bottom="15" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="ProductGroup">
+            <Range Top="17" Left="1" Bottom="17" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Properties">
+            <Range Top="26" Left="0" Bottom="60" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Results">
+            <Range Top="26" Left="0" Bottom="60" Right="2" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RFLPositions">
+            <Range Top="18" Left="1" Bottom="18" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RFLPositionsInput">
+            <Range Top="19" Left="1" Bottom="19" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="StartDate">
+            <Range Top="7" Left="1" Bottom="7" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="TargetDatasource">
+            <Range Top="9" Left="1" Bottom="9" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="TargetItem">
+            <Range Top="14" Left="1" Bottom="14" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="TargetProperty">
+            <Range Top="6" Left="1" Bottom="6" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Test">
+            <Range Top="35" Left="3" Bottom="35" Right="3" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="TotalPositions">
+            <Range Top="16" Left="1" Bottom="16" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="VanillaExoticLookup">
+            <Range Top="12" Left="1" Bottom="12" Right="1" />
+          </CellNameDefinition>
+        </NamedRanges>
+        <Cells>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="2" Bottom="32" Right="2" />
+            <Value>Values(DatabaseName,CodeName,"Murex Bond",A33,"Murex",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="3" Bottom="32" Right="3" />
+            <Value>"MTM"</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="64" Left="1" Bottom="64" Right="1" />
+            <Value>Description</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="4" Left="1" Bottom="4" Right="1" />
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p6:type="q1:string">DE000HLB82S5</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="5" Left="1" Bottom="5" Right="1" />
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p6:type="q2:string">SPD Equity Instrument Data</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="58" Left="1" Bottom="58" Right="1" />
+            <Value>IF(ISERROR(D59), NULL, D59)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="3" Left="1" Bottom="3" Right="1" />
+            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:string">MD_SILVER</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="8" Left="1" Bottom="8" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+            <Value>Results.Values(Column_1, Column_2)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="63" Left="1" Bottom="63" Right="1" />
+            <Value>Results.Values(Column_1, Column_3)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="20" Left="1" Bottom="20" Right="1" />
+            <Value>Item(DatabaseName,CodeName, "Bond Price Interface Data")</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="23" Left="1" Bottom="23" Right="1" />
+            <Value>IF ( TotalPositions = 0, "Equity Linked Bonds Passiva", 
+IF(IsFapPas, "Equity Linked Bonds No Check",
+ISNULL(IF (LOOKUP(VanillaExoticLookup, ProductGroup, 1, 2) = "Exotic", 
+"Equity Linked Bonds (RFL) Exotic", 
+"Equity Linked Bonds (RFL) Plain"), 
+"Equity Linked Bonds (RFL) Unassigned")))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="15" Left="1" Bottom="15" Right="1" />
+            <Value>ISNULL(DatabaseItems(DatabaseName, "Murex Positions Bonds", "Murex Position Bond", 
+"*_" + TargetItem.ISIN.Code), NULL)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="17" Left="1" Bottom="17" Right="1" />
+            <Value>TargetItem.|Product Group|</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="26" Left="0" Bottom="26" Right="0" />
+            <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p6:type="q4:string">Agio</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="60" Left="1" Bottom="60" Right="1" />
+            <Value>IF(ISERROR(D61), NULL, D61)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="60" Left="2" Bottom="60" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A61,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="18" Left="1" Bottom="18" Right="1" />
+            <Value>IF(Positions &lt;&gt; NULL, Positions.Values(|Portfolio|("Murex"), 
+|RFL Position|("Murex").Data(StartDate)), NULL)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="19" Left="1" Bottom="19" Right="1" />
+            <Value>IF(Positions &lt;&gt; NULL, 
+Positions.Values(Database, Code, CodeType, "RFL Positions", "Murex", StartDate).FLATTEN(), NULL)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="7" Left="1" Bottom="7" Right="1" />
+            <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p6:type="q5:dateTime">2020-05-14T00:00:00</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="9" Left="1" Bottom="9" Right="1" />
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p6:type="q6:string">SPD</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="14" Left="1" Bottom="14" Right="1" />
+            <Value>Item(DatabaseName,CodeName,CodeTypeName)</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="6" Left="1" Bottom="6" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="35" Left="3" Bottom="35" Right="3" />
+            <Value>MurexBondPriceInterface.|Instrument Label|("Murex")</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="16" Left="1" Bottom="16" Right="1" />
+            <Value>IF(Positions &lt;&gt; NULL, SUM(Positions.Values(ISNULL(|Nominal Position|("Murex").Data(StartDate), 0))), 0)</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="12" Left="1" Bottom="12" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="0" Bottom="32" Right="0" />
+            <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p6:type="q7:string">Evaluation Mode</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="58" Left="3" Bottom="58" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A59,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="26" Left="1" Bottom="26" Right="1" />
+            <Value>IF(ISERROR(D27), NULL, D27)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="26" Left="2" Bottom="26" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A27,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="27" Left="0" Bottom="27" Right="0" />
+            <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p6:type="q8:string">Barrier 1</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="27" Left="1" Bottom="27" Right="1" />
+            <Value>IF(ISERROR(D28), NULL, D28)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="27" Left="2" Bottom="27" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A28,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="28" Left="0" Bottom="28" Right="0" />
+            <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p6:type="q9:string">Barrier 2</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="28" Left="1" Bottom="28" Right="1" />
+            <Value>IF(ISERROR(D29), NULL, D29)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="28" Left="2" Bottom="28" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A29,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="29" Left="0" Bottom="29" Right="0" />
+            <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p6:type="q10:string">Clean/Dirty</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="29" Left="1" Bottom="29" Right="1" />
+            <Value>IF(ISERROR(D30), NULL, D30)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="29" Left="2" Bottom="29" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A30,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="30" Left="0" Bottom="30" Right="0" />
+            <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p6:type="q11:string">Currency</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="30" Left="1" Bottom="30" Right="1" />
+            <Value>IF(ISERROR(D31), NULL, D31)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="30" Left="2" Bottom="30" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A31,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="0" Bottom="31" Right="0" />
+            <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p6:type="q12:string">Determination Date</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="1" Bottom="31" Right="1" />
+            <Value>IF(ISERROR(D32), NULL, D32)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="2" Bottom="31" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A32,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="1" Bottom="32" Right="1" />
+            <Value>IF(ISERROR(D33), NULL, D33)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="0" Bottom="33" Right="0" />
+            <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p6:type="q13:string">Evaluation Spread</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="1" Bottom="33" Right="1" />
+            <Value>IF(ISERROR(D34), NULL, D34)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="2" Bottom="33" Right="2" />
+            <Value>Values(DatabaseName,CodeName,"Murex Bond",A34,"Murex",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="0" Bottom="34" Right="0" />
+            <Value xmlns:q14="http://www.w3.org/2001/XMLSchema" p6:type="q14:string">Initial Price</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="1" Bottom="34" Right="1" />
+            <Value>IF(ISERROR(D35), NULL, D35)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="2" Bottom="34" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A35,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="35" Left="0" Bottom="35" Right="0" />
+            <Value xmlns:q15="http://www.w3.org/2001/XMLSchema" p6:type="q15:string">Instrument Label</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="35" Left="1" Bottom="35" Right="1" />
+            <Value>IF(ISERROR(D36), NULL, D36)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="35" Left="2" Bottom="35" Right="2" />
+            <Value>Values(DatabaseName,CodeName,"Murex Bond",A36,"Murex",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="36" Left="0" Bottom="36" Right="0" />
+            <Value xmlns:q16="http://www.w3.org/2001/XMLSchema" p6:type="q16:string">ISIN</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="36" Left="1" Bottom="36" Right="1" />
+            <Value>IF(ISERROR(D37), NULL, D37)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="36" Left="2" Bottom="36" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A37,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="37" Left="0" Bottom="37" Right="0" />
+            <Value xmlns:q17="http://www.w3.org/2001/XMLSchema" p6:type="q17:string">Issue Cancelled</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="37" Left="1" Bottom="37" Right="1" />
+            <Value>IF(ISERROR(D38), NULL, D38)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="37" Left="2" Bottom="37" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A38,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="38" Left="0" Bottom="38" Right="0" />
+            <Value xmlns:q18="http://www.w3.org/2001/XMLSchema" p6:type="q18:string">Issue Volume</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="38" Left="1" Bottom="38" Right="1" />
+            <Value>IF(ISERROR(D39), NULL, D39)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="38" Left="2" Bottom="38" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A39,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="39" Left="0" Bottom="39" Right="0" />
+            <Value xmlns:q19="http://www.w3.org/2001/XMLSchema" p6:type="q19:string">Issuer Estimated Value</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="39" Left="1" Bottom="39" Right="1" />
+            <Value>IF(ISERROR(D40), NULL, D40)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="39" Left="2" Bottom="39" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A40,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="40" Left="0" Bottom="40" Right="0" />
+            <Value xmlns:q20="http://www.w3.org/2001/XMLSchema" p6:type="q20:string">Issuer Name</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="40" Left="1" Bottom="40" Right="1" />
+            <Value>IF(ISERROR(D41), NULL, D41)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="40" Left="2" Bottom="40" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A41,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="41" Left="0" Bottom="41" Right="0" />
+            <Value xmlns:q21="http://www.w3.org/2001/XMLSchema" p6:type="q21:string">Maturity</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="41" Left="1" Bottom="41" Right="1" />
+            <Value>IF(ISERROR(D42), NULL, D42)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="41" Left="2" Bottom="41" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A42,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="42" Left="0" Bottom="42" Right="0" />
+            <Value xmlns:q22="http://www.w3.org/2001/XMLSchema" p6:type="q22:string">MX Market</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="42" Left="1" Bottom="42" Right="1" />
+            <Value>IF(ISERROR(D43), NULL, D43)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="42" Left="2" Bottom="42" Right="2" />
+            <Value>Values(DatabaseName,CodeName,"Murex Bond",A43,"Murex",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="43" Left="0" Bottom="43" Right="0" />
+            <Value xmlns:q23="http://www.w3.org/2001/XMLSchema" p6:type="q23:string">Node Entity</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="43" Left="1" Bottom="43" Right="1" />
+            <Value>IF(ISERROR(D44), NULL, D44)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="43" Left="2" Bottom="43" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A44,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="44" Left="0" Bottom="44" Right="0" />
+            <Value xmlns:q24="http://www.w3.org/2001/XMLSchema" p6:type="q24:string">Node Department</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="44" Left="1" Bottom="44" Right="1" />
+            <Value>IF(ISERROR(D45), NULL, D45)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="44" Left="2" Bottom="44" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A45,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="45" Left="0" Bottom="45" Right="0" />
+            <Value xmlns:q25="http://www.w3.org/2001/XMLSchema" p6:type="q25:string">Node Product</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="45" Left="1" Bottom="45" Right="1" />
+            <Value>IF(ISERROR(D46), NULL, D46)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="45" Left="2" Bottom="45" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A46,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="46" Left="0" Bottom="46" Right="0" />
+            <Value xmlns:q26="http://www.w3.org/2001/XMLSchema" p6:type="q26:string">Placement Type</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="46" Left="1" Bottom="46" Right="1" />
+            <Value>IF(ISERROR(D47), NULL, D47)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="46" Left="2" Bottom="46" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A47,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="47" Left="0" Bottom="47" Right="0" />
+            <Value xmlns:q27="http://www.w3.org/2001/XMLSchema" p6:type="q27:string">Product Group</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="47" Left="1" Bottom="47" Right="1" />
+            <Value>IF(ISERROR(D48), NULL, D48)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="47" Left="2" Bottom="47" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A48,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="48" Left="0" Bottom="48" Right="0" />
+            <Value xmlns:q28="http://www.w3.org/2001/XMLSchema" p6:type="q28:string">Product Name</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="48" Left="1" Bottom="48" Right="1" />
+            <Value>IF(ISERROR(D49), NULL, D49)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="48" Left="2" Bottom="48" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A49,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="49" Left="0" Bottom="49" Right="0" />
+            <Value xmlns:q29="http://www.w3.org/2001/XMLSchema" p6:type="q29:string">Quote Type</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="49" Left="1" Bottom="49" Right="1" />
+            <Value>IF(ISERROR(D50), NULL, D50)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="49" Left="2" Bottom="49" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A50,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="50" Left="0" Bottom="50" Right="0" />
+            <Value xmlns:q30="http://www.w3.org/2001/XMLSchema" p6:type="q30:string">Reference Date</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="50" Left="1" Bottom="50" Right="1" />
+            <Value>IF(ISERROR(D51), NULL, D51)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="50" Left="2" Bottom="50" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A51,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="51" Left="0" Bottom="51" Right="0" />
+            <Value xmlns:q31="http://www.w3.org/2001/XMLSchema" p6:type="q31:string">Reporting Date</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="51" Left="1" Bottom="51" Right="1" />
+            <Value>IF(ISERROR(D52), NULL, D52)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="51" Left="2" Bottom="51" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A52,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="52" Left="0" Bottom="52" Right="0" />
+            <Value xmlns:q32="http://www.w3.org/2001/XMLSchema" p6:type="q32:string">RFL Positions</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="52" Left="1" Bottom="52" Right="1" />
+            <Value>IF(ISERROR(D53), NULL, D53)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="52" Left="2" Bottom="52" Right="2" />
+            <Value>RFLPositionsInput</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="53" Left="0" Bottom="53" Right="0" />
+            <Value xmlns:q33="http://www.w3.org/2001/XMLSchema" p6:type="q33:string">Settlement Type</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="53" Left="1" Bottom="53" Right="1" />
+            <Value>IF(ISERROR(D54), NULL, D54)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="53" Left="2" Bottom="53" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A54,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="54" Left="0" Bottom="54" Right="0" />
+            <Value xmlns:q34="http://www.w3.org/2001/XMLSchema" p6:type="q34:string">Structure ID</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="54" Left="1" Bottom="54" Right="1" />
+            <Value>IF(ISERROR(D55), NULL, D55)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="54" Left="2" Bottom="54" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A55,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="55" Left="0" Bottom="55" Right="0" />
+            <Value xmlns:q35="http://www.w3.org/2001/XMLSchema" p6:type="q35:string">Structure Type</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="55" Left="1" Bottom="55" Right="1" />
+            <Value>IF(ISERROR(D56), NULL, D56)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="55" Left="2" Bottom="55" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A56,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="56" Left="0" Bottom="56" Right="0" />
+            <Value xmlns:q36="http://www.w3.org/2001/XMLSchema" p6:type="q36:string">Termination</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="56" Left="1" Bottom="56" Right="1" />
+            <Value>IF(ISERROR(D57), NULL, D57)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="56" Left="2" Bottom="56" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A57,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="57" Left="0" Bottom="57" Right="0" />
+            <Value xmlns:q37="http://www.w3.org/2001/XMLSchema" p6:type="q37:string">Underlying Name</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="57" Left="1" Bottom="57" Right="1" />
+            <Value>IF(ISERROR(D58), NULL, D58)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="57" Left="2" Bottom="57" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A58,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="58" Left="0" Bottom="58" Right="0" />
+            <Value xmlns:q38="http://www.w3.org/2001/XMLSchema" p6:type="q38:string">Underlying Type</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="58" Left="2" Bottom="58" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A59,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="59" Left="0" Bottom="59" Right="0" />
+            <Value xmlns:q39="http://www.w3.org/2001/XMLSchema" p6:type="q39:string">Valuta</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="59" Left="1" Bottom="59" Right="1" />
+            <Value>IF(ISERROR(D60), NULL, D60)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="59" Left="2" Bottom="59" Right="2" />
+            <Value>Values(DatabaseName,CodeName,CodeTypeName,A60,"SPD",StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="60" Left="0" Bottom="60" Right="0" />
+            <Value xmlns:q40="http://www.w3.org/2001/XMLSchema" p6:type="q40:string">WKN</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="60" Left="3" Bottom="60" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A61,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="26" Left="3" Bottom="26" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A27,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="27" Left="3" Bottom="27" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A28,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="28" Left="3" Bottom="28" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A29,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="29" Left="3" Bottom="29" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A30,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="30" Left="3" Bottom="30" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A31,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="3" Bottom="31" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A32,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="3" Bottom="33" Right="3" />
+            <Value>MurexBondPriceInterface.|Evaluation Spread|("Murex").Data(StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="3" Bottom="34" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A35,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="36" Left="3" Bottom="36" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A37,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="37" Left="3" Bottom="37" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A38,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="38" Left="3" Bottom="38" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A39,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="39" Left="3" Bottom="39" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A40,CodeTypeName,TargetDatasource).Data(StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="40" Left="3" Bottom="40" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A41,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="41" Left="3" Bottom="41" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A42,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="42" Left="3" Bottom="42" Right="3" />
+            <Value>MurexBondPriceInterface.|MX Market|("Murex")</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="43" Left="3" Bottom="43" Right="3" />
+            <Value xmlns:q41="http://www.w3.org/2001/XMLSchema" p6:type="q41:string">Frankfurt</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="44" Left="3" Bottom="44" Right="3" />
+            <Value xmlns:q42="http://www.w3.org/2001/XMLSchema" p6:type="q42:string">Equity</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="45" Left="3" Bottom="45" Right="3" />
+            <Value>NodeProduct</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="46" Left="3" Bottom="46" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A47,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="47" Left="3" Bottom="47" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A48,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="48" Left="3" Bottom="48" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A49,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="49" Left="3" Bottom="49" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A50,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="50" Left="3" Bottom="50" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A51,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="51" Left="3" Bottom="51" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A52,CodeTypeName,TargetDatasource).Data(StartDate)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="52" Left="3" Bottom="52" Right="3" />
+            <Value>RFLPositions</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="53" Left="3" Bottom="53" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A54,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="54" Left="3" Bottom="54" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A55,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="55" Left="3" Bottom="55" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A56,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="56" Left="3" Bottom="56" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A57,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="57" Left="3" Bottom="57" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A58,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="59" Left="3" Bottom="59" Right="3" />
+            <Value>Property(DatabaseName,CodeName,A60,CodeTypeName,TargetDatasource)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="2" Left="0" Bottom="2" Right="0" />
+            <Value xmlns:q43="http://www.w3.org/2001/XMLSchema" p6:type="q43:string">** STANDARD PARAMETERS **</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="3" Left="0" Bottom="3" Right="0" />
+            <Value xmlns:q44="http://www.w3.org/2001/XMLSchema" p6:type="q44:string">DatabaseName</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="4" Left="0" Bottom="4" Right="0" />
+            <Value xmlns:q45="http://www.w3.org/2001/XMLSchema" p6:type="q45:string">CodeName</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="5" Left="0" Bottom="5" Right="0" />
+            <Value xmlns:q46="http://www.w3.org/2001/XMLSchema" p6:type="q46:string">CodeTypeName</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="6" Left="0" Bottom="6" Right="0" />
+            <Value xmlns:q47="http://www.w3.org/2001/XMLSchema" p6:type="q47:string">TargetProperty</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="7" Left="0" Bottom="7" Right="0" />
+            <Value xmlns:q48="http://www.w3.org/2001/XMLSchema" p6:type="q48:string">StartDate</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="8" Left="0" Bottom="8" Right="0" />
+            <Value xmlns:q49="http://www.w3.org/2001/XMLSchema" p6:type="q49:string">EndDate</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="9" Left="0" Bottom="9" Right="0" />
+            <Value xmlns:q50="http://www.w3.org/2001/XMLSchema" p6:type="q50:string">TargetDatasource</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="25" Left="0" Bottom="25" Right="0" />
+            <Value xmlns:q51="http://www.w3.org/2001/XMLSchema" p6:type="q51:string">** PROPERTIES **</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="62" Left="0" Bottom="62" Right="0" />
+            <Value xmlns:q52="http://www.w3.org/2001/XMLSchema" p6:type="q52:string">** AUDIT **</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="63" Left="0" Bottom="63" Right="0" />
+            <Value xmlns:q53="http://www.w3.org/2001/XMLSchema" p6:type="q53:string">InputAudit</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="64" Left="0" Bottom="64" Right="0" />
+            <Value xmlns:q54="http://www.w3.org/2001/XMLSchema" p6:type="q54:string">CalculationAudit</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="14" Left="0" Bottom="14" Right="0" />
+            <Value xmlns:q55="http://www.w3.org/2001/XMLSchema" p6:type="q55:string">TargetItem</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="11" Left="0" Bottom="11" Right="0" />
+            <Value xmlns:q56="http://www.w3.org/2001/XMLSchema" p6:type="q56:string">** CUSTOM PARAMETERS **</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="12" Left="0" Bottom="12" Right="0" />
+            <Value xmlns:q57="http://www.w3.org/2001/XMLSchema" p6:type="q57:string">VanillaExoticLookup</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="15" Left="0" Bottom="15" Right="0" />
+            <Value xmlns:q58="http://www.w3.org/2001/XMLSchema" p6:type="q58:string">Positions</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="16" Left="0" Bottom="16" Right="0" />
+            <Value xmlns:q59="http://www.w3.org/2001/XMLSchema" p6:type="q59:string">TotalPositions</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="23" Left="0" Bottom="23" Right="0" />
+            <Value xmlns:q60="http://www.w3.org/2001/XMLSchema" p6:type="q60:string">Node Product</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="17" Left="0" Bottom="17" Right="0" />
+            <Value xmlns:q61="http://www.w3.org/2001/XMLSchema" p6:type="q61:string">ProductGroup</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="18" Left="0" Bottom="18" Right="0" />
+            <Value xmlns:q62="http://www.w3.org/2001/XMLSchema" p6:type="q62:string">RFLPositions</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="19" Left="0" Bottom="19" Right="0" />
+            <Value xmlns:q63="http://www.w3.org/2001/XMLSchema" p6:type="q63:string">RFLPositionsInput</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="20" Left="0" Bottom="20" Right="0" />
+            <Value xmlns:q64="http://www.w3.org/2001/XMLSchema" p6:type="q64:string">MurexPositionBond</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="21" Left="0" Bottom="21" Right="0" />
+            <Value xmlns:q65="http://www.w3.org/2001/XMLSchema" p6:type="q65:string">IsFapPas</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="21" Left="1" Bottom="21" Right="1" />
+            <Value>IF(Positions.Values(|Portfolio|.Code)[1] = "FAP_PAS_006", TRUE, FALSE)</Value>
+          </CellDefinition>
+        </Cells>
+      </Xenomorph.Generic.Formula>
+    </Property>
+  </Item>
+</Category>

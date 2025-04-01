@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Request">
+  <Item PropertyCount="19" Description="BTP" CodeType="Request" Code="Reuters IPV Future Option Vols BTP" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
+      <string>Reuters Future Options Prices</string>
+    </Property>
+    <Property Name="Bloomberg Destination Code Type" Static="true" MultiSourced="false" DataType="String">
+      <string>Reuters</string>
+    </Property>
+    <Property Name="Bloomberg Destination Data Source" Static="true" MultiSourced="false" DataType="String">
+      <string>Reuters</string>
+    </Property>
+    <Property Name="Bloomberg Destination Properties" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.String" header="Name" />
+          <columnDefinition index="2" type="System.String" header="Value" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Ask</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Bid</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Trade</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Ask</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Bid</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Trade</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Fields" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Field Name" />
+        </columnDefinitions>
+        <rows />
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Identifiers Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Save Date" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Bloomberg Save Date Column" Static="true" MultiSourced="false" DataType="Int16">
+      <short>-1</short>
+    </Property>
+    <Property Name="Bloomberg Save Date Format" Static="true" MultiSourced="false" DataType="String">
+      <string>dd/MM/yyyy</string>
+    </Property>
+    <Property Name="Data Interface" Static="true" MultiSourced="false" DataType="String">
+      <string>FXForward</string>
+    </Property>
+    <Property Name="Data Vendor" Static="true" MultiSourced="false" DataType="String">
+      <string>Reuters</string>
+    </Property>
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
+      <string>Values(
+  Values("GEN_VAL2"),
+  Values("GEN_VAL4")
+).TRANSPOSE.FLATTEN</string>
+    </Property>
+    <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
+      <boolean>false</boolean>
+    </Property>
+    <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">
+      <string>Values(
+      Values("0x070340f0c9816a3b"),
+      Values(8, 9),
+      Values(1, 3),
+      Values(",")
+    ).TRANSPOSE.FLATTEN</string>
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Unique File Name Identifier" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+  </Item>
+</Category>

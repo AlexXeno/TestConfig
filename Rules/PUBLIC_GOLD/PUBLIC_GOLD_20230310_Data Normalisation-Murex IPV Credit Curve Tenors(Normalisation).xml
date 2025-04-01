@@ -1,0 +1,794 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Data Normalisation">
+  <Item PropertyCount="6" Description="Normalise Murex IPV Credit Curve Tenor data" CodeType="Normalisation" Code="Murex IPV Credit Curve Tenors" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Property Actions" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Type" />
+          <columnDefinition index="3" type="System.String" header="Name" />
+          <columnDefinition index="4" type="System.String" header="Description" />
+          <columnDefinition index="5" type="System.String" header="Source Property" />
+          <columnDefinition index="6" type="System.String" header="Target Property" />
+          <columnDefinition index="7" type="System.String" header="Source Data Source" />
+          <columnDefinition index="8" type="System.String" header="Target Data Source" />
+          <columnDefinition index="9" type="System.String" header="Data Rule" />
+          <columnDefinition index="10" type="System.String" header="Analytic Query" />
+          <columnDefinition index="11" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Analytic Parameters" />
+          <columnDefinition index="12" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Attributes" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Desk</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_DESK</string>
+            </col>
+            <col index="6">
+              <string>Desk</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Credit Curve</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_CURVE_L</string>
+            </col>
+            <col index="6">
+              <string>Credit Curve</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.Values(Item('MD_SILVER', data ,'Murex Credit Curve')).Cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Currency</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_CURRENC</string>
+            </col>
+            <col index="6">
+              <string>Currency</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.Values(Item('COMMON', Data ,'System')).Cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Issuer</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_ISSUER</string>
+            </col>
+            <col index="6">
+              <string>Issuer</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Issuer Long Name</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_LONGNAM</string>
+            </col>
+            <col index="6">
+              <string>Issuer Long Name</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Curve Generator</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_GENERAT</string>
+            </col>
+            <col index="6">
+              <string>Curve Generator</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="7">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>KIS Number Issuer</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>KIS</string>
+            </col>
+            <col index="6">
+              <string>KIS Number Issuer</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.Values(Item('MD_SILVER', Data ,'Counterparty Number')).Cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="8">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Sector</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>SECTOR</string>
+            </col>
+            <col index="6">
+              <string>Sector</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="9">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Seniority</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_SENIORI</string>
+            </col>
+            <col index="6">
+              <string>Seniority</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="10">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Tenor</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_LABEL</string>
+            </col>
+            <col index="6">
+              <string>Tenor</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="11">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Type</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>TYPE</string>
+            </col>
+            <col index="6">
+              <string>Type</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Series Actions" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Type" />
+          <columnDefinition index="3" type="System.String" header="Name" />
+          <columnDefinition index="4" type="System.String" header="Description" />
+          <columnDefinition index="5" type="System.String" header="Source Property" />
+          <columnDefinition index="6" type="System.String" header="Target Property" />
+          <columnDefinition index="7" type="System.String" header="Source Data Source" />
+          <columnDefinition index="8" type="System.String" header="Target Data Source" />
+          <columnDefinition index="9" type="System.String" header="Data Rule" />
+          <columnDefinition index="10" type="System.String" header="Analytic Query" />
+          <columnDefinition index="11" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Analytic Parameters" />
+          <columnDefinition index="12" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Attributes" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Node Department</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_AVERAGE</string>
+            </col>
+            <col index="6">
+              <string>Node Department</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Risk Control</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.values("CPB").cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Node Entity</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_AVERAGE</string>
+            </col>
+            <col index="6">
+              <string>Node Entity</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Risk Control</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.values("Frankfurt").cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Node Product</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_AVERAGE</string>
+            </col>
+            <col index="6">
+              <string>Node Product</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Risk Control</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.values("Credit Curves").cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Ask Spread</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_ASK_VAL</string>
+            </col>
+            <col index="6">
+              <string>Ask Spread</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.CDBL() * 100</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Bid Spread</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_BID_VAL</string>
+            </col>
+            <col index="6">
+              <string>Bid Spread </string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.CDBL() * 100</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Curve Spread</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_CURVE_S</string>
+            </col>
+            <col index="6">
+              <string>Curve Spread</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.CDBL() * 100</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="7">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Mid Spread</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_AVERAGE</string>
+            </col>
+            <col index="6">
+              <string>Mid Spread</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Murex</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.CDBL() * 100</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="8">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Factor</string>
+            </col>
+            <col index="3">
+              <string>Calc Method</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string>MX_AVERAGE</string>
+            </col>
+            <col index="6">
+              <string>Calc Method</string>
+            </col>
+            <col index="7">
+              <string>Murex</string>
+            </col>
+            <col index="8">
+              <string>Internal</string>
+            </col>
+            <col index="9">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <string>.Values("Automated").Cells(1,1)</string>
+            </col>
+            <col index="11">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="12">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Universe Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>DatabaseItems("\\MZTSBATCH01\MD_RAW","Murex IPV Credit Curve Tenors","Murex Credit Curve Tenor","*").Where(NOT ISERROR(MX_AVERAGE.Data(%RunDate%)))</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+  </Item>
+</Category>

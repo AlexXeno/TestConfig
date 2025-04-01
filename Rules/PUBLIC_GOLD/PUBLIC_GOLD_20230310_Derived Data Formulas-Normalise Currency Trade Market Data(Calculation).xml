@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Derived Data Formulas">
+  <Item PropertyCount="1" CodeType="Calculation" Code="Normalise Currency Trade Market Data" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Calculation" Static="true" MultiSourced="false" DataType="Formula">
+      <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="37" CellDefinitionsColumns="3">
+        <NamedRanges>
+          <CellNameDefinition Name="AskIntraDay">
+            <Range Top="26" Left="1" Bottom="26" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="BidIntraDay">
+            <Range Top="27" Left="1" Bottom="27" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="cashrateitem">
+            <Range Top="16" Left="1" Bottom="16" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="CodeName">
+            <Range Top="2" Left="1" Bottom="2" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="CodeTypeName">
+            <Range Top="3" Left="1" Bottom="3" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="DatabaseName">
+            <Range Top="1" Left="1" Bottom="1" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="EndDate">
+            <Range Top="6" Left="1" Bottom="6" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="EodEndDateTime">
+            <Range Top="22" Left="1" Bottom="22" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Eodrates">
+            <Range Top="23" Left="1" Bottom="23" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="EodStartDateTime">
+            <Range Top="21" Left="1" Bottom="21" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="EodTime">
+            <Range Top="18" Left="1" Bottom="18" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="FormulaResult">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="InputAudit">
+            <Range Top="36" Left="1" Bottom="36" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="itemstonormalise">
+            <Range Top="14" Left="1" Bottom="14" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="MurexEODAsk">
+            <Range Top="28" Left="1" Bottom="28" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="MurexEODBid">
+            <Range Top="29" Left="1" Bottom="29" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RawData">
+            <Range Top="15" Left="1" Bottom="15" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RawDB">
+            <Range Top="9" Left="1" Bottom="9" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RawDBAskproperty">
+            <Range Top="10" Left="1" Bottom="10" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RAWDBBidproperty">
+            <Range Top="11" Left="1" Bottom="11" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Results">
+            <Range Top="31" Left="0" Bottom="34" Right="2" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="StartDate">
+            <Range Top="5" Left="1" Bottom="5" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="TargetDataSource">
+            <Range Top="7" Left="1" Bottom="7" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="TargetProperty">
+            <Range Top="4" Left="1" Bottom="4" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Tradedatainputs">
+            <Range Top="13" Left="1" Bottom="13" Right="1" />
+          </CellNameDefinition>
+        </NamedRanges>
+        <Cells>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="26" Left="1" Bottom="26" Right="1" />
+            <Value>RawData.Where(Column_1 LIKE '*Ask*').Values(Column_2,Column_3)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="27" Left="1" Bottom="27" Right="1" />
+            <Value>RawData.Where(Column_1 LIKE '*Bid*').Values(Column_2,Column_3)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="16" Left="1" Bottom="16" Right="1" />
+            <Value>Item(RawDB,CodeName,CodeTypeName)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="2" Left="1" Bottom="2" Right="1" />
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p6:type="q1:string">AED=</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="3" Left="1" Bottom="3" Right="1" />
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p6:type="q2:string">Reuters</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="1" Left="1" Bottom="1" Right="1" />
+            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:string">MD_SILVER</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="6" Left="1" Bottom="6" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="22" Left="1" Bottom="22" Right="1" />
+            <Value>StartDate + EodTime</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="23" Left="1" Bottom="23" Right="1" />
+            <Value>cashrateitem.Properties('quote*','Reuters').Values(Name,'internal',Data(EodStartDateTime,EodEndDateTime).LastValue).Where(Column_3&lt;&gt;NULL)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="21" Left="1" Bottom="21" Right="1" />
+            <Value>DATEADD( EodEndDateTime, '-1H' )</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="18" Left="1" Bottom="18" Right="1" />
+            <Value>Item( 'PUBLIC_GOLD', 'Eod Times', 'Mapping Table' ).|Table|( 'Internal' ).Where( Column_1 = 'Murex' ).Cells(1,2)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+            <Value>Results.Where(Column_2&lt;&gt; NULL).Values(Column_1,Column_2)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="36" Left="1" Bottom="36" Right="1" />
+            <Value>Results.Where(Column_2&lt;&gt; NULL).Values(Column_1,Column_3)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="14" Left="1" Bottom="14" Right="1" />
+            <Value>Tradedatainputs.Values(Column_1.SPLIT('|').TRANSPOSE(),Column_2.Values(Column_1).Where(Column_1 &gt;= StartDate).MIN().CDATE(),Column_2.Values(Column_2).Where(Column_1 &gt;= StartDate).MAX().CDATE(),Column_2.Column_3.MIN()).FLATTEN()</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="28" Left="1" Bottom="28" Right="1" />
+            <Value>Eodrates.Where(Column_1 LIKE '*Ask*').Values(Column_2,Column_3)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="29" Left="1" Bottom="29" Right="1" />
+            <Value>Eodrates.Where(Column_1 LIKE '*Bid*').Values(Column_2,Column_3)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="15" Left="1" Bottom="15" Right="1" />
+            <Value>itemstonormalise.Values(Column_3 ,Column_5,Property(Column_1,Column_2,IF(Column_3 ='Ask Intraday',RawDBAskproperty,RAWDBBidproperty),Column_4,Column_5)
+.Data(Column_6, Column_7, '1P')).Where(Column_3 &lt;&gt; NULL)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="9" Left="1" Bottom="9" Right="1" />
+            <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p6:type="q4:string">\\MZTSBATCH01\MD_RAW</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="10" Left="1" Bottom="10" Right="1" />
+            <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p6:type="q5:string">Quote - Ask Price</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="11" Left="1" Bottom="11" Right="1" />
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p6:type="q6:string">Quote - Bid Price</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="0" Bottom="31" Right="0" />
+            <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p6:type="q7:string">Ask IntraDay</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="2" Bottom="34" Right="2" />
+            <Value>IF(ISERROR(MurexEODBid),NULL,MurexEODBid.Values(Column_1,Values(RawDB,CodeName,CodeTypeName,RawDBAskproperty,Column_1,StartDate)))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="5" Left="1" Bottom="5" Right="1" />
+            <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p6:type="q8:dateTime">2022-02-28T00:00:00</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="7" Left="1" Bottom="7" Right="1" />
+            <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p6:type="q9:string">Internal</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="4" Left="1" Bottom="4" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="13" Left="1" Bottom="13" Right="1" />
+            <Value>DatabaseItems("MD_SILVER","Murex Trades Currency","Murex Trade DuT",CDATE(StartDate).TOSTRING( 'yyyyMMdd' )+ "*")
+.Values(Data inputs('Gold')).FLATTEN()
+.Where (CodeName = Column_4).Values(RawDB +'|'+ Column_4+'|'+Column_5+'|'+Column_3+'|'+Column_6,Column_7,Column_8,Column_9)
+.GROUPBY(RawDB +'|'+ Column_4+'|'+Column_5+'|'+Column_3+'|'+Column_6)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="1" Bottom="31" Right="1" />
+            <Value>IF(ISERROR(AskIntraDay),NULL,AskIntraDay)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="31" Left="2" Bottom="31" Right="2" />
+            <Value>IF(ISERROR(AskIntraDay),NULL,AskIntraDay.Values(Column_1,Values(StartDate,Values(RawDB,CodeName,CodeTypeName,RawDBAskproperty,Column_1,StartDate)).MAKESERIES(0,1)))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="0" Bottom="32" Right="0" />
+            <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p6:type="q10:string">Bid IntraDay</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="1" Bottom="32" Right="1" />
+            <Value>IF(ISERROR(BidIntraDay) ,NULL,BidIntraDay)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="32" Left="2" Bottom="32" Right="2" />
+            <Value>IF(ISERROR(BidIntraDay) ,NULL,BidIntraDay.Values(Column_1,Values(StartDate,Values(RawDB,CodeName,CodeTypeName,RawDBAskproperty,Column_1,StartDate)).MAKESERIES(0,1)))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="0" Bottom="33" Right="0" />
+            <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p6:type="q11:string">Murex End of Day Ask</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="1" Bottom="33" Right="1" />
+            <Value>IF(ISERROR(MurexEODAsk),NULL,MurexEODAsk)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="33" Left="2" Bottom="33" Right="2" />
+            <Value>IF(ISERROR(MurexEODAsk),NULL,MurexEODAsk.Values(Column_1,Values(RawDB,CodeName,CodeTypeName,RawDBAskproperty,Column_1,StartDate)))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="0" Bottom="34" Right="0" />
+            <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p6:type="q12:string">Murex End of Day Bid</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="34" Left="1" Bottom="34" Right="1" />
+            <Value>IF(ISERROR(MurexEODBid),NULL,MurexEODBid)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="2" Left="0" Bottom="2" Right="0" />
+            <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p6:type="q13:string">CodeName</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="3" Left="0" Bottom="3" Right="0" />
+            <Value xmlns:q14="http://www.w3.org/2001/XMLSchema" p6:type="q14:string">CodeTypeName</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="4" Left="0" Bottom="4" Right="0" />
+            <Value xmlns:q15="http://www.w3.org/2001/XMLSchema" p6:type="q15:string">TargetProperty</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="5" Left="0" Bottom="5" Right="0" />
+            <Value xmlns:q16="http://www.w3.org/2001/XMLSchema" p6:type="q16:string">StartDate</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="6" Left="0" Bottom="6" Right="0" />
+            <Value xmlns:q17="http://www.w3.org/2001/XMLSchema" p6:type="q17:string">EndDate</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="7" Left="0" Bottom="7" Right="0" />
+            <Value xmlns:q18="http://www.w3.org/2001/XMLSchema" p6:type="q18:string">TargetDataSource</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="1" Left="0" Bottom="1" Right="0" />
+            <Value xmlns:q19="http://www.w3.org/2001/XMLSchema" p6:type="q19:string">DatabaseName</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="13" Left="0" Bottom="13" Right="0" />
+            <Value xmlns:q20="http://www.w3.org/2001/XMLSchema" p6:type="q20:string">Tradedatainputs</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="15" Left="0" Bottom="15" Right="0" />
+            <Value xmlns:q21="http://www.w3.org/2001/XMLSchema" p6:type="q21:string">RawData</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="16" Left="0" Bottom="16" Right="0" />
+            <Value xmlns:q22="http://www.w3.org/2001/XMLSchema" p6:type="q22:string">cashrateitem</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="23" Left="0" Bottom="23" Right="0" />
+            <Value xmlns:q23="http://www.w3.org/2001/XMLSchema" p6:type="q23:string">Eod rates</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="21" Left="0" Bottom="21" Right="0" />
+            <Value xmlns:q24="http://www.w3.org/2001/XMLSchema" p6:type="q24:string">EodStartDateTime</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="22" Left="0" Bottom="22" Right="0" />
+            <Value xmlns:q25="http://www.w3.org/2001/XMLSchema" p6:type="q25:string">EodEndDateTime</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="26" Left="0" Bottom="26" Right="0" />
+            <Value xmlns:q26="http://www.w3.org/2001/XMLSchema" p6:type="q26:string">Ask IntraDay</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="27" Left="0" Bottom="27" Right="0" />
+            <Value xmlns:q27="http://www.w3.org/2001/XMLSchema" p6:type="q27:string">Bid IntraDay</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="28" Left="0" Bottom="28" Right="0" />
+            <Value xmlns:q28="http://www.w3.org/2001/XMLSchema" p6:type="q28:string">Murex End of Day Ask</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="29" Left="0" Bottom="29" Right="0" />
+            <Value xmlns:q29="http://www.w3.org/2001/XMLSchema" p6:type="q29:string">Murex End of Day Bid</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="9" Left="0" Bottom="9" Right="0" />
+            <Value xmlns:q30="http://www.w3.org/2001/XMLSchema" p6:type="q30:string">RawDB</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="10" Left="0" Bottom="10" Right="0" />
+            <Value xmlns:q31="http://www.w3.org/2001/XMLSchema" p6:type="q31:string">RawDBAskproperty</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="11" Left="0" Bottom="11" Right="0" />
+            <Value xmlns:q32="http://www.w3.org/2001/XMLSchema" p6:type="q32:string">RAWDBBidproperty</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="36" Left="0" Bottom="36" Right="0" />
+            <Value xmlns:q33="http://www.w3.org/2001/XMLSchema" p6:type="q33:string">InputAudit</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="14" Left="0" Bottom="14" Right="0" />
+            <Value xmlns:q34="http://www.w3.org/2001/XMLSchema" p6:type="q34:string">itemstonormalise</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="12" Left="2" Bottom="12" Right="2" />
+            <Value>Tradedatainputs.Values(Column_1.SPLIT('|').TRANSPOSE(),Column_2.Column_1.Where(Column_1 &gt;= StartDate).MIN().CDATE(),Column_2.Column_2.Where(Column_1 &gt;= StartDate).MAX().CDATE(),Column_2.Column_3.MIN()).FLATTEN()</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="18" Left="0" Bottom="18" Right="0" />
+            <Value xmlns:q35="http://www.w3.org/2001/XMLSchema" p6:type="q35:string">EodTime</Value>
+          </CellDefinition>
+        </Cells>
+      </Xenomorph.Generic.Formula>
+    </Property>
+  </Item>
+</Category>

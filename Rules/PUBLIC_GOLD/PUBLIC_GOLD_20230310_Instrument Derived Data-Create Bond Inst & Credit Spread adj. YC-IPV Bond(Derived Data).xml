@@ -1,0 +1,611 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Instrument Derived Data">
+  <Item PropertyCount="5" CodeType="Derived Data" Code="Create Bond Inst &amp; Credit Spread adj. YC-IPV Bond" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%Rundate%</string>
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Enabled" />
+          <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Name" />
+          <columnDefinition index="3" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Description" />
+          <columnDefinition index="4" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Target Property" />
+          <columnDefinition index="5" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Target Data Source" />
+          <columnDefinition index="6" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Data Rule" />
+          <columnDefinition index="7" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Analytic Query" />
+          <columnDefinition index="8" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Analytic Parameters" />
+          <columnDefinition index="9" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Validation Properties" />
+          <columnDefinition index="10" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Attributes" />
+          <columnDefinition index="11" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Destination Property" />
+          <columnDefinition index="12" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Destination Data Source" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Create cash rates</anyType>
+            </col>
+            <col index="3">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="4">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Tolerance</anyType>
+            </col>
+            <col index="5">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Internal</anyType>
+            </col>
+            <col index="6">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="7">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Item(%Public%, %DerivedDataFormulaCode%, "Calculation").Calculation.Setvalues('Parameters',%parameters%)</anyType>
+            </col>
+            <col index="8">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>Public</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>DerivedDataFormulaCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Create CS adjusted Cash rates - IPV Bonds</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>Parameters</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">ALL</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="9">
+              <anyType p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>TargetCodeQuery</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">code</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>TargetCodeType</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">codetype</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>OutputIsMultiReference</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="4">
+                    <col index="1">
+                      <string>OutputIsMultiProperty</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="5">
+                    <col index="1">
+                      <string>OutputIsMultiSourced</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="6">
+                    <col index="1">
+                      <string>SavePropertyAsCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="7">
+                    <col index="1">
+                      <string>CreateDestinationItem</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="8">
+                    <col index="1">
+                      <string>DestinationItemCategory</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">'RC Bond Credit Curve Points'</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="11">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="12">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Risk Control</anyType>
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">save tenor on cash rates</anyType>
+            </col>
+            <col index="3">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="4">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Tolerance</anyType>
+            </col>
+            <col index="5">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Internal</anyType>
+            </col>
+            <col index="6">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="7">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Item(%Public%, %DerivedDataFormulaCode%, "Calculation").Calculation.Setvalues('Parameters',%parameters%)</anyType>
+            </col>
+            <col index="8">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>Public</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>DerivedDataFormulaCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Create CS adjusted Cash rates - IPV Bonds</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>parameters</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Tenors</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="9">
+              <anyType p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>TargetCodeQuery</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">code</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>TargetCodeType</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">codetype</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>OutputIsMultiReference</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="4">
+                    <col index="1">
+                      <string>OutputIsMultiProperty</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="5">
+                    <col index="1">
+                      <string>OutputIsMultiSourced</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="6">
+                    <col index="1">
+                      <string>SavePropertyAsCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="7">
+                    <col index="1">
+                      <string>CreateDestinationItem</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="8">
+                    <col index="1">
+                      <string>DestinationItemCategory</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">'RC Bond Credit Curve Points'</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="11">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="12">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Internal</anyType>
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Create YC item</anyType>
+            </col>
+            <col index="3">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="4">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Tolerance</anyType>
+            </col>
+            <col index="5">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Internal</anyType>
+            </col>
+            <col index="6">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="7">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Item(%Public%, %DerivedDataFormulaCode%, "Calculation").Calculation</anyType>
+            </col>
+            <col index="8">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>Public</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>DerivedDataFormulaCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Create CS adjusted YC - IPV Bonds</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="9">
+              <anyType p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>TargetCodeQuery</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Code</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>TargetCodeType</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">'RC Bond Credit Curve'</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>OutputIsMultiReference</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="4">
+                    <col index="1">
+                      <string>OutputIsMultiProperty</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="5">
+                    <col index="1">
+                      <string>OutputIsMultiSourced</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="6">
+                    <col index="1">
+                      <string>SavePropertyAsCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="7">
+                    <col index="1">
+                      <string>CreateDestinationItem</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="8">
+                    <col index="1">
+                      <string>DestinationItemCategory</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">'RC Bond Credit Curves'</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="11">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="12">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">set discounting YC</anyType>
+            </col>
+            <col index="3">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="4">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Tolerance</anyType>
+            </col>
+            <col index="5">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Internal</anyType>
+            </col>
+            <col index="6">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="7">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Item(%Public%, %DerivedDataFormulaCode%, "Calculation").Calculation</anyType>
+            </col>
+            <col index="8">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>Public</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>DerivedDataFormulaCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Set Credit Curve Bond Discounting YC</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="9">
+              <anyType p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>TargetCodeQuery</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">code</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>TargetCodeType</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">codetype</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>OutputIsMultiReference</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="4">
+                    <col index="1">
+                      <string>OutputIsMultiProperty</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="5">
+                    <col index="1">
+                      <string>OutputIsMultiSourced</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="6">
+                    <col index="1">
+                      <string>SavePropertyAsCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="7">
+                    <col index="1">
+                      <string>CreateDestinationItem</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="8">
+                    <col index="1">
+                      <string>DestinationItemCategory</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">
+                      </anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="11">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+            <col index="12">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%Rundate%</string>
+    </Property>
+    <Property Name="Universe Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV Bonds", "", "*").Where(|Market Data operation| = "Credit Curve")</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+  </Item>
+</Category>

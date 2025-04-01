@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Request">
+  <Item PropertyCount="19" CodeType="Request" Code="Bloomberg GetAllQuotes - MCC Equity Stocks" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg Stocks</string>
+    </Property>
+    <Property Name="Bloomberg Destination Code Type" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg</string>
+    </Property>
+    <Property Name="Bloomberg Destination Data Source" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg</string>
+    </Property>
+    <Property Name="Bloomberg Destination Properties" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.String" header="Name" />
+          <columnDefinition index="2" type="System.String" header="Value" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Ask</string>
+            </col>
+            <col index="2">
+              <string>ASK_QUOTES</string>
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Bid</string>
+            </col>
+            <col index="2">
+              <string>BID_QUOTES</string>
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Trade</string>
+            </col>
+            <col index="2">
+              <string>TRADE_QUOTES</string>
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Ask</string>
+            </col>
+            <col index="2">
+              <string>VOLUME_ASK_QUOTES</string>
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Bid</string>
+            </col>
+            <col index="2">
+              <string>VOLUME_BID_QUOTES</string>
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Trade</string>
+            </col>
+            <col index="2">
+              <string>VOLUME_TRADE_QUOTES</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Fields" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Field Name" />
+        </columnDefinitions>
+        <rows />
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Identifiers Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER","Front Arena Trades Equities","Front Arena Trade DuT",(%RunDate%).TOSTRING( 'yyyyMMdd' )+ "*")
+.Where(|Product Category| &lt;&gt; 'ETF' 
+		AND |Instrument Type| = "Stock" 
+		AND |Portfolio|.|Is PL Relevant|('Risk Control') = TRUE 
+		AND NOT ( Column_1.|OTC| = FALSE 
+					AND Column_1.|OTC BlockTrade| = NULL 
+					AND Column_1.|Front Arena Market| = 'XETRA' 
+					AND Column_1.|Counterparty| = 'XETRA' ) 
+		AND (Column_1.|Trade Status| &lt;&gt; "Void" ) ) 
+.Values(|Data Inputs|.Value).FLATTEN
+.Values(Column_7.TOSTRING("yyyy-MM-dd 00:00:00"), Column_8.TOSTRING("yyyy-MM-dd 23:59:59"), Column_4)
+.Values(Column_1, Column_2, Column_3)
+.GROUPBY( Column_1, Column_2, Column_3)
+.Values(Column_1,Column_2).FLATTEN()
+.Values(Column_1, Column_2, "24", Column_3, "", "")
+.FLATTEN.FILLCOLDATA('TP',1,4).Where(Column_4 &lt;&gt; NULL)</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Save Date" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Bloomberg Save Date Column" Static="true" MultiSourced="false" DataType="Int16">
+      <short>-1</short>
+    </Property>
+    <Property Name="Bloomberg Save Date Format" Static="true" MultiSourced="false" DataType="String">
+      <string>dd/MM/yyyy</string>
+    </Property>
+    <Property Name="Data Interface" Static="true" MultiSourced="false" DataType="String">
+      <string>GetAllQuotes</string>
+    </Property>
+    <Property Name="Data Vendor" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg</string>
+    </Property>
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
+      <boolean>true</boolean>
+    </Property>
+    <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Unique File Name Identifier" Static="true" MultiSourced="false" DataType="String">
+      <string>GAQEST</string>
+    </Property>
+  </Item>
+</Category>

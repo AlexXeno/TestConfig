@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Request">
+  <Item PropertyCount="20" Description="Bloomberg IPV FX Smiles" CodeType="Request" Code="Bloomberg IPV FX Smiles" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg FX Vols</string>
+    </Property>
+    <Property Name="Bloomberg Destination Code Type" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg</string>
+    </Property>
+    <Property Name="Bloomberg Destination Data Source" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg</string>
+    </Property>
+    <Property Name="Bloomberg Destination Properties" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.String" header="Name" />
+          <columnDefinition index="2" type="System.String" header="Value" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Ask</string>
+            </col>
+            <col index="2">
+              <string>ASK_QUOTES</string>
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Bid</string>
+            </col>
+            <col index="2">
+              <string>BID_QUOTES</string>
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Trade</string>
+            </col>
+            <col index="2">
+              <string>TRADE_QUOTES</string>
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Ask</string>
+            </col>
+            <col index="2">
+              <string>VOLUME_ASK_QUOTES</string>
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Bid</string>
+            </col>
+            <col index="2">
+              <string>VOLUME_BID_QUOTES</string>
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Trade</string>
+            </col>
+            <col index="2">
+              <string>VOLUME_TRADE_QUOTES</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Fields" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Field Name" />
+        </columnDefinitions>
+        <rows />
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Identifiers Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "Murex IPV FX Smiles", "Murex FX Smile")
+.Values(|Data Inputs|("Gold").Data(TODAY).Where(Column_4 = "Bloomberg")
+.Values(Column_2.Code)).FLATTEN.Values(Column_1).GROUPBY(Column_1).Where(Column_1 &lt;&gt; NULL)
+.VALUES(
+TOSTRING(TODAY, "dd-MMM-yyyy 00:00", "en-GB"), 
+TOSTRING(TODAY, "dd-MMM-yyyy 23:59", "en-GB"), 
+"24", 
+Column_1, 
+"TICKER", "")</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Save Date" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Bloomberg Save Date Column" Static="true" MultiSourced="false" DataType="Int16">
+      <short>-1</short>
+    </Property>
+    <Property Name="Bloomberg Save Date Format" Static="true" MultiSourced="false" DataType="String">
+      <string>dd/MM/yyyy</string>
+    </Property>
+    <Property Name="Data Interface" Static="true" MultiSourced="false" DataType="String">
+      <string>GetAllQuotes</string>
+    </Property>
+    <Property Name="Data Vendor" Static="true" MultiSourced="false" DataType="String">
+      <string>Bloomberg</string>
+    </Property>
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="File Export Definition" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC" code="BB GAQ REQUEST" codeType="File Export" />
+    </Property>
+    <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
+      <boolean>true</boolean>
+    </Property>
+    <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Unique File Name Identifier" Static="true" MultiSourced="false" DataType="String">
+      <string>GH_FXS</string>
+    </Property>
+  </Item>
+</Category>

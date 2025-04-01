@@ -1,0 +1,1564 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Import">
+  <Item PropertyCount="4" Description=".\markit\V6 CDS Sub IG Contributions_*.csv" CodeType="Import" Code="Import Markit Sub-IG CDS Contributions" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Files" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.String" header="Name" />
+          <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Value" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <string>InputFilePath</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">D:\Data\Interfaces\Markit</anyType>
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <string>InputFileSpec</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">"V6 CDS Sub IG Contributions_" + Value(%RunDate%).ToString("yyyyMMdd")+".csv"</anyType>
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <string>FileWatchInSeconds</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">0</anyType>
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <string>FileRowLimitForTesting</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <string>LogFilePath</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">D:\Data\Logs</anyType>
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <string>LogFilePrefix</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Markit_Sub_IG_CDS</anyType>
+            </col>
+          </row>
+          <row index="7">
+            <col index="1">
+              <string>MoveInputFileAfterProcessing</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+            </col>
+          </row>
+          <row index="8">
+            <col index="1">
+              <string>ProcessedFilePath</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">D:\Data\Interfaces\Markit\Processed</anyType>
+            </col>
+          </row>
+          <row index="9">
+            <col index="1">
+              <string>RejectedFilePath</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">D:\Data\Interfaces\Markit\RejectedRows</anyType>
+            </col>
+          </row>
+          <row index="10">
+            <col index="1">
+              <string>RowsInHeader</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">0</anyType>
+            </col>
+          </row>
+          <row index="11">
+            <col index="1">
+              <string>StartOfData</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Date,Ticker,ShortName,RedCode,Tier,Ccy,DocClause,Contributor,StandardCurve,ContributedPriceType,ContributedCoupon,ContributedLevel6m,ContributedLevel1y,ContributedLevel2y,ContributedLevel3y,ContributedLevel4y,ContributedLevel5y,ContributedLevel7y,ContributedLevel10y,ContributedLevel15y,ContributedLevel20y,ContributedLevel30y,Recovery,CleaningPriceType,PrimaryCoupon,Upfront6m,Upfront1y,Upfront2y,Upfront3y,Upfront4y,Upfront5y,Upfront7y,Upfront10y,Upfront15y,Upfront20y,Upfront30y,ParSpread6m,ParSpread1y,ParSpread2y,ParSpread3y,ParSpread4y,ParSpread5y,ParSpread7y,ParSpread10y,ParSpread15y,ParSpread20y,ParSpread30y,Depth5y,CarryFwd5y,Sector,Region,Country,AvRating,ImpliedRating</anyType>
+            </col>
+          </row>
+          <row index="12">
+            <col index="1">
+              <string>EndOfData</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="13">
+            <col index="1">
+              <string>ColumnDelimiter</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">,</anyType>
+            </col>
+          </row>
+          <row index="14">
+            <col index="1">
+              <string>TextQualifier</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="15">
+            <col index="1">
+              <string>EncodingCodePage</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">28591</anyType>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Property Mappings" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.Int32" header="SourceColumnNumber" />
+          <columnDefinition index="3" type="System.String" header="DestinationProperty" />
+          <columnDefinition index="4" type="System.String" header="NoDataToken" />
+          <columnDefinition index="5" type="System.String" header="RefDatabase" />
+          <columnDefinition index="6" type="System.String" header="RefCodeType" />
+          <columnDefinition index="7" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Attributes" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>false</boolean>
+            </col>
+            <col index="2">
+              <int>0</int>
+            </col>
+            <col index="3">
+              <string>Date</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>1</int>
+            </col>
+            <col index="3">
+              <string>Ticker</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>2</int>
+            </col>
+            <col index="3">
+              <string>ShortName</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>3</int>
+            </col>
+            <col index="3">
+              <string>RedCode</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>4</int>
+            </col>
+            <col index="3">
+              <string>Tier</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>5</int>
+            </col>
+            <col index="3">
+              <string>Ccy</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="7">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>6</int>
+            </col>
+            <col index="3">
+              <string>DocClause</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="8">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>7</int>
+            </col>
+            <col index="3">
+              <string>Contributor</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="9">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>8</int>
+            </col>
+            <col index="3">
+              <string>StandardCurve</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="10">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>9</int>
+            </col>
+            <col index="3">
+              <string>ContributedPriceType</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="11">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>10</int>
+            </col>
+            <col index="3">
+              <string>ContributedCoupon</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="12">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>11</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel6m</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="13">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>12</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel1y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="14">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>13</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel2y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="15">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>14</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel3y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="16">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>15</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel4y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="17">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>16</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel5y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="18">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>17</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel7y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="19">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>18</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel10y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="20">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>19</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel15y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="21">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>20</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel20y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="22">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>21</int>
+            </col>
+            <col index="3">
+              <string>ContributedLevel30y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="23">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>22</int>
+            </col>
+            <col index="3">
+              <string>Recovery</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="24">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>23</int>
+            </col>
+            <col index="3">
+              <string>CleaningPriceType</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="25">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>24</int>
+            </col>
+            <col index="3">
+              <string>PrimaryCoupon</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="26">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>25</int>
+            </col>
+            <col index="3">
+              <string>Upfront6m</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="27">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>26</int>
+            </col>
+            <col index="3">
+              <string>Upfront1y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="28">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>27</int>
+            </col>
+            <col index="3">
+              <string>Upfront2y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="29">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>28</int>
+            </col>
+            <col index="3">
+              <string>Upfront3y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="30">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>29</int>
+            </col>
+            <col index="3">
+              <string>Upfront4y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="31">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>30</int>
+            </col>
+            <col index="3">
+              <string>Upfront5y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="32">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>31</int>
+            </col>
+            <col index="3">
+              <string>Upfront7y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="33">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>32</int>
+            </col>
+            <col index="3">
+              <string>Upfront10y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="34">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>33</int>
+            </col>
+            <col index="3">
+              <string>Upfront15y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="35">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>34</int>
+            </col>
+            <col index="3">
+              <string>Upfront20y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="36">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>35</int>
+            </col>
+            <col index="3">
+              <string>Upfront30y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="37">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>36</int>
+            </col>
+            <col index="3">
+              <string>ParSpread6m</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="38">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>37</int>
+            </col>
+            <col index="3">
+              <string>ParSpread1y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="39">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>38</int>
+            </col>
+            <col index="3">
+              <string>ParSpread2y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="40">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>39</int>
+            </col>
+            <col index="3">
+              <string>ParSpread3y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="41">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>40</int>
+            </col>
+            <col index="3">
+              <string>ParSpread4y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="42">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>41</int>
+            </col>
+            <col index="3">
+              <string>ParSpread5y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="43">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>42</int>
+            </col>
+            <col index="3">
+              <string>ParSpread7y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="44">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>43</int>
+            </col>
+            <col index="3">
+              <string>ParSpread10y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="45">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>44</int>
+            </col>
+            <col index="3">
+              <string>ParSpread15y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="46">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>45</int>
+            </col>
+            <col index="3">
+              <string>ParSpread20y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="47">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>46</int>
+            </col>
+            <col index="3">
+              <string>ParSpread30y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="48">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>47</int>
+            </col>
+            <col index="3">
+              <string>Depth5y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="49">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>48</int>
+            </col>
+            <col index="3">
+              <string>CarryFwd5y</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="50">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>49</int>
+            </col>
+            <col index="3">
+              <string>Sector</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="51">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>50</int>
+            </col>
+            <col index="3">
+              <string>Region</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="52">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>51</int>
+            </col>
+            <col index="3">
+              <string>Country</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="53">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>52</int>
+            </col>
+            <col index="3">
+              <string>AvRating</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="54">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <int>53</int>
+            </col>
+            <col index="3">
+              <string>ImpliedRating</string>
+            </col>
+            <col index="4">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="5">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Target Mappings" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.String" header="Name" />
+          <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="Value" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <string>DeltaLoadEnabled</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <string>DeltaLoadHistoric</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:boolean" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <string>DeltaLoadProperty</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <string>DeltaLoadSource</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <string>TargetCategory</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Markit CDS Contributions</anyType>
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <string>TargetCategoryColumn</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="7">
+            <col index="1">
+              <string>CodeColumn</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="8">
+            <col index="1">
+              <string>SuffixedCodeFormat</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">{1}_{4}_{5}_{6}_{RowNumber}</anyType>
+            </col>
+          </row>
+          <row index="9">
+            <col index="1">
+              <string>CodeType</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Markit Sub IG CDS Contribution</anyType>
+            </col>
+          </row>
+          <row index="10">
+            <col index="1">
+              <string>CodeTypeColumn</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="11">
+            <col index="1">
+              <string>AdditionalCodeCol</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="12">
+            <col index="1">
+              <string>AdditionalSuffixedCodeFormat</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="13">
+            <col index="1">
+              <string>AdditionalCodeType</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="14">
+            <col index="1">
+              <string>AdditionalCodeTypeCol</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="15">
+            <col index="1">
+              <string>TargetDataSource</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">Markit</anyType>
+            </col>
+          </row>
+          <row index="16">
+            <col index="1">
+              <string>TargetDataSourceColumn</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">-1</anyType>
+            </col>
+          </row>
+          <row index="17">
+            <col index="1">
+              <string>SaveDate</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">
+              </anyType>
+            </col>
+          </row>
+          <row index="18">
+            <col index="1">
+              <string>SaveDateColumn</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:int" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">0</anyType>
+            </col>
+          </row>
+          <row index="19">
+            <col index="1">
+              <string>SaveDateFormat</string>
+            </col>
+            <col index="2">
+              <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p9:type="q1:string" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance">dd-MMM-yy</anyType>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+  </Item>
+</Category>

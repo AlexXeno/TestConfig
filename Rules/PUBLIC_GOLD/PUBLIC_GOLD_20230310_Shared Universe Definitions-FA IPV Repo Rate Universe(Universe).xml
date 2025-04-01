@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Shared Universe Definitions">
+  <Item PropertyCount="1" CodeType="Universe" Code="FA IPV Repo Rate Universe" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Universe Items" Static="true" MultiSourced="false" DataType="Formula">
+      <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="6" CellDefinitionsColumns="2">
+        <NamedRanges>
+          <CellNameDefinition Name="Check">
+            <Range Top="3" Left="1" Bottom="3" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="FormulaResult">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Nocheck">
+            <Range Top="4" Left="1" Bottom="4" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Node">
+            <Range Top="1" Left="1" Bottom="1" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Results">
+            <Range Top="3" Left="0" Bottom="4" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="RunDate">
+            <Range Top="2" Left="1" Bottom="2" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="Unchecked">
+            <Range Top="5" Left="1" Bottom="5" Right="1" />
+          </CellNameDefinition>
+        </NamedRanges>
+        <Cells>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="3" Left="1" Bottom="3" Right="1" />
+            <Value>IF(Node='Check',Values(
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Repo Rates','Front Arena Repo Rate','*') 
+.Where(RunDate IN (|Repo Rate|.Dates)).Where(Repo underlying ='SX5E' AND Rate curve = 'MtM_EUR_SPREAD_INDEX_Repo') 
+.Where( |ISIN|.|MAX Date| &gt; Maturity Date),
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Repo Rates','Front Arena Repo Rate','*') 
+.Where(RunDate IN (|Repo Rate|.Dates)).Where(Repo underlying ='SX5E' AND Rate curve = 'MtM_EUR_SPREAD_INDEX_Repo') 
+.Where( |ISIN|.|MAX Date| &lt; Maturity Date)
+.Values(Reference,Maturity Date)
+.SORTBY(Maturity Date ASC).Rows(1).Values(Reference)).TRANSPOSE.FLATTEN.Where(Column_3 NOT LIKE '*none').Values(Item(Column_1,Column_3,Column_2)),NULL)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+            <Value>Results.Where(Column_1 = Node ).Column_2.Where( NOT ISERROR(Column_1.Category))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="4" Left="1" Bottom="4" Right="1" />
+            <Value>Values(
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Repo Rates','Front Arena Repo Rate','*') 
+.Where(RunDate IN (|Repo Rate|.Dates)).Where(Repo underlying &lt;&gt; 'SX5E' AND Rate curve &lt;&gt; 'MtM_EUR_SPREAD_INDEX_Repo') 
+,
+DatabaseItems('\\MZTSBATCH01\MD_SILVER','Front Arena IPV Repo Rates','Front Arena Repo Rate','*') 
+.Where(RunDate IN (|Repo Rate|.Dates)).Where(Repo underlying ='SX5E' AND Rate curve = 'MtM_EUR_SPREAD_INDEX_Repo') 
+.Where( |ISIN|.|MAX Date| &lt; Maturity Date)
+.Values(Reference,Maturity Date)
+.SORTBY(Maturity Date ASC).Rows(2,RowCount).Values(Reference)).TRANSPOSE.FLATTEN.Values(Item(Column_1,Column_3,Column_2))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="1" Left="1" Bottom="1" Right="1" />
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p6:type="q1:string">Check</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="3" Left="0" Bottom="3" Right="0" />
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p6:type="q2:string">Check</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="2" Left="1" Bottom="2" Right="1" />
+            <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p6:type="q3:dateTime">2019-06-13T00:00:00</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="5" Left="1" Bottom="5" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="4" Left="0" Bottom="4" Right="0" />
+            <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p6:type="q4:string">Nocheck</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="0" Left="1" Bottom="0" Right="1" />
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="1" Left="0" Bottom="1" Right="0" />
+            <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p6:type="q5:string">Node</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="2" Left="0" Bottom="2" Right="0" />
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p6:type="q6:string">RunDate</Value>
+          </CellDefinition>
+          <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+            <Range Top="5" Left="0" Bottom="5" Right="0" />
+          </CellDefinition>
+        </Cells>
+      </Xenomorph.Generic.Formula>
+    </Property>
+  </Item>
+</Category>

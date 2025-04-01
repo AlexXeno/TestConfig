@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Shared Universe Definitions">
+  <Item PropertyCount="1" Description="Common Bonds in Bloomberg Bonds and Proxy Bonds" CodeType="Universe" Code="BB BONDS PROXY JOIN" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Universe Items" Static="true" MultiSourced="false" DataType="Formula">
+      <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="2" CellDefinitionsColumns="2">
+        <NamedRanges>
+          <CellNameDefinition Name="FormulaResult">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="IPVISINs" />
+          <CellNameDefinition Name="Matches">
+            <Range Top="1" Left="1" Bottom="1" Right="1" />
+          </CellNameDefinition>
+          <CellNameDefinition Name="MatchingBIDR" />
+        </NamedRanges>
+        <Cells>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="0" Left="0" Bottom="0" Right="0" />
+            <Value>Matches.Where(Column_2 = "RC Proxy Bonds").Values(Item("MD_SILVER",Column_1,"ISIN"))</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="1" Left="1" Bottom="1" Right="1" />
+            <Value>DatabaseItems("MD_SILVER","Bloomberg Bonds","ISIN").Values(Code,Item("MD_SILVER",Code,"Proxy Bond").Category)</Value>
+          </CellDefinition>
+          <CellDefinition p6:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:p6="http://www.w3.org/2001/XMLSchema-instance">
+            <Range Top="1" Left="0" Bottom="1" Right="0" />
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p6:type="q1:string">Matches</Value>
+          </CellDefinition>
+        </Cells>
+      </Xenomorph.Generic.Formula>
+    </Property>
+  </Item>
+</Category>

@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Request">
+  <Item PropertyCount="19" CodeType="Request" Code="Reuters TRTH RAW IPV HELPS Swaption Volatilities" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="Bloomberg Destination Category" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Bloomberg Destination Code Type" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Bloomberg Destination Data Source" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Bloomberg Destination Properties" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.String" header="Name" />
+          <columnDefinition index="2" type="System.String" header="Value" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Ask</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="2">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Bid</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="3">
+            <col index="1">
+              <string>GetAllQuotes_Property_Value_Trade</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="4">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Ask</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="5">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Bid</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+          <row index="6">
+            <col index="1">
+              <string>GetAllQuotes_Property_Volume_Trade</string>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Fields" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Field Name" />
+        </columnDefinitions>
+        <rows />
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Identifiers Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Bloomberg Save Date" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Bloomberg Save Date Column" Static="true" MultiSourced="false" DataType="Int16">
+      <short>-1</short>
+    </Property>
+    <Property Name="Bloomberg Save Date Format" Static="true" MultiSourced="false" DataType="String">
+      <string>dd/MM/yyyy</string>
+    </Property>
+    <Property Name="Data Interface" Static="true" MultiSourced="false" DataType="String">
+      <string>TickHistoryRaw</string>
+    </Property>
+    <Property Name="Data Vendor" Static="true" MultiSourced="false" DataType="String">
+      <string>Reuters</string>
+    </Property>
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Fields Query" Static="true" MultiSourced="false" DataType="String">
+      <string>Values( 
+	Values(
+	  "GEN_VAL1",
+	  "GEN_VAL3",
+	  "GEN_VAL7",
+	  "PRIMACT_1",
+	  "DEALT_VL1",
+	  "TRDPRC_1",
+	  "IRGPRC"
+	).TRANSPOSE,
+	
+	Item( 'PUBLIC_GOLD', 'FI_VolCheck_HelpsCheck_RICs', 'Mapping Table' ).|Table|.Rows(2,RowCount).Values( Column_9 )
+	.GROUPBY( Column_9 )
+).TRANSPOSE.FLATTEN.Values( Column_1 ).GROUPBY( Column_1 )
+
+</string>
+    </Property>
+    <Property Name="Ignore Substituted Bloomberg Data" Static="true" MultiSourced="false" DataType="Boolean">
+      <boolean>false</boolean>
+    </Property>
+    <Property Name="Items Query" Static="true" MultiSourced="false" DataType="String">
+      <string>DatabaseItems("\\MZTSBATCH01\MD_SILVER", "HELPS Vola", "Helps Volatility", "*").
+Where(%Rundate% IN (Data inputs.Dates ) AND 
+|include|.Data(%Rundate%)=TRUE AND 
+|Instrument Type|( "HELPS" ) = "Swaption Volatilities ATM" )
+.Values(|data inputs|.Data(%Rundate%)).FLATTEN()
+.Values('Reuters Swaption Volatilities',Column_4,'RIC',Column_4,Column_3,Column_6,'Reuters Swaption Volatilities')</string>
+    </Property>
+    <Property Name="Parameters Query" Static="true" MultiSourced="false" DataType="String">
+      <string>Values(
+  Values( "", "QueryStartDate", %RunDate% ),
+  Values( "", "QueryEndDate", DATEADD( %RunDate%, '1D' ))
+).TRANSPOSE.FLATTEN</string>
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+    <Property Name="Unique File Name Identifier" Static="true" MultiSourced="false" DataType="String">
+      <string />
+    </Property>
+  </Item>
+</Category>

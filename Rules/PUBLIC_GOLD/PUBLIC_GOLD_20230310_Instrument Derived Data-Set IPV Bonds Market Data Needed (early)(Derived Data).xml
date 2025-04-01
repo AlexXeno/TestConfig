@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<Category ItemCount="1" Name="Instrument Derived Data">
+  <Item PropertyCount="5" CodeType="Derived Data" Code="Set IPV Bonds Market Data Needed (early)" Database="\\MZTSBATCH01\PUBLIC_GOLD">
+    <Property Name="End Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Entity" Static="true" MultiSourced="false" DataType="ItemRef">
+      <Xenomorph.Generic.ItemRef database="\\MZTSBATCH01\PUBLIC_GOLD" code="MCC IPV" codeType="Entity" />
+    </Property>
+    <Property Name="Series Calculations" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Name" />
+          <columnDefinition index="3" type="System.String" header="Description" />
+          <columnDefinition index="4" type="System.String" header="Target Property" />
+          <columnDefinition index="5" type="System.String" header="Target Data Source" />
+          <columnDefinition index="6" type="System.String" header="Data Rule" />
+          <columnDefinition index="7" type="System.String" header="Analytic Query" />
+          <columnDefinition index="8" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Analytic Parameters" />
+          <columnDefinition index="9" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Validation Properties" />
+          <columnDefinition index="10" type="Xenomorph.Generic.List, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e" header="Attributes" />
+          <columnDefinition index="11" type="System.String" header="Destination Property" />
+          <columnDefinition index="12" type="System.String" header="Destination Data Source" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>IPV Market Data Needed</string>
+            </col>
+            <col index="3">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="4">
+              <string>Bloomberg Bond</string>
+            </col>
+            <col index="5">
+              <string>Murex</string>
+            </col>
+            <col index="6">
+              <string p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="7">
+              <string>Item(%Public%, %DerivedDataFormulaCode%, "Calculation").Calculation.SetValues('UseNextRunDate', %UseNextRunDate%)</string>
+            </col>
+            <col index="8">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>Public</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">\\MZTSBATCH01\PUBLIC_GOLD</anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>DerivedDataFormulaCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">Set IPV Bond Get Market Data</anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>UseNextRunDate</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="9">
+              <Xenomorph.Generic.List p8:nil="true" xmlns:p8="http://www.w3.org/2001/XMLSchema-instance" />
+            </col>
+            <col index="10">
+              <Xenomorph.Generic.List>
+                <columnDefinitions>
+                  <columnDefinition index="1" type="System.String" header="" />
+                  <columnDefinition index="2" type="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" header="" />
+                </columnDefinitions>
+                <rows>
+                  <row index="1">
+                    <col index="1">
+                      <string>TargetCodeQuery</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">
+                      </anyType>
+                    </col>
+                  </row>
+                  <row index="2">
+                    <col index="1">
+                      <string>TargetCodeType</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">
+                      </anyType>
+                    </col>
+                  </row>
+                  <row index="3">
+                    <col index="1">
+                      <string>OutputIsMultiReference</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">true</anyType>
+                    </col>
+                  </row>
+                  <row index="4">
+                    <col index="1">
+                      <string>OutputIsMultiProperty</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="5">
+                    <col index="1">
+                      <string>OutputIsMultiSourced</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="6">
+                    <col index="1">
+                      <string>SavePropertyAsCode</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="7">
+                    <col index="1">
+                      <string>CreateDestinationItem</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:boolean" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">false</anyType>
+                    </col>
+                  </row>
+                  <row index="8">
+                    <col index="1">
+                      <string>DestinationItemCategory</string>
+                    </col>
+                    <col index="2">
+                      <anyType xmlns:q1="http://www.w3.org/2001/XMLSchema" p13:type="q1:string" xmlns:p13="http://www.w3.org/2001/XMLSchema-instance">
+                      </anyType>
+                    </col>
+                  </row>
+                </rows>
+              </Xenomorph.Generic.List>
+            </col>
+            <col index="11">
+              <string>IPV Market Data Needed</string>
+            </col>
+            <col index="12">
+              <string>Murex</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+    <Property Name="Start Date Query" Static="true" MultiSourced="false" DataType="String">
+      <string>%RunDate%</string>
+    </Property>
+    <Property Name="Universe Query" Static="true" MultiSourced="false" DataType="List">
+      <Xenomorph.Generic.List>
+        <columnDefinitions>
+          <columnDefinition index="1" type="System.Boolean" header="Enabled" />
+          <columnDefinition index="2" type="System.String" header="Query" />
+        </columnDefinitions>
+        <rows>
+          <row index="1">
+            <col index="1">
+              <boolean>true</boolean>
+            </col>
+            <col index="2">
+              <string>Item("\\MZTSBATCH01\MD_SILVER", "DE000A2TSDD4", "Murex Bond")</string>
+            </col>
+          </row>
+        </rows>
+      </Xenomorph.Generic.List>
+    </Property>
+  </Item>
+</Category>
