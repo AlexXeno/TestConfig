@@ -57,9 +57,10 @@ jobs:
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
       environment: DEV
-      TSServerToken: ${{TSServerToken}}
-      SQLInstanceToken: ${{SQLInstanceToken}}
-      SQLUserToken: ${{SQLUserToken}}
+      # apparently there is a bug in re-usable workflows that stop variables from working
+      TSServerToken: "xTSSERVERx"
+      SQLInstanceToken: "xSQLINSTANCEx"
+      SQLUserToken: "xSQLUSERx"
         
   buildSIT:
     # The type of runner that the job will run on
