@@ -64,7 +64,7 @@ jobs:
       SQLUserToken: "xSQLUSERx"
       
   call-create-release-SIT:
-    needs: dereference
+    needs: [dereference, call-create-release-DEV]
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -75,7 +75,7 @@ jobs:
       SQLUserToken: "xSQLUSERx"
 
   call-create-release-UAT:
-    needs: dereference
+    needs: [dereference, call-create-release-SIT]
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -86,7 +86,7 @@ jobs:
       SQLUserToken: "xSQLUSERx"
       
   call-create-release-PROD:
-    needs: dereference
+    needs: [dereference, call-create-release-UAT]
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
