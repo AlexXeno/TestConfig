@@ -60,11 +60,11 @@ jobs:
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: 'Releases\Release_${{inputs.environment}}.zip'
+          filename: 'Releases/Release_${{inputs.environment}}.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig'
 
       - name: Upload Release
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: 'Releases\Release_${{inputs.environment}}.zip'
+          file_pattern: 'Releases/Release_${{inputs.environment}}.zip'
 
