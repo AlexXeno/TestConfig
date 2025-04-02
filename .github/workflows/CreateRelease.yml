@@ -61,7 +61,7 @@ jobs:
         with:
           type: 'zip'
           filename: 'Releases/Release_${{inputs.environment}}.zip'
-          exclusions: '*.git* /*node_modules/* .editorconfig'
+          exclusions: '*.git* *.md /Releases'
 
       - name: Upload Release
         uses: stefanzweifel/git-auto-commit-action@v4
