@@ -53,6 +53,7 @@ jobs:
   
   # Create the various releases
   call-create-release-DEV:
+    needs: dereference
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -63,6 +64,7 @@ jobs:
       SQLUserToken: "xSQLUSERx"
       
   call-create-release-SIT:
+    needs: dereference
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -73,6 +75,7 @@ jobs:
       SQLUserToken: "xSQLUSERx"
 
   call-create-release-UAT:
+    needs: dereference
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -83,6 +86,7 @@ jobs:
       SQLUserToken: "xSQLUSERx"
       
   call-create-release-PROD:
+    needs: dereference
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -91,7 +95,6 @@ jobs:
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
-
       
   buildSIT:
     # The type of runner that the job will run on
