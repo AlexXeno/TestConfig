@@ -5,31 +5,20 @@
 # Created: 9th April 2025
 #
 ######################################################
-
 Import-Module sqlps -DisableNameChecking;
 
-if ($TargetEnvironment -eq "TEST")
+# Value is tokenised in github and replaced
+# when release is built for each environment
+$ServerInstance = "xSQLINSTANCEx"
+
+Write-Output "Target SQL Instance is $ServerInstance"
+if (-Not $ServerInstance)
 {
-    Write-Output "Target is TEST environment"
-    $ServerInstance = "HEMCCAPPT002"
-}
-elseif ($TargetEnvironment -eq "INT")
-{
-    Write-Output "Target is INT environment"
-    $ServerInstance = "HEMCCSQLI-CL\TSDB"
-}
-elseif ($TargetEnvironment -eq "PROD")
-{
-    Write-Output "Target is PROD environment"
-    $ServerInstance = "HEMCCSQLP-CL1\TSDB"
-}
-else
-{
-    Write-Output "Unknown target environment specified - $($TargetEnvironment)"
+    Write-Output "No SQL Instance specified"
     exit;
 }
 
-$sourceFolder = "$PSScriptRoot\SQL Scripts";
+$sourceFolder = "$PSScriptRoot\SQLScripts";
 $logFolder = "$PSScriptRoot\Logs";
 
 $sourceFiles = @(Get-ChildItem -Path $sourceFolder -Filter *.sql);
