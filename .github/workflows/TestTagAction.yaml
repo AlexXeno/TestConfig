@@ -1,4 +1,13 @@
+name: Test Tag action
+
 on:
   push:
     tags:
     - '*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Tag
+        run: echo ${{github.ref_name}}
