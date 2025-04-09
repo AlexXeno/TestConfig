@@ -49,18 +49,4 @@ jobs:
           regex: true    
           
       - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-  
-  # Create the various releases
-  call-create-release-DEV:
-    needs: dereference
-    # Call the reusable workflow
-    uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
-    with:
-      environment: DEV
-      # apparently there is a bug in re-usable workflows that stop variables from working
-      TSServerToken: "xTSSERVERx"
-      SQLInstanceToken: "xSQLINSTANCEx"
-      SQLUserToken: "xSQLUSERx"
-      
-
+        uses: stefanzweifel/git-auto-commit-action@v4    
