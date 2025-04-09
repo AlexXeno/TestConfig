@@ -4,6 +4,8 @@
 # Author: A.Rowe
 # Created: 8th April 2025
 #########################################
+# Value is tokenised in github and replaced
+# when release is built for each environment
 $TargetTS = "xTSSERVERx"
 
 Write-Output "Target TimeScape Server is $TargetTS"
