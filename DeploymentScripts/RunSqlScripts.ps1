@@ -38,3 +38,5 @@ foreach ($file in $sourceFiles)
         Write-Output $Error;
     }
 }
+
+Write-Output "$MyInvocation.MyCommand.Name completed"
