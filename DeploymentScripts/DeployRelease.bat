@@ -1,1 +1,6 @@
-
+ECHO Running deployment script...
+powershell "& '%~dp0\ApplyDBT.ps1'" > "%~dp0\Logs\ApplyDBT_xENVx.log"
+powershell "& '%~dp0\ImportXDBItems.ps1'" > "%~dp0\Logs\ImportXDBItems_xENVx.log"
+powershell "& '%~dp0\CopyWorkflowScripts.ps1'" > "%~dp0\Logs\CopyWorkflowScripts_xENVx.log"
+powershell "& '%~dp0\RunSqlScripts.ps1'" > "%~dp0\Logs\RunSqlScripts_xENVx.log"
+ECHO deployment completed...
