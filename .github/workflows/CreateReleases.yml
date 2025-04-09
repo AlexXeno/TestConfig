@@ -30,6 +30,7 @@ jobs:
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
+      Tag: ${{github.ref_name}}
   call-create-release-SIT:
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
@@ -39,6 +40,7 @@ jobs:
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
+      Tag: ${{github.ref_name}}
   call-create-release-UAT:
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
@@ -48,6 +50,7 @@ jobs:
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"      
+      Tag: ${{github.ref_name}}
   call-create-release-PROD:
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
@@ -57,3 +60,4 @@ jobs:
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
+      Tag: ${{github.ref_name}}
