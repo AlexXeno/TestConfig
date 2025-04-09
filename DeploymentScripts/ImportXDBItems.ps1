@@ -31,5 +31,5 @@ XdbImport "\\$($TargetTS)\PUBLIC" "$PSScriptRoot\Rules\PUBLIC" "PUBLIC_20" "$PSS
 Write-Output "Import items to SYSTEM"
 XdbImport "\\$($TargetTS)\SYSTEM" "$PSScriptRoot\Rules\SYSTEM" "SYSTEM_20" "$PSScriptRoot\Logs\SystemItemsImport.log" -o
 
-Write-Output "$MyInvocation.MyCommand.Name run successfully"
+Write-Output "$MyInvocation.MyCommand.Name completed"
 
