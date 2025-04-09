@@ -10,6 +10,12 @@ $TargetTS = "xTSSERVERx"
 
 Write-Output "Target TimeScape Server is $TargetTS"
 
+if (-Not $TargetTS)
+{
+    Write-Output "No TimeScape Server specified"
+    exit;
+}
+
 # Do the processing
 
 # Import rules
