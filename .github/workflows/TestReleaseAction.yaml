@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Runs on Published
-      run: echo "{{github.event}}"
+      run: echo "${{github.event}}"
     - name: Runs on Published 2
       if: 'github.event.published'
       run: echo "This is a Publish"
