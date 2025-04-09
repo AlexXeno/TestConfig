@@ -18,8 +18,8 @@ if (-Not $ServerInstance)
     exit;
 }
 
-$sourceFolder = "$PSScriptRoot\SQLScripts";
-$logFolder = "$PSScriptRoot\Logs";
+$sourceFolder = "$PSScriptRoot\..\SQLScripts";
+$logFolder = "$PSScriptRoot\..\Logs";
 
 $sourceFiles = @(Get-ChildItem -Path $sourceFolder -Filter *.sql);
 $nFiles = $sourceFiles.Length;
