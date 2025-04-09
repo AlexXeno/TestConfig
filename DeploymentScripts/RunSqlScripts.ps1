@@ -19,7 +19,7 @@ if (-Not $ServerInstance)
 }
 
 $sourceFolder = "$PSScriptRoot\..\SQLScripts";
-$logFolder = "$PSScriptRoot\..\Logs";
+$logFolder = "$PSScriptRoot\Logs";
 
 $sourceFiles = @(Get-ChildItem -Path $sourceFolder -Filter *.sql);
 $nFiles = $sourceFiles.Length;
