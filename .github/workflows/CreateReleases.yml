@@ -24,7 +24,6 @@ jobs:
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
   call-create-release-SIT:
-    needs: [call-create-release-DEV]
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -34,7 +33,6 @@ jobs:
       SQLInstanceToken: "xSQLINSTANCEx"
       SQLUserToken: "xSQLUSERx"
   call-create-release-UAT:
-    needs: [call-create-release-SIT]
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
@@ -42,10 +40,8 @@ jobs:
       # apparently there is a bug in re-usable workflows that stop variables from working
       TSServerToken: "xTSSERVERx"
       SQLInstanceToken: "xSQLINSTANCEx"
-      SQLUserToken: "xSQLUSERx"
-      
+      SQLUserToken: "xSQLUSERx"      
   call-create-release-PROD:
-    needs: [call-create-release-UAT]
     # Call the reusable workflow
     uses: AlexXeno/TestConfig/.github/workflows/CreateRelease.yml@main
     with:
