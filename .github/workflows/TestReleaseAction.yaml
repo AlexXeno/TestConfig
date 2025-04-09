@@ -2,12 +2,17 @@ name: Test Release action
 
 on:
   release:
-    types: [published,unpublished,created,edited,prereleased,released]
+    types: [published]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - name: Runs on Published
+      run: echo github.event
+    - name: Runs on Published 2
+      if: 'github.event.publish'
+      run: echo "This is a Publish"
     - name: Runs on Pre-Release
       if: 'github.event.prerelease'
       run: echo "This is a Pre-Release"
