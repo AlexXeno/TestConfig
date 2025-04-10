@@ -22,7 +22,7 @@ Add-PSSnapin Xenomorph.TimeScape;
 $templates = $("MD_GOLD", "MD_SILVER", "MD_RAW", `
     "PUBLIC_SILVER", "PUBLIC_GOLD", "COMMON", "PUBLIC", "SYSTEM")
 
-$templates % {
+$templates | % {
   try
   {
     Write-Output "Deploying template to \\$TargetTS\$_"
