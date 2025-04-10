@@ -44,7 +44,8 @@ jobs:
       - name: Run a multi-line script
         run: 
           echo "Building Environment, ${{inputs.environment}}" 
-          echo "Target TSServer, ${{ vars.TSSERVER}}"         
+          echo "Target TSServer, ${{ vars.TSSERVER}}"             
+          echo "Target SQL Instance, ${{ vars.SQLINSTANCE}}"         
           echo "TSServer Token, ${{ inputs.TSServerToken}}"          
           echo "SQLInstance Token, ${{ inputs.SQLInstanceToken}}"          
           echo "SQLUser Token, ${{ inputs.SQLUserToken}}"
@@ -61,6 +62,22 @@ jobs:
           include: "Rules/**"
           regex: true    
 
+      - name: Find and Replace ${{ inputs.TSServerToken}} in Deployment Scripts
+        uses: jacobtomlinson/gha-find-replace@3.0.5
+        with:
+          find: "${{ inputs.TSServerToken}}"
+          replace: "${{ vars.TSSERVER}}"
+          include: "DeploymentScripts/**"
+          regex: true   
+          
+      - name: Find and Replace ${{ inputs.SQLInstanceToken}} in Deployment Scripts
+        uses: jacobtomlinson/gha-find-replace@3.0.5
+        with:
+          find: "${{ inputs.SQLInstanceToken}}"
+          replace: "${{ vars.SQLINSTANCE}}"
+          include: "DeploymentScripts/**"
+          regex: true   
+          
       - name: Create Config Release
         uses: thedoctor0/zip-release@0.7.5
         with:
