@@ -18,13 +18,13 @@ if (-Not $TargetTS)
 
 Add-PSSnapin Xenomorph.TimeScape;
 
-Copy-Database "$PSScriptRoot\DatabaseTemplates\MD_GOLD.XML" "\\$TargetTS\MD_GOLD" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\MD_SILVER.XML" "\\$TargetTS\MD_SILVER" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\MD_RAW.XML" "\\$TargetTS\MD_RAW" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\PUBLIC_SILVER.XML" "\\$TargetTS\PUBLIC_SILVER" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\PUBLIC_GOLD.XML" "\\$TargetTS\PUBLIC_GOLD" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\PUBLIC.XML" "\\$TargetTS\PUBLIC" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\COMMON.XML" "\\$TargetTS\COMMON" -SourceIsXML;
-Copy-Database "$PSScriptRoot\DatabaseTemplates\SYSTEM.XML" "\\$TargetTS\SYSTEM" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\MD_GOLD_DBT.XML" "\\$TargetTS\MD_GOLD" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\MD_SILVER_DBT.XML" "\\$TargetTS\MD_SILVER" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\MD_RAW_DBT.XML" "\\$TargetTS\MD_RAW" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\PUBLIC_SILVER_DBT.XML" "\\$TargetTS\PUBLIC_SILVER" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\PUBLIC_GOLD_DBT.XML" "\\$TargetTS\PUBLIC_GOLD" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\PUBLIC_DBT.XML" "\\$TargetTS\PUBLIC" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\COMMON_DBT.XML" "\\$TargetTS\COMMON" -SourceIsXML;
+Copy-Database "$PSScriptRoot\..\DatabaseTemplates\SYSTEM_DBT.XML" "\\$TargetTS\SYSTEM" -SourceIsXML;
 
 Write-Output "$MyInvocation.MyCommand.Name completed"
