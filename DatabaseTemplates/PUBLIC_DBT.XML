@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseStructure saveDate="04/10/2025 13:22:55">
+  <codeTypes>
+    <codeType>Calculation</codeType>
+    <codeType>Datastream</codeType>
+    <codeType>Derived Data</codeType>
+    <codeType>File Export</codeType>
+    <codeType>Internal</codeType>
+    <codeType>Normalisation</codeType>
+    <codeType>Query Explorer</codeType>
+    <codeType>Reuters</codeType>
+    <codeType>System</codeType>
+    <codeType>Task</codeType>
+    <codeType>User</codeType>
+    <codeType>Web Report</codeType>
+  </codeTypes>
+  <dataSources>
+    <dataSource>Bloomberg</dataSource>
+    <dataSource>Datastream</dataSource>
+    <dataSource>Internal</dataSource>
+    <dataSource>Reuters</dataSource>
+  </dataSources>
+  <categories>
+    <Category name="Basket" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="X_Basket Definition" dataType="List" flags="Historic, StoreChangesOnly" description="Basket composition" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="8">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Double" header="Weight" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 1" />
+                <ColumnDefinition type="System.String" header="Item 1 Source" />
+                <ColumnDefinition type="System.String" header="Item 1 Series" />
+                <ColumnDefinition type="System.Int16" header="Operator" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 2" />
+                <ColumnDefinition type="System.String" header="Item 2 Source" />
+                <ColumnDefinition type="System.String" header="Item 2 Series" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Basket Divisor" dataType="Double" flags="Historic, StoreChangesOnly" description="Basket divisor" frequency="Day">
+          <Constraint testFunction="NotEqualTo" testValue1="0" testValue2="0">
+            <allowedValues>
+              <ArrayOfDouble d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
+            </allowedValues>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Dividends" dataType="List" flags="Historic, StoreChangesOnly, MultiSourced" description="Dividend schedule over time" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="5">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Ex-Date" />
+                <ColumnDefinition type="System.DateTime" header="Payment Date" />
+                <ColumnDefinition type="System.Double" header="Value" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Description" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Bond" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Cash Rate" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Commodity" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Currency" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Derived Data Formulas" description="Derived Data Formulas">
+      <propertyDefinitions>
+        <PropertyDefinition name="Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Equity" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="X_Dividends" dataType="List" flags="Historic, StoreChangesOnly, MultiSourced" description="Dividend schedule over time" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="5">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Ex-Date" />
+                <ColumnDefinition type="System.DateTime" header="Payment Date" />
+                <ColumnDefinition type="System.Double" header="Value" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Description" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Equity Correlations" description="Category for supporting the Equity Correlations Portal Special Screen">
+      <propertyDefinitions>
+        <PropertyDefinition name="Average" dataType="Double" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Calculate RC Correlation Matrices FG" dataType="FormulaGrid" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Calculate Shift Parameter FG" dataType="FormulaGrid" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Calculated Shift Parameter" dataType="List" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Correlation Matrices Member" dataType="List" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Correlation Matrices Member CodeType" dataType="String" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="System.String">
+            <string>Equity Correlation</string>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Correlation Matrices Member Data" dataType="FormulaGrid" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="Xenomorph.Generic.FormulaGrid, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e">
+            <Xenomorph.Generic.FormulaGrid RowColumnFormat="A1" CellDefinitionsRows="15" CellDefinitionsColumns="5">
+              <NamedRanges>
+                <CellNameDefinition Name="CorrelationMatricesMemberCodeType">
+                  <Range Top="8" Left="1" Bottom="8" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="Date">
+                  <Range Top="1" Left="1" Bottom="1" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="EndDate">
+                  <Range Top="3" Left="1" Bottom="3" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="FilledData">
+                  <Range Top="13" Left="1" Bottom="13" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="RawData">
+                  <Range Top="11" Left="1" Bottom="11" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="RCData">
+                  <Range Top="12" Left="1" Bottom="12" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="RiskControlDatasource">
+                  <Range Top="5" Left="1" Bottom="5" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="RiskControlProperty">
+                  <Range Top="4" Left="1" Bottom="4" Right="1" />
+                </CellNameDefinition>
+                <CellNameDefinition Name="StartDate">
+                  <Range Top="2" Left="1" Bottom="2" Right="1" />
+                </CellNameDefinition>
+              </NamedRanges>
+              <Cells>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="0" Left="0" Bottom="0" Right="0" />
+                  <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" d9p1:type="q1:string">** INPUT PARAMETERS**</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="1" Left="0" Bottom="1" Right="0" />
+                  <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" d9p1:type="q2:string">Date</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="2" Left="0" Bottom="2" Right="0" />
+                  <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" d9p1:type="q3:string">StartDate</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="3" Left="0" Bottom="3" Right="0" />
+                  <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" d9p1:type="q4:string">EndDate</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="1" Left="1" Bottom="1" Right="1" />
+                  <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" d9p1:type="q5:dateTime">2021-08-27T00:00:00</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="2" Left="1" Bottom="2" Right="1" />
+                  <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" d9p1:type="q6:dateTime">2021-07-28T00:00:00</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="3" Left="1" Bottom="3" Right="1" />
+                  <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" d9p1:type="q7:dateTime">2021-08-27T00:00:00</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="4" Left="0" Bottom="4" Right="0" />
+                  <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" d9p1:type="q8:string">RiskControlProperty</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="5" Left="0" Bottom="5" Right="0" />
+                  <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" d9p1:type="q9:string">RiskControlDatasource</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="4" Left="1" Bottom="4" Right="1" />
+                  <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" d9p1:type="q10:string">Last</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="5" Left="1" Bottom="5" Right="1" />
+                  <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" d9p1:type="q11:string">Risk Control</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="10" Left="0" Bottom="10" Right="0" />
+                  <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" d9p1:type="q12:string">** OUTPUT **</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="7" Left="0" Bottom="7" Right="0" />
+                  <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" d9p1:type="q13:string">** PROPERTIES **</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="8" Left="0" Bottom="8" Right="0" />
+                  <Value xmlns:q14="http://www.w3.org/2001/XMLSchema" d9p1:type="q14:string">Correlation Matrices Member CodeType</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="8" Left="1" Bottom="8" Right="1" />
+                  <Value>|Correlation Matrices Member CodeType|</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="11" Left="0" Bottom="11" Right="0" />
+                  <Value xmlns:q15="http://www.w3.org/2001/XMLSchema" d9p1:type="q15:string">RawData</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="11" Left="1" Bottom="11" Right="1" />
+                  <Value>|Correlation Matrices Member|.Data(Date).Values(Column_1, Property('MD_SILVER', Column_1, 'Last', CorrelationMatricesMemberCodeType, 'Bloomberg').Data(StartDate, EndDate,,, 'LOAD=[PROXY=ON]'))</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="12" Left="0" Bottom="12" Right="0" />
+                  <Value xmlns:q16="http://www.w3.org/2001/XMLSchema" d9p1:type="q16:string">RCData</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="12" Left="1" Bottom="12" Right="1" />
+                  <Value>|Correlation Matrices Member|.Data(Date).Values(Column_1, ISNULL(Property('MD_SILVER', Column_1, RiskControlProperty, CorrelationMatricesMemberCodeType, RiskControlDatasource).Data(StartDate, EndDate,,, 'LOAD=[PROXY=ON]'), Property('MD_SILVER', Column_1, 'Last', CorrelationMatricesMemberCodeType, 'Bloomberg').Data(StartDate, EndDate,,, 'LOAD=[PROXY=ON]')))</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="ConstantCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="13" Left="0" Bottom="13" Right="0" />
+                  <Value xmlns:q17="http://www.w3.org/2001/XMLSchema" d9p1:type="q17:string">FilledData</Value>
+                </CellDefinition>
+                <CellDefinition d9p1:type="FormulaCellDefinition" CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false" xmlns:d9p1="http://www.w3.org/2001/XMLSchema-instance">
+                  <Range Top="13" Left="1" Bottom="13" Right="1" />
+                  <Value>|Correlation Matrices Member|.Data(Date).Values(Column_1, ISNULL(Property('MD_SILVER', Column_1, RiskControlProperty, CorrelationMatricesMemberCodeType, RiskControlDatasource).Data(StartDate, EndDate, '1WD',, 'LOAD=[PROXY=ON];FILL=[MR = TP W 100 D]'), Property('MD_SILVER', Column_1, 'Last', CorrelationMatricesMemberCodeType, 'Bloomberg').Data(StartDate, EndDate, '1WD',, 'LOAD=[PROXY=ON];FILL=[MR=TP W 100 D]')))</Value>
+                </CellDefinition>
+                <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+                  <Range Top="13" Left="2" Bottom="13" Right="2" />
+                </CellDefinition>
+                <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+                  <Range Top="13" Left="3" Bottom="13" Right="3" />
+                </CellDefinition>
+                <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+                  <Range Top="13" Left="4" Bottom="13" Right="4" />
+                </CellDefinition>
+              </Cells>
+            </Xenomorph.Generic.FormulaGrid>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Date Under Test" dataType="DateTime" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="End Date" dataType="DateTime" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Global Shift Parameter" dataType="Double" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Global Shift Parameter Used" dataType="Double" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Hist Corr Matrix" dataType="List" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Hist Corr Matrix FG" dataType="FormulaGrid" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Percentile" dataType="Double" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Percentile Value" dataType="Double" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="RC Correlation Matrices" dataType="List" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Risk Control Data Source" dataType="String" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="System.String">
+            <string>Risk Control</string>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Risk Control Property" dataType="String" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="System.String">
+            <string>Last</string>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="SD Correlation Date" dataType="DateTime" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Start Date" dataType="DateTime" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Underlying List" dataType="List" flags="Historic" description="" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Front Arena ID" />
+                <ColumnDefinition type="System.String" header="Bloomberg ID" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Underlyings with MD" dataType="List" flags="Historic" description="" frequency="Day" />
+        <PropertyDefinition name="Underlyings with MD FG" dataType="FormulaGrid" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="User ID" dataType="String" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="User SN" dataType="String" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="User WS" dataType="String" flags="None" description="" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="File Export" description="File Export">
+      <propertyDefinitions>
+        <PropertyDefinition name="Data Rule" dataType="ItemRef" flags="None" description="[O] Reference to data rule item" frequency="Day" />
+        <PropertyDefinition name="Definition" dataType="FormulaGrid" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="Xenomorph.Generic.FormulaGrid, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e">
+            <Xenomorph.Generic.FormulaGrid RowColumnFormat="A1" CellDefinitionsRows="5" CellDefinitionsColumns="5">
+              <NamedRanges />
+              <Cells>
+                <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+                  <Range Top="0" Left="0" Bottom="0" Right="0" />
+                </CellDefinition>
+              </Cells>
+            </Xenomorph.Generic.FormulaGrid>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Enable Footer" dataType="Boolean" flags="None" description="[O] Enable Report Footer" frequency="Day" />
+        <PropertyDefinition name="Enable Header" dataType="Boolean" flags="None" description="[O] Enable Report Header" frequency="Day" />
+        <PropertyDefinition name="File Name" dataType="Formula" flags="HasDefaultValue" description="File Name" frequency="Day">
+          <DefaultValue type="Xenomorph.Generic.Formula, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e">
+            <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="1" CellDefinitionsColumns="1">
+              <NamedRanges>
+                <CellNameDefinition Name="FormulaResult">
+                  <Range Top="0" Left="0" Bottom="0" Right="0" />
+                </CellNameDefinition>
+              </NamedRanges>
+              <Cells>
+                <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+                  <Range Top="0" Left="0" Bottom="0" Right="0" />
+                </CellDefinition>
+              </Cells>
+            </Xenomorph.Generic.Formula>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Footer" dataType="FormulaGrid" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Header" dataType="FormulaGrid" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Type" dataType="Int16" flags="None" description="[O] Report Type" frequency="Day" />
+        <PropertyDefinition name="Universe" dataType="List" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="FormulaGrid" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="Xenomorph.Generic.FormulaGrid, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e">
+            <Xenomorph.Generic.FormulaGrid RowColumnFormat="A1" CellDefinitionsRows="5" CellDefinitionsColumns="5">
+              <NamedRanges />
+              <Cells />
+            </Xenomorph.Generic.FormulaGrid>
+          </DefaultValue>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Folders" description="Contains web folder structure">
+      <propertyDefinitions>
+        <PropertyDefinition name="Display Name" dataType="String" flags="None" description="Text displayed on the tree node" frequency="Day" />
+        <PropertyDefinition name="Icon URL" dataType="ItemRef" flags="None" description="Icon displayed in the tree" frequency="Day" />
+        <PropertyDefinition name="Sub Folders" dataType="List" flags="None" description="List containing sub folders" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Node Name" />
+                <ColumnDefinition type="System.String" header="Display Name" />
+                <ColumnDefinition type="System.String" header="Icon URL" />
+                <ColumnDefinition type="System.String" header="Target URL" />
+                <ColumnDefinition type="System.String" header="Target Frame" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Folder Settings" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Sub Folders" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Target URL" dataType="ItemRef" flags="None" description="Points to target web addin" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Foreign Exchange Rate" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Future" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="General" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Index" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="X_Basket Definition" dataType="List" flags="Historic, StoreChangesOnly" description="Basket composition" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="8">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Double" header="Weight" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 1" />
+                <ColumnDefinition type="System.String" header="Item 1 Source" />
+                <ColumnDefinition type="System.String" header="Item 1 Series" />
+                <ColumnDefinition type="System.Int16" header="Operator" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 2" />
+                <ColumnDefinition type="System.String" header="Item 2 Source" />
+                <ColumnDefinition type="System.String" header="Item 2 Series" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Basket Divisor" dataType="Double" flags="Historic, StoreChangesOnly" description="Basket divisor" frequency="Day">
+          <Constraint testFunction="NotEqualTo" testValue1="0" testValue2="0">
+            <allowedValues>
+              <ArrayOfDouble d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
+            </allowedValues>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Dividends" dataType="List" flags="Historic, StoreChangesOnly, MultiSourced" description="Dividend schedule over time" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="5">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Ex-Date" />
+                <ColumnDefinition type="System.DateTime" header="Payment Date" />
+                <ColumnDefinition type="System.Double" header="Value" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Description" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Instrument Derived Data" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Series Calculations" dataType="List" flags="None" description="[O] List of single tenor point time series type calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Option" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Published Rates" description="FX Fixings Published Rates">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Query Explorer" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Query Reports" dataType="List" flags="None" description="Report definitions" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="ID" />
+                <ColumnDefinition type="Xenomorph.Generic.Blob" header="Definition" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Swap" description="">
+      <propertyDefinitions />
+    </Category>
+  </categories>
+</DatabaseStructure>

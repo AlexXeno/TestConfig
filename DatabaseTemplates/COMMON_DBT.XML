@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseStructure saveDate="04/10/2025 13:18:32">
+  <codeTypes>
+    <codeType>Bloomberg</codeType>
+    <codeType>Country ISO</codeType>
+    <codeType>CUSIP</codeType>
+    <codeType>DataRule</codeType>
+    <codeType>Datastream</codeType>
+    <codeType>Exchange</codeType>
+    <codeType>ISIN</codeType>
+    <codeType>Reuters</codeType>
+    <codeType>SEDOL</codeType>
+    <codeType>System</codeType>
+    <codeType>User</codeType>
+  </codeTypes>
+  <dataSources>
+    <dataSource>Bloomberg</dataSource>
+    <dataSource>Datastream</dataSource>
+    <dataSource>Internal</dataSource>
+    <dataSource>Reuters</dataSource>
+  </dataSources>
+  <categories>
+    <Category name="Basket" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="X_Basket Definition" dataType="List" flags="Historic, StoreChangesOnly" description="Basket composition" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="8">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Double" header="Weight" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 1" />
+                <ColumnDefinition type="System.String" header="Item 1 Source" />
+                <ColumnDefinition type="System.String" header="Item 1 Series" />
+                <ColumnDefinition type="System.Int16" header="Operator" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 2" />
+                <ColumnDefinition type="System.String" header="Item 2 Source" />
+                <ColumnDefinition type="System.String" header="Item 2 Series" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Basket Divisor" dataType="Double" flags="Historic, StoreChangesOnly" description="Basket divisor" frequency="Day">
+          <Constraint testFunction="NotEqualTo" testValue1="0" testValue2="0">
+            <allowedValues>
+              <ArrayOfDouble d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
+            </allowedValues>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Dividends" dataType="List" flags="Historic, StoreChangesOnly, MultiSourced" description="Dividend schedule over time" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="5">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Ex-Date" />
+                <ColumnDefinition type="System.DateTime" header="Payment Date" />
+                <ColumnDefinition type="System.Double" header="Value" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Description" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Bond" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Cash Rate" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Commodity" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Country" description="Country">
+      <propertyDefinitions>
+        <PropertyDefinition name="Holidays" dataType="List" flags="None" description="[O] Holidays" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Date" />
+                <ColumnDefinition type="System.String" header="Type" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Price Ccy" dataType="ItemRef" flags="None" description="[O] Price currency" frequency="Day" />
+        <PropertyDefinition name="Source File" dataType="String" flags="None" description="File from which data was extracted" frequency="Day" />
+        <PropertyDefinition name="Week Day Holidays" dataType="List" flags="None" description="[O] Week  day holidays" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Day" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Currency" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Curves Manager" description="Curves Manager">
+      <propertyDefinitions>
+        <PropertyDefinition name="Method" dataType="String" flags="Historic, StoreChangesOnly" description="Identifier for the interpolation method" frequency="Day" />
+        <PropertyDefinition name="Name" dataType="String" flags="None" description="Name of the Item" frequency="Day" />
+        <PropertyDefinition name="Parameters" dataType="List" flags="Historic, StoreChangesOnly" description="Names of interpolation parameters (first column) and the values of interpolation parameters" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Tenors Map" dataType="List" flags="None" description="[R] Map of unsupported Tenors to supported Tenors" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Tenor" />
+                <ColumnDefinition type="System.String" header="Map" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Tenors Query Map" dataType="List" flags="None" description="Tenors Query Map" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Regular Expression" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Tenors Term Map" dataType="List" flags="None" description="[O] Curve Form 2 Map of unsupported Tenors to supported Tenors" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Tenor" />
+                <ColumnDefinition type="System.Double" header="Term Map" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Data Rule" description="Data rules for common use">
+      <propertyDefinitions>
+        <PropertyDefinition name="Definition" dataType="String" flags="None" description="Full Data Rule definition string" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Equity" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="X_Dividends" dataType="List" flags="Historic, StoreChangesOnly, MultiSourced" description="Dividend schedule over time" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="5">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Ex-Date" />
+                <ColumnDefinition type="System.DateTime" header="Payment Date" />
+                <ColumnDefinition type="System.Double" header="Value" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Description" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Exchange" description="Exchange">
+      <propertyDefinitions>
+        <PropertyDefinition name="Country" dataType="ItemRef" flags="None" description="[O] Country" frequency="Day" />
+        <PropertyDefinition name="Holidays" dataType="List" flags="None" description="[O] Holidays" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Date" />
+                <ColumnDefinition type="System.String" header="Type" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Price Ccy" dataType="ItemRef" flags="None" description="[O] Price currency" frequency="Day" />
+        <PropertyDefinition name="Week Day Holidays" dataType="List" flags="None" description="[O] Week  day holidays" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Day" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Foreign Exchange Rate" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Future" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="General" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="History Builder Schema" description="Schemas for generating item histories">
+      <propertyDefinitions>
+        <PropertyDefinition name="Item Schema" dataType="List" flags="None" description="[O] Schema for generating an item's history" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Index" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="X_Basket Definition" dataType="List" flags="Historic, StoreChangesOnly" description="Basket composition" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="8">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Double" header="Weight" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 1" />
+                <ColumnDefinition type="System.String" header="Item 1 Source" />
+                <ColumnDefinition type="System.String" header="Item 1 Series" />
+                <ColumnDefinition type="System.Int16" header="Operator" />
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Item 2" />
+                <ColumnDefinition type="System.String" header="Item 2 Source" />
+                <ColumnDefinition type="System.String" header="Item 2 Series" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Basket Divisor" dataType="Double" flags="Historic, StoreChangesOnly" description="Basket divisor" frequency="Day">
+          <Constraint testFunction="NotEqualTo" testValue1="0" testValue2="0">
+            <allowedValues>
+              <ArrayOfDouble d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
+            </allowedValues>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="X_Dividends" dataType="List" flags="Historic, StoreChangesOnly, MultiSourced" description="Dividend schedule over time" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="5">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Ex-Date" />
+                <ColumnDefinition type="System.DateTime" header="Payment Date" />
+                <ColumnDefinition type="System.Double" header="Value" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Description" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Option" description="">
+      <propertyDefinitions />
+    </Category>
+    <Category name="Surfaces Manager" description="Configuration data for Surface objects">
+      <propertyDefinitions>
+        <PropertyDefinition name="Method" dataType="String" flags="Historic, StoreChangesOnly" description="Identifier for the interpolation method" frequency="Day" />
+        <PropertyDefinition name="Name" dataType="String" flags="None" description="Name of the Item" frequency="Day" />
+        <PropertyDefinition name="Parameters" dataType="List" flags="Historic, StoreChangesOnly" description="Names of interpolation parameters (first column) and the values of interpolation parameters" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Tenors Map" dataType="List" flags="None" description="Mapping of tenor names to associated timespan" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Tenor" />
+                <ColumnDefinition type="System.Double" header="Map" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Swap" description="">
+      <propertyDefinitions />
+    </Category>
+  </categories>
+</DatabaseStructure>

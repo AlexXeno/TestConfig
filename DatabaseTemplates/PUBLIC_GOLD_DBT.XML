@@ -1,0 +1,1524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseStructure saveDate="04/10/2025 13:23:29">
+  <codeTypes>
+    <codeType>Bloomberg Request</codeType>
+    <codeType>Calculation</codeType>
+    <codeType>Consolidation</codeType>
+    <codeType>Derived Data</codeType>
+    <codeType>Entity</codeType>
+    <codeType>EventHandler</codeType>
+    <codeType>Export</codeType>
+    <codeType>GUID</codeType>
+    <codeType>Import</codeType>
+    <codeType>Mapping Table</codeType>
+    <codeType>Normalisation</codeType>
+    <codeType>Override</codeType>
+    <codeType>Request</codeType>
+    <codeType>Template</codeType>
+    <codeType>Tenor Map</codeType>
+    <codeType>Universe</codeType>
+    <codeType>Validation</codeType>
+  </codeTypes>
+  <dataSources>
+    <dataSource>BB</dataSource>
+    <dataSource>Internal</dataSource>
+  </dataSources>
+  <categories>
+    <Category name="Category Templates" description="Validation rules (containing universes and tests)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Applicable Categories" dataType="List" flags="None" description="List of categories to which this template applies" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="CategoryExpression" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Item CodeTypes" dataType="List" flags="None" description="CodeTypes to show in templated items. Those not in listed will be hidden." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.Boolean" header="Required" />
+                <ColumnDefinition type="System.String" header="DisplayName" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="CodeType" />
+                <ColumnDefinition type="System.String" header="LayoutTabName" />
+                <ColumnDefinition type="System.String" header="LayoutRegionName" />
+                <ColumnDefinition type="System.Int32" header="LayoutPosition" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Item Properties" dataType="List" flags="None" description="Properties to show in templated items. Those not in listed will be hidden." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="10">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.Boolean" header="Required" />
+                <ColumnDefinition type="System.String" header="DisplayName" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Property" />
+                <ColumnDefinition type="System.String" header="DataSource" />
+                <ColumnDefinition type="System.String" header="LayoutTabName" />
+                <ColumnDefinition type="System.String" header="LayoutRegionName" />
+                <ColumnDefinition type="System.Int32" header="LayoutPosition" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View All Codes Order" dataType="List" flags="None" description="Preference list for primary code type, applicable to both category and item views." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="CodeType" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View All Metadata" dataType="List" flags="None" description="Metadata applicable to the both category and item views, e.g. icon." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View Category Data Columns" dataType="List" flags="None" description="QL driven additional columns, applicable to category items view." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="4">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="ColumnHeader" />
+                <ColumnDefinition type="System.String" header="Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View Category Metadata" dataType="List" flags="None" description="Metadata applicable to category items view, e.g. ShowPropCountColumn" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View Item Display Graphically" dataType="List" flags="None" description="List of properties to plot, applicable to item view." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="8">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="DisplayName" />
+                <ColumnDefinition type="System.String" header="Property" />
+                <ColumnDefinition type="System.String" header="DataSource" />
+                <ColumnDefinition type="System.String" header="GraphSize" />
+                <ColumnDefinition type="System.String" header="LayoutTabName" />
+                <ColumnDefinition type="System.String" header="LayoutRegionName" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View Item Display Queries" dataType="List" flags="None" description="QL driven display values, applicable to item view." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="17">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.Boolean" header="DisplayDuringEdit" />
+                <ColumnDefinition type="System.String" header="DisplayName" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="ChartPlotType" />
+                <ColumnDefinition type="System.String" header="Query" />
+                <ColumnDefinition type="System.String" header="ItemQuery" />
+                <ColumnDefinition type="System.String" header="ItemPropertyName" />
+                <ColumnDefinition type="System.String" header="ItemPropertyDataSource" />
+                <ColumnDefinition type="System.String" header="LinkTargetDateTimeQuery" />
+                <ColumnDefinition type="System.String" header="LinkTargetRangeBeforeQuery" />
+                <ColumnDefinition type="System.String" header="LinkTargetRangeAfterQuery" />
+                <ColumnDefinition type="System.String" header="GraphSize" />
+                <ColumnDefinition type="System.String" header="LayoutTabName" />
+                <ColumnDefinition type="System.String" header="LayoutRegionName" />
+                <ColumnDefinition type="System.Int32" header="LayoutPosition" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View Item Metadata" dataType="List" flags="None" description="Metadata to control the item view. These values only apply when template is incomplete. For future use: &#xD;&#xA;ShowEmptyProps, HideMarketData, HideReferenceData, MergeAll(to merge Reference Data, Market Data and Avail Props tabs), &#xD;&#xA;CollapseProps(to give focus" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="View Item Tab Region Order" dataType="List" flags="None" description="Tab and region ordering, with descriptions, applicable to item view." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="3">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="TabName" />
+                <ColumnDefinition type="System.String" header="TabDescription" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="RegionOrder" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Cube Derived Data" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Object Calculations" dataType="List" flags="None" description="[O] List of object level calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="10">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Calculations" dataType="List" flags="None" description="[O] List of single tenor point time series type calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Cube Override Rules" description="Override rules (to fix exceptions)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole objects." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Point Overrides" dataType="List" flags="None" description="[O] List of override rules for returning single points." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole properties." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Cube Validation" description="Validation rules (containing universes and tests)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Delegate" dataType="ItemRef" flags="None" description="[O] Entity to handle exceptions, during public holiday of owning entity." frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="[O] Owning entity." frequency="Day" />
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Override Rules" dataType="List" flags="None" description="[O] One or more references to items containing shared override rules." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Override Rules" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Tests" dataType="List" flags="None" description="[O] One or more references to items containing shared tests." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Tests" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Cube Validation Shared" description="Shared validation rules (containing tests only)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Curve Derived Data" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Object Calculations" dataType="List" flags="None" description="[O] List of object level calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="10">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Calculations" dataType="List" flags="None" description="[O] List of single tenor point time series type calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Curve Override Rules" description="Override rules (to fix exceptions)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole objects." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Point Overrides" dataType="List" flags="None" description="[O] List of override rules for returning single points." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole properties." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Curve Validation" description="Validation rules (containing universes and tests)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Delegate" dataType="ItemRef" flags="None" description="[O] Entity to handle exceptions, during public holiday of owning entity." frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="[O] Owning entity." frequency="Day" />
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Override Rules" dataType="List" flags="None" description="[O] One or more references to items containing shared override rules." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Override Rules" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Tests" dataType="List" flags="None" description="[O] One or more references to items containing shared tests." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Tests" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Curve Validation Shared" description="Shared validation rules (containing tests only)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Data Normalisation" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to normalise, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="[O] Owning entity." frequency="Day" />
+        <PropertyDefinition name="Property Actions" dataType="List" flags="None" description="[O] List of historic/series level actions to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Source Property" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Source Data Source" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Actions" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Source Property" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Source Data Source" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to normalise, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Data Source Consolidation" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Consolidation Action" dataType="String" flags="None" description="[R] Consolidation action to perform on the configured Data Sources." frequency="Day">
+          <Constraint testFunction="InList" testValue1="" testValue2="" flags="None" minumumLength="0" maximumLength="0">
+            <allowedValues>
+              <ArrayOfString>
+                <string>Preferred Data Source</string>
+                <string>Closest to Moving Average</string>
+                <string>Closest to Average</string>
+              </ArrayOfString>
+            </allowedValues>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Consolidation Action Data" dataType="String" flags="None" description="[O] Data that qualifies the Consolidation Action." frequency="Day" />
+        <PropertyDefinition name="Consolidation Date Query" dataType="String" flags="None" description="[O] Expression returning consolidation data date. Ignored for Static properties. Must be a valid QL+ date expresion. Eg. TODAY()-1 or '01/01/2001'." frequency="Day" />
+        <PropertyDefinition name="Data Source Output" dataType="String" flags="None" description="[R] The name of the Data Source of the consolidated value. If blank the chosen Data Source will be used." frequency="Day" />
+        <PropertyDefinition name="Data Sources" dataType="List" flags="None" description="[R] List of Data Sources for which to load data from the item as defined in Property." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to consolidate, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Property" dataType="String" flags="None" description="[R] Property for which to load data from the item for each enabled Data Source defined in Data Sources." frequency="Day" />
+        <PropertyDefinition name="Property Data Type" dataType="String" flags="None" description="[R] The TimeScape data type of the item property in Property that is to be consolidated by this consolidation item." frequency="Day">
+          <Constraint testFunction="InList" testValue1="" testValue2="" flags="None" minumumLength="0" maximumLength="0">
+            <allowedValues>
+              <ArrayOfString>
+                <string>Integer</string>
+                <string>Long Integer</string>
+                <string>Real</string>
+                <string>Boolean</string>
+                <string>Text</string>
+                <string>DateTime</string>
+                <string>Reference</string>
+              </ArrayOfString>
+            </allowedValues>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to consolidate, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Derived Data Formulas" description="Derived Data Formulas">
+      <propertyDefinitions>
+        <PropertyDefinition name="Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+        <PropertyDefinition name="Change Log" dataType="List" flags="None" description="" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="4">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.DateTime" header="Date" />
+                <ColumnDefinition type="System.String" header="User" />
+                <ColumnDefinition type="System.String" header="Change Request" />
+                <ColumnDefinition type="System.String" header="Change Details" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Checked Out User" dataType="String" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="System.String">
+            <string>None</string>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Copy of Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Entity" description="Entities (locations)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Enabled" dataType="Boolean" flags="None" description="[R] Flag to control if entity is active (in Process Management)." frequency="Day" />
+        <PropertyDefinition name="SharePoint Entity Group" dataType="String" flags="None" description="[R] Name of corresponding SharePoint group, containing all users in this entity, e.g. TimeScape Users London" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Event Handlers" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Entity ID" dataType="Int32" flags="None" description="Foreign key to TSPM" frequency="Day" />
+        <PropertyDefinition name="Handler Type" dataType="String" flags="None" description="OutputFileExport, OutputReport, SendEmail" frequency="Day" />
+        <PropertyDefinition name="Output File Export" dataType="List" flags="None" description="FileExportDefinitionXdb, FileExportDefinitionCode, FileExportDefinitionCodeType, Separator, DestinationFolder, FileName, etc" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Output Report" dataType="List" flags="None" description="ReportType (Checks, etc), DestinationFolder, FileName, NodeID, IncludeSubNodes, etc" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Send Email" dataType="List" flags="None" description="To, Cc, Bcc, SubjectTemplate, BodyTemplate, IsHtml, ReplacementTokens" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Export" description="Exporting rules (for post-promotion data export)">
+      <propertyDefinitions>
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to data to output." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="Owning Entity" frequency="Day" />
+        <PropertyDefinition name="Property Outputs" dataType="List" flags="None" description="Property/DataSource pairs defining data to output, with optional de-normalisation query" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Source Property" />
+                <ColumnDefinition type="System.String" header="Source Data Source" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Outputs" dataType="List" flags="None" description="Property/DataSource pairs defining data to output, with optional de-normalisation query" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Source Property" />
+                <ColumnDefinition type="System.String" header="Source Data Source" />
+                <ColumnDefinition type="System.String" header="Type" />
+                <ColumnDefinition type="System.String" header="Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of data to output." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Import" description="Item Import Rules">
+      <propertyDefinitions>
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="Owning entity" frequency="Day" />
+        <PropertyDefinition name="Files" dataType="List" flags="None" description="InputFilePath, InputFileSpec, LogFilePath, LogFilePrefix, ProcessedFilePath, RejectedFilePath, &#xD;&#xA; RowsInHeader, StartOfData, EndOfData, ColumnDelimiter, TextQualifier, EncodingCodePage" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Mappings" dataType="List" flags="None" description="Three or five text columns: LogicalColumnName, TargetProperty, NoDataTokenOpt [, RefDatabase][, RefCodeType]" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.Int32" header="SourceColumnNumber" />
+                <ColumnDefinition type="System.String" header="DestinationProperty" />
+                <ColumnDefinition type="System.String" header="NoDataToken" />
+                <ColumnDefinition type="System.String" header="RefDatabase" />
+                <ColumnDefinition type="System.String" header="RefCodeType" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Target Mappings" dataType="List" flags="None" description="TargetCategory, TargetCategoryColumn, CodeColumn, SuffixedCodeFormat, CodeType, CodeTypeColumn, &#xD;&#xA; AdditionalCodeCol, AdditionalSuffixedCodeFormat, AdditionalCodeType, AdditionalCodeTypeCol, &#xD;&#xA; TargetDataSource, TargetDataSourceColumn, SaveDate, SaveDateC" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Instrument Derived Data" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Series Calculations" dataType="List" flags="None" description="[O] List of single tenor point time series type calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Instrument Override Rules" description="Override rules (to fix exceptions)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole objects." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Point Overrides" dataType="List" flags="None" description="[O] List of override rules for returning single points." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole properties." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Instrument Validation" description="Validation rules (containing universes and tests)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Delegate" dataType="ItemRef" flags="None" description="[O] Entity to handle exceptions, during public holiday of owning entity." frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="[O] Owning entity." frequency="Day" />
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Override Rules" dataType="List" flags="None" description="[O] One or more references to items containing shared override rules." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Override Rules" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Tests" dataType="List" flags="None" description="[O] One or more references to items containing shared tests." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Tests" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Instrument Validation Shared" description="Shared validation rules (containing tests only)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="IPV Overrides" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Exception Inputs" dataType="List" flags="Historic, MultiSourced" description="VUT override with instrumen tand tenor combination" frequency="Day" />
+        <PropertyDefinition name="Override Inputs" dataType="List" flags="Historic, MultiSourced" description="2d matrix config table" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Mapping Tables" description="General tables/lists for various mappings and lookups">
+      <propertyDefinitions>
+        <PropertyDefinition name="Table" dataType="List" flags="MultiSourced" description="Mapping table" frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Request" description="Vendor Instrument Request Rules">
+      <propertyDefinitions>
+        <PropertyDefinition name="Bloomberg Destination Category" dataType="String" flags="None" description="[BBG]" frequency="Day" />
+        <PropertyDefinition name="Bloomberg Destination Code Type" dataType="String" flags="None" description="[BBG]" frequency="Day" />
+        <PropertyDefinition name="Bloomberg Destination Data Source" dataType="String" flags="None" description="[BBG]" frequency="Day" />
+        <PropertyDefinition name="Bloomberg Destination Properties" dataType="List" flags="None" description="[BBG] Target properties for fields from Get All Quotes" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Bloomberg Fields" dataType="List" flags="None" description="[BBG] For Get Data and Get History" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Field Name" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Bloomberg Identifiers Query" dataType="List" flags="None" description="[BBG] Query to load a collection of items, for Get Data (2 columns), Get All Quotes (3 columns) and Get History (3 columns)" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Bloomberg Save Date" dataType="String" flags="None" description="[BBG] Date (or date expression) used to save imported data" frequency="Day" />
+        <PropertyDefinition name="Bloomberg Save Date Column" dataType="Int16" flags="None" description="[BBG] Column index to load save date from" frequency="Day" />
+        <PropertyDefinition name="Bloomberg Save Date Format" dataType="String" flags="None" description="[BBG] Date format for parsing Bloomberg Save Date" frequency="Day" />
+        <PropertyDefinition name="Data Interface" dataType="String" flags="None" description="Vendor interface/program name (TickHistoryTimeAndSales, GetData, GetAllQuotes, GetHistory)" frequency="Day" />
+        <PropertyDefinition name="Data Vendor" dataType="String" flags="None" description="Data vendor name (Reuters, Bloomberg)" frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="Expression returning end date of data to request." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Fields Query" dataType="String" flags="None" description="[RT] QL expression to load fields" frequency="Day" />
+        <PropertyDefinition name="File Export Definition" dataType="ItemRef" flags="None" description="[BBG] Reference to File Export item to generate Bloomberg request file" frequency="Day" />
+        <PropertyDefinition name="Ignore Substituted Bloomberg Data" dataType="Boolean" flags="HasDefaultValue" description="" frequency="Day">
+          <DefaultValue type="System.Boolean">
+            <boolean>true</boolean>
+          </DefaultValue>
+        </PropertyDefinition>
+        <PropertyDefinition name="Items Query" dataType="String" flags="None" description="[RT] QL expression to load instruments" frequency="Day" />
+        <PropertyDefinition name="Parameters Query" dataType="String" flags="None" description="[RT] QL expression to load parameters" frequency="Day" />
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="Expression returning start date of data to request." frequency="Day" />
+        <PropertyDefinition name="Unique File Name Identifier" dataType="String" flags="None" description="Six character asset class name, uses as part of request file name." frequency="Day" />
+      </propertyDefinitions>
+    </Category>
+    <Category name="Shared Universe Definitions" description="Universe definitions to be shared by multiple rules">
+      <propertyDefinitions>
+        <PropertyDefinition name="Calculation" dataType="Formula" flags="None" description="Derived Data Formula" frequency="Day" />
+        <PropertyDefinition name="Universe Items" dataType="Formula" flags="HasDefaultValue" description="Formula to return items in universe" frequency="Day">
+          <DefaultValue type="Xenomorph.Generic.Formula, Xenomorph.Generic, Version=5.0.4000.0, Culture=neutral, PublicKeyToken=2adfa95c2785233e">
+            <Xenomorph.Generic.Formula RowColumnFormat="A1" CellDefinitionsRows="1" CellDefinitionsColumns="1">
+              <NamedRanges>
+                <CellNameDefinition Name="FormulaResult">
+                  <Range Top="0" Left="0" Bottom="0" Right="0" />
+                </CellNameDefinition>
+              </NamedRanges>
+              <Cells>
+                <CellDefinition CalculationEnabled="true" DataVisible="true" RowHidden="false" EndOfLine="false">
+                  <Range Top="0" Left="0" Bottom="0" Right="0" />
+                </CellDefinition>
+              </Cells>
+            </Xenomorph.Generic.Formula>
+          </DefaultValue>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Surface Derived Data" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="" frequency="Day" />
+        <PropertyDefinition name="Object Calculations" dataType="List" flags="None" description="[O] List of object level calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="10">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Calculations" dataType="List" flags="None" description="[O] List of single tenor point time series type calculations to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="12">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Destination Property" />
+                <ColumnDefinition type="System.String" header="Destination Data Source" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to derive from, used in all tests." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Surface Override Rules" description="Override rules (to fix exceptions)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole objects." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Point Overrides" dataType="List" flags="None" description="[O] List of override rules for returning single points." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Overrides" dataType="List" flags="None" description="[O] List of override rules for returning whole properties." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="7">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Surface Validation" description="Validation rules (containing universes and tests)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Delegate" dataType="ItemRef" flags="None" description="[O] Entity to handle exceptions, during public holiday of owning entity." frequency="Day" />
+        <PropertyDefinition name="End Date Query" dataType="String" flags="None" description="[O] Expression returning end date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Entity" dataType="ItemRef" flags="None" description="[O] Owning entity." frequency="Day" />
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Override Rules" dataType="List" flags="None" description="[O] One or more references to items containing shared override rules." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Override Rules" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Shared Tests" dataType="List" flags="None" description="[O] One or more references to items containing shared tests." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="1">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="Xenomorph.Generic.ItemRef" header="Shared Tests" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Start Date Query" dataType="String" flags="None" description="[O] Expression returning start date of series to validate, used in all tests. If blank, date can be specified in Analytic Query column of test." frequency="Day" />
+        <PropertyDefinition name="Universe Query" dataType="List" flags="None" description="[R] One or more queries that return a collection of items." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Query" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Surface Validation Shared" description="Shared validation rules (containing tests only)">
+      <propertyDefinitions>
+        <PropertyDefinition name="Object Tests" dataType="List" flags="None" description="[O] List of item level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="6">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Property Tests" dataType="List" flags="None" description="[O] List of static property level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="9">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Series Tests" dataType="List" flags="None" description="[O] List of historic/series level tests to run against universe." frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="11">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.Boolean" header="Enabled" />
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.String" header="Description" />
+                <ColumnDefinition type="System.String" header="Target Property" />
+                <ColumnDefinition type="System.String" header="Target Data Source" />
+                <ColumnDefinition type="System.String" header="Data Rule" />
+                <ColumnDefinition type="System.String" header="Analytic Query" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Analytic Parameters" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Validation Properties" />
+                <ColumnDefinition type="Xenomorph.Generic.List" header="Attributes" />
+                <ColumnDefinition type="System.String" header="Start Date Override" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+    <Category name="Tenor Maps" description="">
+      <propertyDefinitions>
+        <PropertyDefinition name="Method" dataType="String" flags="Historic, StoreChangesOnly" description="Identifier for the interpolation method" frequency="Day" />
+        <PropertyDefinition name="Name" dataType="String" flags="None" description="Name of the Item" frequency="Day" />
+        <PropertyDefinition name="Parameters" dataType="List" flags="Historic, StoreChangesOnly" description="Names of interpolation parameters (first column) and the values of interpolation parameters" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Name" />
+                <ColumnDefinition type="System.Object" header="Value" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+        <PropertyDefinition name="Tenors Map" dataType="List" flags="None" description="Mapping of tenor names to associated timespan" frequency="Day">
+          <Constraint flags="FixedColumnCount, FixedColumnTypes" rows="0" columns="2">
+            <columnTypes>
+              <ArrayOfColumnDefinition>
+                <ColumnDefinition type="System.String" header="Tenor" />
+                <ColumnDefinition type="System.Double" header="Map" />
+              </ArrayOfColumnDefinition>
+            </columnTypes>
+          </Constraint>
+        </PropertyDefinition>
+      </propertyDefinitions>
+    </Category>
+  </categories>
+</DatabaseStructure>
