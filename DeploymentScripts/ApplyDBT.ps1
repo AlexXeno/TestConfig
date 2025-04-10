@@ -18,13 +18,21 @@ if (-Not $TargetTS)
 
 Add-PSSnapin Xenomorph.TimeScape;
 
+Write-Output "Deploying template to \\$TargetTS\MD_GOLD"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\MD_GOLD_DBT.XML" "\\$TargetTS\MD_GOLD" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\MD_SILVER"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\MD_SILVER_DBT.XML" "\\$TargetTS\MD_SILVER" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\MD_RAW"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\MD_RAW_DBT.XML" "\\$TargetTS\MD_RAW" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\PUBLIC_SILVER"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\PUBLIC_SILVER_DBT.XML" "\\$TargetTS\PUBLIC_SILVER" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\PUBLIC_GOLD"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\PUBLIC_GOLD_DBT.XML" "\\$TargetTS\PUBLIC_GOLD" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\PUBLIC"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\PUBLIC_DBT.XML" "\\$TargetTS\PUBLIC" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\COMMON"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\COMMON_DBT.XML" "\\$TargetTS\COMMON" -SourceIsXML;
+Write-Output "Deploying template to \\$TargetTS\SYSTEM"
 Copy-Database "$PSScriptRoot\..\DatabaseTemplates\SYSTEM_DBT.XML" "\\$TargetTS\SYSTEM" -SourceIsXML;
 
 Write-Output "$MyInvocation.MyCommand.Name completed"
