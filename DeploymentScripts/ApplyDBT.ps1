@@ -1,4 +1,4 @@
-#########################################
+$(#########################################
 # Script to import XDB Templates to the 
 # appropriate databases
 # Author: A.Rowe
@@ -34,4 +34,4 @@ $templates | % {
   }
 }
 
-Write-Output "$MyInvocation.MyCommand.Name completed"
+Write-Output "$($MyInvocation.MyCommand.Name) completed"
