@@ -39,4 +39,4 @@ foreach ($file in $sourceFiles)
     }
 }
 
-Write-Output "$MyInvocation.MyCommand.Name completed"
+Write-Output "$($MyInvocation.MyCommand.Name) completed"
