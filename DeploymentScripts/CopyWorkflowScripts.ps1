@@ -56,4 +56,4 @@ foreach ($file in $sourceFiles)
     Copy-Item -Path $file.FullName -Destination $targetFolder;
 }
 
-Write-Output "$MyInvocation.MyCommand.Name completed"
+Write-Output "$($MyInvocation.MyCommand.Name) completed"
